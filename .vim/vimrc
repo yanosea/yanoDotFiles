@@ -1,0 +1,62 @@
+" PREFERENCES
+" Language and Character Code
+let $LANG='en_US.UTF-8'
+set encoding=utf8
+" .viminfo Path
+set viminfo+=n~/.vim/.viminfo
+" Show Line Number
+set number
+" Show Cursor Position
+set ruler
+" Highlight Current Line
+set cursorline
+" Show Status Bar Constantly
+set laststatus=2
+" GUI Setting
+set guifontwide=DroidSansMono\ Nerd\ Font\ 10
+set guifont=DroidSansMono\ Nerd\ Font\ 10
+set guicursor+=i:block,a:-blinkwait175-blinkoff150-blinkon175
+" Highlight Search Result
+set hlsearch
+" Command History
+set history=1000
+" Enable Command Complement
+set wildmenu
+" Indent Automatically (4 Half Spaces)
+set autoindent
+set smartindent
+set expandtab
+set tabstop=4
+set shiftwidth=4
+" Enable Syntax Highlight
+syntax enable
+
+" PLUGIN SETTINGS
+call plug#begin()
+
+    " Set Document Japanese
+    Plug 'vim-jp/vimdoc-ja'
+    " Enable Clipboard History
+    Plug 'vim-scripts/YankRing.vim'
+    " Set IME OFF When Escape From Insert Mode
+    Plug 'kaz399/spzenhan.vim'
+
+call plug#end()
+
+" YankRing
+let g:yankring_history_dir = '$XDG_STATE_HOME/yankring'
+
+" WSL Clipboard
+if !empty($WSL_DISTRO_NAME)
+    let s:clip = '/mnt/c/Windows/System32/clip.exe'
+    if executable(s:clip)
+        augroup WSLYank
+            autocmd!
+            autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+        augroup END
+    endif
+    if executable('spzenhan.exe')
+        autocmd InsertLeave * :call system('spzenhan.exe 0')
+        autocmd CmdlineLeave * :call system('spzenhan.exe 0')
+    endif
+endif

@@ -1,0 +1,45 @@
+[app]
+  background_color = "#000000"
+  border_color = "#ffffff"
+  text_color = "#f9f9f9"
+  sub_text_color = "#979797"
+  emphasis_text = "maroon:-:bi"
+
+[tab]
+  text = "white:-:-"
+  background_color = "#000000"
+
+[autocomplete]
+  text_color = "#000000"
+  background_color = "#808080"
+  selected_background_color = "#C0C0C0"
+
+[statusbar]
+  text = "black:-:-"
+  background_color = "#ffffff"
+
+[tweet]
+  annotation = "teal:-:-"
+  detail = "gray:-:-"
+  like = "pink:-:-"
+  retweet = "lime:-:-"
+  hashtag = "aqua:-:-"
+  mention = "aqua:-:-"
+  poll_graph = "aqua:-:-"
+  poll_detail = "gray:-:-"
+  separator = "gray:-:-"
+
+[user]
+  name = "white:-:b"
+  user_name = "gray:-:i"
+  detail = "gray:-:-"
+  verified = "blue:-:-"
+  private = "gray:-:-"
+
+[metrics]
+  tweets_text = "black:-:-"
+  tweets_background_color = "#a094c7"
+  following_text = "black:-:-"
+  following_background_color = "#84a0c6"
+  followers_text = "black:-:-"
+  followers_background_color = "#89b8c2"

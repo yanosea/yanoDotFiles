@@ -1,0 +1,12 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	email = myanoshi0626@gmail.com
+	name = yanosea
+[credential]
+	helper = store --file $XDG_CONFIG_HOME/git/credentials
+[core]
+	pager = git-split-diffs --color | less -RFX

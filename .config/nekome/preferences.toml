@@ -1,0 +1,110 @@
+[feature]
+  main_user = "fly_2_fake"
+  load_tweets_limit = 100
+  accmulate_tweets_limit = 1000
+  use_external_editor = false
+  is_locale_cjk = true
+  startup_cmds = ["home", "mention --unfocus", "list つぬよそ 1496789318933037067 --unfocus", "user @fly_2_fake --unfocus", "likes @fly_2_fake --unfocus"]
+
+[comfirm]
+  block = true
+  delete = true
+  follow = true
+  like = true
+  mute = true
+  quit = false
+  retweet = true
+  tweet = true
+  unblock = true
+  unfollow = true
+  unlike = true
+  unmute = true
+  unretweet = true
+
+[appearance]
+  style_file = "style_default.toml"
+  date_fmt = "2006/01/02"
+  time_fmt = "15:04:05"
+  user_bio_max_row = 3
+  user_profile_padding_x = 4
+  user_detail_separator = " | "
+  hide_tweet_separator = false
+  hide_quote_tweet_separator = false
+  tweet_separator = "─"
+  quote_tweet_separator = "-"
+  graph_char = "█"
+  graph_max_width = 30
+  tab_separator = "|"
+  tab_max_width = 20
+
+[layout]
+  tweet = "{annotation}\n{user_info}\n{text}\n{poll}\n{detail}"
+  tweet_anotation = "{text} {author_name} {author_username}"
+  tweet_detail = "{created_at} | via {via}\n{metrics}"
+  tweet_poll = "{graph}\n{detail}"
+  tweet_poll_graph = "{label}\n{graph} {per} {votes}"
+  tweet_poll_detail = "{status} | {all_votes} votes | ends on {end_date}"
+  user = "{user_info}\n{bio}\n{user_detail}"
+  user_info = "{name} {username} {badge}"
+
+[text]
+  like = "Like"
+  retweet = "RT"
+  loading = "Loading..."
+  no_tweets = "No tweets ฅ^-ω-^ฅ"
+  tweet_textarea_hint = "What's happening?"
+  tab_home = "Home"
+  tab_mention = "Mention"
+  tab_list = "List: {name}"
+  tab_user = "User: @{name}"
+  tab_search = "Search: {query}"
+  tab_likes = "Likes: @{name}"
+  tab_docs = "Docs: {name}"
+
+[icon]
+  geo = "📍"
+  link = "🔗"
+  pinned = "📌"
+  verified = "✅"
+  private = "🔒"
+
+[keybinding]
+  [keybinding.global]
+    quit = ["ctrl+q"]
+  [keybinding.view]
+    close_page = ["ctrl+w"]
+    focus_cmdline = [":", ";"]
+    redraw = ["."]
+    select_next_tab = ["Right"]
+    select_prev_tab = ["Left"]
+    show_help = ["/"]
+  [keybinding.page]
+    reload_page = [","]
+  [keybinding.home_timeline]
+    stream_mode_start = ["s"]
+    stream_mode_stop = ["ctrl+s"]
+  [keybinding.tweet]
+    copy_url = ["c"]
+    cursor_bottom = ["End"]
+    cursor_down = ["Down"]
+    cursor_top = ["Home"]
+    cursor_up = ["Up"]
+    open_browser = ["o"]
+    open_user_likes = ["ctrl+u"]
+    open_user_page = ["u"]
+    quote = ["q"]
+    reply = ["h"]
+    scroll_down = ["PageDown"]
+    scroll_up = ["PageUp"]
+    tweet = ["t"]
+    tweet_delete = ["ctrl+d"]
+    tweet_like = ["l"]
+    tweet_retweet = ["r"]
+    tweet_unlike = ["ctrl+l"]
+    tweet_unretweet = ["ctrl+r"]
+    user_block = ["b"]
+    user_follow = ["f"]
+    user_mute = ["m"]
+    user_unblock = ["ctrl+b"]
+    user_unfollow = ["ctrl+f"]
+    user_unmute = ["ctrl+m"]

@@ -1,0 +1,25 @@
+# IGNORE FOLDER
+.config/coc
+.config/configstore
+.config/fish/completions
+.config/fish/conf.d
+.config/fish/functions
+.config/gup
+.config/ranger/plugins
+.vim/autoload
+.vim/colors
+.vim/plugged
+
+# IGNORE FILE
+.config/fish/fish_plugins
+.config/fish/fish_variables
+.config/git/credentials
+.config/lazygit/state.yml
+.config/nekome/.cred.toml
+.config/ranger/commands.py
+.config/ranger/commands_full.py
+.config/ranger/scope.sh
+.config/spotify-tui/.spotify_token_cache.json
+.config/spotify-tui/client.yml
+.vim/.viminfo
+*.log
