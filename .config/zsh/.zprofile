@@ -41,5 +41,9 @@ source /usr/share/fzf/completion.zsh
 ## homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# PREFERENCES
+## OPENAI_API_KEY
+export OPENAI_API_KEY=`cat $HOME/work/credentials/OPENAI_API_KEY`
+
 # FISH START
 exec fish
