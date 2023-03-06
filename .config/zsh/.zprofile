@@ -38,6 +38,9 @@ export PATH=$PATH:$GOPATH/bin
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
+## OTHER
+export PATH=$PATH:$HOME/.local/bin
+
 ## homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
