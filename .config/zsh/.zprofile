@@ -45,6 +45,9 @@ export PATH=$PATH:$HOME/.local/bin
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # PREFERENCES
+## GITHUB_TOKEN
+export GITHUB_TOKEN=`cat $HOME/work/credentials/GITHUB_TOKEN`
+
 ## OPENAI_API_KEY
 export OPENAI_API_KEY=`cat $HOME/work/credentials/OPENAI_API_KEY`
 
