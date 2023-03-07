@@ -11,6 +11,7 @@
 .vim/plugged
 
 # IGNORE FILE
+.config/dlv/.dbg_history
 .config/fish/fish_plugins
 .config/fish/fish_variables
 .config/git/credentials
