@@ -14,6 +14,7 @@ set laststatus=2
 set guifontwide=DroidSansMono\ Nerd\ Font\ 10
 set guifont=DroidSansMono\ Nerd\ Font\ 10
 set guicursor+=i:block,a:-blinkwait175-blinkoff150-blinkon175
+set mouse=
 " Highlight Search Result
 set hlsearch
 " Command History
