@@ -77,6 +77,9 @@ call plug#begin('$XDG_DATA_HOME/nvim/site')
 
 call plug#end()
 
+" Hide Highlight Search Result SETTING
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
 " Buffers SETTINGS
 nnoremap <silent> <C-k> :bprev<CR>
 nnoremap <silent> <C-j> :bnext<CR>
