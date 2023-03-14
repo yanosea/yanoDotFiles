@@ -9,6 +9,7 @@ if status is-interactive
     alias cat='/usr/sbin/bat'
 
     # theme
+    set -g theme_color_scheme nord
     set -g theme_display_date yes
     set -g theme_date_format "+%F %H:%M:%S"
     set -g theme_display_git_default_branch yes
