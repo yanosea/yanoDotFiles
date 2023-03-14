@@ -54,6 +54,7 @@ call plug#begin('$XDG_DATA_HOME/nvim/site')
     Plug 'ryanoasis/vim-devicons'
     " File Explorer with NerdFont
     Plug 'preservim/nerdtree'
+    Plug 'jistr/vim-nerdtree-tabs'
     " Show Git Status In File Explorer
     Plug 'Xuyuanp/nerdtree-git-plugin'
     " Enable Highlight
@@ -95,7 +96,7 @@ let g:airline#extensions#tabline#enabled = 1
 " NERDTree SETTINGS
 hi VertSplit cterm=none
 let NERDTreeShowHidden = 1
-nmap <C-f> :NERDTreeToggle<CR>
+nmap <C-f> :NERDTreeTabsToggle<CR>
 nmap <C-k> <Plug>AirlineSelectPrevTab
 nmap <C-j> <Plug>AirlineSelectNextTab
 augroup my-glyph-palette
