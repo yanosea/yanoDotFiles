@@ -34,6 +34,10 @@ export PATH=$PATH:$GOPATH/bin
 ## cargo
 . "$HOME/.cargo/env"
 
+## volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 ## fzf
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
