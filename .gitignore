@@ -2,6 +2,7 @@
 .config/coc
 .config/configstore
 .config/gup
+.config/ranger/colorschemes
 .config/ranger/plugins
 .vim/autoload
 .vim/colors
