@@ -9,8 +9,7 @@
 [credential]
 	helper = store --file $XDG_CONFIG_HOME/git/credentials
 [core]
-	; pager = git-split-diffs --color | less -RFX
-    pager = delta
+    pager = git-split-diffs --color | less -RFX
 
 [interactive]
     diffFilter = delta --color-only
