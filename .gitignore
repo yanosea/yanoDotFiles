@@ -18,6 +18,7 @@
 .config/git/credentials
 .config/lazygit/state.yml
 .config/nekome/.cred.toml
+.config/nvim/lazy-lock.json
 .config/ranger/commands.py
 .config/ranger/commands_full.py
 .config/ranger/scope.sh

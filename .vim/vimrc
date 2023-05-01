@@ -1,6 +1,7 @@
 " PREFERENCES
 " Language and Character Code
 let $LANG='en_US.UTF-8'
+set helplang=ja,en
 set encoding=utf8
 " .viminfo Path
 set viminfo+=n~/.vim/.viminfo
