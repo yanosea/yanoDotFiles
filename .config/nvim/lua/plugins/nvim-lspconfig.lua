@@ -1,9 +1,8 @@
 local common_on_attach = function(client, bufnr)
   client.server_capabilities.semanticTokensProvider = nil
 
-  local augroup = vim.api.nvim_create_augroup('LspFormatting', { clear = false })
-
   if client.supports_method('textDocument/formatting') then
+    local augroup = vim.api.nvim_create_augroup('LspFormatting', { clear = false })
     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
     vim.api.nvim_create_autocmd('BufWritePre', {
       callback = function()
