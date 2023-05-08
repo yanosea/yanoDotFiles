@@ -41,8 +41,8 @@ local set_opt = {
   autoindent = true,
   smartindent = true,
   expandtab = true,
-  tabstop = 4,
-  shiftwidth = 4,
+  tabstop = 2,
+  shiftwidth = 2,
   -- window split
   splitbelow = false,
   splitright = false,
@@ -58,6 +58,19 @@ local append_opt = {
   -- GUI setting
   guicursor = 'i:block,a:-blinkwait175-blinkoff150-blinkon175',
 }
+
+-- lsp
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  virtual_text = {
+    format = function(diagnostic)
+      return string.format('%s (%s: %s)', diagnostic.message, diagnostic.source, diagnostic.code)
+    end,
+  },
+})
+
+-- ignore auto format
+vim.api.nvim_create_user_command('W', 'noautocmd w', {})
+vim.api.nvim_create_user_command('Wq', 'noautocmd wq', {})
 
 -- set preferences
 for k, v in pairs(set_opt) do
