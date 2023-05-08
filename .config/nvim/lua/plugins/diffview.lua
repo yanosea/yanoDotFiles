@@ -1,17 +1,5 @@
 return {
   {
-    -- https://github.com/lambdalisue/gin.vim
-    'lambdalisue/gin.vim',
-    lazy = false,
-    -- https://github.com/vim-denops/denops.vim
-    dependencies = { 'vim-denops/denops.vim' },
-    init = function()
-      vim.keymap.set('n', '<LEADER>gs', '<CMD>GinStatus ++opener=split<CR>', { desc = 'git status' })
-      vim.keymap.set('n', '<LEADER>gb', '<CMD>GinBranch ++opener=split<CR>', { desc = 'git branch' })
-      vim.keymap.set('n', '<LEADER>gc', '<CMD>Gin commit<CR>', { desc = 'git commit' })
-    end
-  },
-  {
     -- https://github.com/sindrets/diffview.nvim
     'sindrets/diffview.nvim',
     lazy = true,
@@ -23,13 +11,12 @@ return {
     },
     cmd = { 'DiffviewOpen', 'DiffviewFileHistory' },
     init = function()
-      vim.keymap.set('n', '<LEADER>gd', '<CMD>DiffviewOpen<CR>', { desc = 'show git diff' })
-      vim.keymap.set('n', '<LEADER>gh', '<CMD>DiffviewFileHistory<CR>', { desc = 'show current branch file history' })
-      vim.keymap.set('n', '<LEADER>gl', '<CMD>DiffviewFileHistory %<CR>', { desc = 'show current file history' })
+      vim.keymap.set('n', '<Leader>gd', '<CMD>DiffviewOpen<CR>', { desc = 'show git diff' })
+      vim.keymap.set('n', '<Leader>gh', '<CMD>DiffviewFileHistory<CR>', { desc = 'show current branch file history' })
+      vim.keymap.set('n', '<Leader>gl', '<CMD>DiffviewFileHistory %<CR>', { desc = 'show current file history' })
     end,
     config = function()
       local act = require('diffview.actions')
-
       require('diffview').setup({
         diff_binaries = false,
         enhanced_diff_hl = false,
@@ -110,15 +97,15 @@ return {
             { 'n', '<C-p>',      act.select_prev_entry,         { desc = 'open the diff for the previous file' } },
             { 'n', 'gf',         act.goto_file_edit,            { desc = 'open the file in the previous tabpage' } },
             { 'n', 'gF',         act.goto_file_tab,             { desc = 'open the file in a new tabpage' } },
-            { 'n', '<LEADER>e',  act.focus_files,               { desc = 'bring focus to the file panel' } },
-            { 'n', '<LEADER>b',  act.toggle_files,              { desc = 'toggle the file panel.' } },
+            { 'n', '<Leader>e',  act.focus_files,               { desc = 'bring focus to the file panel' } },
+            { 'n', '<Leader>b',  act.toggle_files,              { desc = 'toggle the file panel.' } },
             { 'n', 'gx',         act.cycle_layout,              { desc = 'cycle through available layouts.' } },
             { 'n', 'x[',         act.prev_conflict,             { desc = 'merge-tool: jump to the previous conflict' } },
             { 'n', 'x]',         act.next_conflict,             { desc = 'merge-tool: jump to the next conflict' } },
-            { 'n', '<LEADER>co', act.conflict_choose('ours'),   { desc = 'choose the OURS version of a conflict' } },
-            { 'n', '<LEADER>ct', act.conflict_choose('theirs'), { desc = 'choose the THEIRS version of a conflict' } },
-            { 'n', '<LEADER>cb', act.conflict_choose('base'),   { desc = 'choose the BASE version of a conflict' } },
-            { 'n', '<LEADER>ca', act.conflict_choose('all'),    { desc = 'choose all the versions of a conflict' } },
+            { 'n', '<Leader>co', act.conflict_choose('ours'),   { desc = 'choose the OURS version of a conflict' } },
+            { 'n', '<Leader>ct', act.conflict_choose('theirs'), { desc = 'choose the THEIRS version of a conflict' } },
+            { 'n', '<Leader>cb', act.conflict_choose('base'),   { desc = 'choose the BASE version of a conflict' } },
+            { 'n', '<Leader>ca', act.conflict_choose('all'),    { desc = 'choose all the versions of a conflict' } },
             { 'n', 'dx',         act.conflict_choose('none'),   { desc = 'delete the conflict region' } },
           },
           diff1 = {
@@ -143,11 +130,12 @@ return {
             { 'n', '?', act.help({ 'view', 'diff3' }), { desc = 'open the help panel' } }
           },
           diff4 = {
+            -- Mappings in 4-way diff layouts
             {
               { 'n', 'x' }, '1do', act.diffget('base'),
               {
                 desc = 'obtain the diff hunk from the BASE version of the file',
-              },
+              }
             },
             {
               { 'n', 'x' }, '2do', act.diffget('ours'),
@@ -185,8 +173,8 @@ return {
             { 'n', 'i',         act.listing_style,       { desc = 'toggle between "list " and "tree " views' } },
             { 'n', 'f',         act.toggle_flatten_dirs, { desc = 'flatten empty subdirectories in tree listing style.' } },
             { 'n', 'R',         act.refresh_files,       { desc = 'update stats and entries in the file list.' } },
-            { 'n', '<LEADER>e', act.focus_files,         { desc = 'bring focus to the file panel' } },
-            { 'n', '<LEADER>b', act.toggle_files,        { desc = 'toggle the file panel' } },
+            { 'n', '<Leader>e', act.focus_files,         { desc = 'bring focus to the file panel' } },
+            { 'n', '<Leader>b', act.toggle_files,        { desc = 'toggle the file panel' } },
             { 'n', 'gx',        act.cycle_layout,        { desc = 'cycle available layouts' } },
             { 'n', 'x]',        act.prev_conflict,       { desc = 'go to the previous conflict' } },
             { 'n', 'x[',        act.next_conflict,       { desc = 'go to the next conflict' } },
@@ -211,11 +199,13 @@ return {
             { 'n', '<C-k>',     act.select_prev_entry,          { desc = 'open the diff for the previous file' } },
             { 'n', 'gf',        act.goto_file_edit,             { desc = 'open the file in the previous tabpage' } },
             { 'n', 'gF',        act.goto_file_tab,              { desc = 'open the file in a new tabpage' } },
-            { 'n', '<LEADER>e', act.focus_files,                { desc = 'bring focus to the file panel' } },
-            { 'n', '<LEADER>b', act.toggle_files,               { desc = 'toggle the file panel' } },
+            { 'n', '<Leader>e', act.focus_files,                { desc = 'bring focus to the file panel' } },
+            { 'n', '<Leader>b', act.toggle_files,               { desc = 'toggle the file panel' } },
             { 'n', 'gx',        act.cycle_layout,               { desc = 'cycle available layouts' } },
             { 'n', '?',         act.help('file_history_panel'), { desc = 'open the help panel' } },
-            { 'n', 'y', act.copy_hash, { desc = 'copy the commit hash of the entry under the cursor' }, },
+            { 'n', 'y', act.copy_hash,
+              { desc = 'copy the commit hash of the entry under the cursor', },
+            },
           },
           option_panel = {
             { 'n', '<TAB>', act.select_entry,         { desc = 'change the current option' } },
