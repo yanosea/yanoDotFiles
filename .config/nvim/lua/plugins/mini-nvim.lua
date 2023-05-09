@@ -18,6 +18,8 @@ return {
               textobject = 'gc',
             },
           })
+          require('mini.indentscope').setup({ symbol = '┆' })
+          vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { link = "Conceal" })
           require('mini.pairs').setup({})
           require('mini.splitjoin').setup({
             mappings = {
