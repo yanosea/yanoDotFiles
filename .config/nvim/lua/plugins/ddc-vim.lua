@@ -67,46 +67,4 @@ return {
       vim.fn['ddc#enable']()
     end,
   },
-  {
-    -- https://github.com/Shougo/pum.vim
-    'Shougo/pum.vim',
-    config = function()
-      vim.fn['pum#set_option']({
-        auto_select = true,
-        padding = true,
-        max_horizontal_items = 3,
-      })
-
-      local opts = { silent = true, noremap = true }
-      vim.keymap.set('i', '<TAB>', '<Cmd>call pum#map#confirm()<CR>', opts)
-    end
-  },
-  {
-    -- https://github.com/matsui54/denops-popup-preview.vim
-    'matsui54/denops-popup-preview.vim',
-    dependencies = { 'vim-denops/denops.vim' },
-    config = function()
-      vim.g.popup_preview_config = {
-        border = false,
-        supportUltisnips = false,
-        supportInfo = true,
-        delay = 60,
-      }
-
-      vim.fn['popup_preview#enable']()
-    end
-  },
-  {
-    -- https://github.com/matsui54/denops-signature_help
-    'matsui54/denops-signature_help',
-    dependencies = { 'vim-denops/denops.vim' },
-    config = function()
-      vim.g.signature_help_config = {
-        contentsStyle = 'currentLabel',
-        viewStyle = 'virtual',
-      }
-
-      vim.fn['signature_help#enable']()
-    end
-  },
 }
