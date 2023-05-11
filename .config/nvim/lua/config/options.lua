@@ -53,6 +53,8 @@ local set_opt = {
 }
 
 local append_opt = {
+  -- intro
+  shortmess = 'I',
   -- clipboaed
   clipboard = 'unnamedplus',
   -- GUI setting
