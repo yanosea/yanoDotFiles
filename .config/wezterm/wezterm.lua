@@ -7,13 +7,66 @@ local wsl_domains = wezterm.default_wsl_domains()
 local default_prog
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
   default_domain = 'WSL:Arch'
-  for _, dom in ipairs(wsl_domains) do
-    dom.default_cwd = "~"
+  for _, domain in ipairs(wsl_domains) do
+    domain.default_cwd = '~'
   end
-  default_prog = { "wsl.exe" }
+  default_prog = { 'wsl.exe' }
 elseif wezterm.target_triple == 'aarch64-apple-darwin' then
   default_domain = 'local'
 end
+
+-- tab bar left
+wezterm.on('format-tab-title', function(tab, tabs)
+  local TAB_BAR_BG = '#2E3440'
+  local ACTIVE_TAB_BG = '#88C0D0'
+  local ACTIVE_TAB_FG = '#ffffff'
+  local NORMAL_TAB_BG = '#434C5E'
+  local NORMAL_TAB_FG = '#ffffff'
+
+  local background = NORMAL_TAB_BG
+  local foreground = NORMAL_TAB_FG
+
+  local is_first = tab.tab_id == tabs[1].tab_id
+  local is_last = tab.tab_id == tabs[#tabs].tab_id
+
+  if tab.is_active then
+    background = ACTIVE_TAB_BG
+    foreground = ACTIVE_TAB_FG
+  end
+
+  local leading_fg = NORMAL_TAB_FG
+  local leading_bg = background
+  local trailing_fg = background
+  local trailing_bg = NORMAL_TAB_BG
+
+  if is_first and tab.is_active then
+    leading_fg = ACTIVE_TAB_BG
+  else
+    leading_fg = NORMAL_TAB_BG
+  end
+
+  if is_last then
+    trailing_bg = TAB_BAR_BG
+  else
+    trailing_bg = NORMAL_TAB_BG
+  end
+
+  local space
+  if is_first then
+    space = ''
+  else
+    space = ' '
+  end
+
+  return {
+    { Background = { Color = leading_bg } }, { Foreground = { Color = leading_fg } },
+    { Text = '' },
+    { Background = { Color = background } }, { Foreground = { Color = foreground } },
+    { Text = space .. tab.tab_index + 1 .. ': ' .. tab.active_pane.title .. ' ' },
+    { Background = { Color = trailing_bg } }, { Foreground = { Color = trailing_fg } },
+    { Text = '' },
+  }
+end)
 
 -- tab bar right
 function basename(s)
@@ -21,10 +74,6 @@ function basename(s)
 end
 
 wezterm.on('update-right-status', function(window)
-  local username = ' ' .. basename(wezterm.home_dir) .. ' ';
-  local date = ' ' .. wezterm.strftime(' %Y/%m/%d %I:%M:%S') .. ' ';
-  local hostname = ' ' .. wezterm.hostname() .. ' ';
-
   window:set_right_status(
     wezterm.format({
       { Foreground = { Color = '#5E81AC' } },
@@ -32,19 +81,19 @@ wezterm.on('update-right-status', function(window)
       { Text = '' },
       { Foreground = { Color = '#ffffff' } },
       { Background = { Color = '#5E81AC' } },
-      { Text = username },
+      { Text = ' ' .. basename(wezterm.home_dir) .. ' ' },
       { Foreground = { Color = '#81A1C1' } },
       { Background = { Color = '#5E81AC' } },
       { Text = '' },
       { Foreground = { Color = '#ffffff' } },
       { Background = { Color = '#81A1C1' } },
-      { Text = hostname },
+      { Text = ' ' .. wezterm.hostname() .. ' ' },
       { Foreground = { Color = '#88C0D0' } },
       { Background = { Color = '#81A1C1' } },
       { Text = '' },
       { Foreground = { Color = '#ffffff' } },
       { Background = { Color = '#88C0D0' } },
-      { Text = date },
+      { Text = ' ' .. wezterm.strftime(' %Y/%m/%d %I:%M:%S') .. ' ' },
     })
   );
 end);
@@ -90,26 +139,15 @@ return {
     { key = 'w', mods = 'LEADER|SHIFT|CTRL', action = act.CloseCurrentTab { confirm = true } },
     { key = 'k', mods = 'SHIFT|CTRL',        action = act.ActivateTabRelative(-1) },
     { key = 'j', mods = 'SHIFT|CTRL',        action = act.ActivateTabRelative(1) },
-    {
-      key = 'e',
-      mods = 'LEADER|SHIFT|CTRL',
-      action = act.PromptInputLine {
-        action = wezterm.action_callback(function(window, line)
-          if line then
-            window:active_tab():set_title(line)
-          end
-        end),
-      },
-    },
-    { key = '1', mods = 'LEADER|SHIFT|CTRL', action = act.ActivateTab(0) },
-    { key = '2', mods = 'LEADER|SHIFT|CTRL', action = act.ActivateTab(1) },
-    { key = '3', mods = 'LEADER|SHIFT|CTRL', action = act.ActivateTab(2) },
-    { key = '4', mods = 'LEADER|SHIFT|CTRL', action = act.ActivateTab(3) },
-    { key = '5', mods = 'LEADER|SHIFT|CTRL', action = act.ActivateTab(4) },
-    { key = '6', mods = 'LEADER|SHIFT|CTRL', action = act.ActivateTab(5) },
-    { key = '7', mods = 'LEADER|SHIFT|CTRL', action = act.ActivateTab(6) },
-    { key = '8', mods = 'LEADER|SHIFT|CTRL', action = act.ActivateTab(7) },
-    { key = '9', mods = 'LEADER|SHIFT|CTRL', action = act.ActivateTab(8) },
+    { key = '1', mods = 'LEADER',            action = act.ActivateTab(0) },
+    { key = '2', mods = 'LEADER',            action = act.ActivateTab(1) },
+    { key = '3', mods = 'LEADER',            action = act.ActivateTab(2) },
+    { key = '4', mods = 'LEADER',            action = act.ActivateTab(3) },
+    { key = '5', mods = 'LEADER',            action = act.ActivateTab(4) },
+    { key = '6', mods = 'LEADER',            action = act.ActivateTab(5) },
+    { key = '7', mods = 'LEADER',            action = act.ActivateTab(6) },
+    { key = '8', mods = 'LEADER',            action = act.ActivateTab(7) },
+    { key = '9', mods = 'LEADER',            action = act.ActivateTab(8) },
     -- pane
     { key = 'v', mods = 'LEADER|SHIFT|CTRL', action = act.SplitHorizontal { domain = 'DefaultDomain' } },
     { key = 's', mods = 'LEADER|SHIFT|CTRL', action = act.SplitVertical { domain = 'DefaultDomain' } },
@@ -129,7 +167,7 @@ return {
     { key = 'c',     mods = 'LEADER|SHIFT|CTRL', action = wezterm.action.ActivateCopyMode },
     { key = 'Enter', mods = 'LEADER|SHIFT|CTRL', action = 'QuickSelect' },
     { key = '?',     mods = 'LEADER|SHIFT|CTRL', action = act.Search('CurrentSelectionOrEmptyString') },
-    { key = 'l',     mods = 'LEADER|SHIFT|CTRL', action = wezterm.action.ShowDebugOverlay },
+    { key = 'd',     mods = 'LEADER|SHIFT|CTRL', action = wezterm.action.ShowDebugOverlay },
   }
   ,
   key_tables = {
