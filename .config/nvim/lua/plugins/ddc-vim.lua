@@ -61,8 +61,8 @@ return {
       })
 
       local opts = { silent = true, noremap = true }
-      vim.keymap.set('i', '<C-j>', '<Cmd>call pum#map#select_relative(+1)<CR>', opts)
-      vim.keymap.set('i', '<C-k>', '<Cmd>call pum#map#select_relative(-1)<CR>', opts)
+      vim.keymap.set('i', '<DOWN>', '<Cmd>call pum#map#select_relative(+1)<CR>', opts)
+      vim.keymap.set('i', '<UP>', '<Cmd>call pum#map#select_relative(-1)<CR>', opts)
 
       vim.fn['ddc#enable']()
     end,
