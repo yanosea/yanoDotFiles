@@ -1,0 +1,206 @@
+gaps:
+  inner_gap: 10
+  outer_gap: 10
+
+bar:
+  height: "30px"
+  position: "top"
+  opacity: 1.0
+  background: "#20242cc4"
+  foreground: "#ffffff"
+  font_family: "Arial"
+  font_size: "13px"
+  padding: "4px 6px"
+  components_left:
+    - type: "workspaces"
+      focused_workspace_background: "#ffffff33"
+      displayed_workspace_background: "#00000033"
+      default_workspace_background: "transparent"
+  components_right:
+    - type: "tiling direction"
+      background: "#ffffff33"
+      margin: "0 4px"
+      padding: "0 8px"
+    - type: "binding mode"
+      background: "#ffffff33"
+      margin: "0 4px 0 0"
+      padding: "0 8px"
+    - type: "clock"
+      time_formatting: "HH:mm:ss ddd MMM d"
+      margin: "0 0 0 10px"
+
+workspaces:
+  - name: "01"
+  - name: "02"
+  - name: "03"
+  - name: "04"
+  - name: "05"
+  - name: "06"
+  - name: "07"
+  - name: "08"
+  - name: "09"
+
+window_rules:
+  # Task Manager requires admin privileges to manage and should be ignored unless running
+  # the WM as admin.
+  - command: "ignore"
+    match_process_name: "Taskmgr"
+
+  # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
+  - command: "set floating"
+    match_class_name: "#32770"
+
+  # Some applications (eg. Steam) have borders that extend past the normal border size.
+  - command: "resize borders 0px -7px -7px -7px"
+    match_process_name: "steam"
+
+binding_modes:
+  - name: "resize"
+    keybindings:
+      # Resize focused window by a percentage or pixel amount.
+      - command: "resize width -2%"
+        bindings: ["H", "Left"]
+      - command: "resize width +2%"
+        bindings: ["L", "Right"]
+      - command: "resize height +2%"
+        bindings: ["K", "Up"]
+      - command: "resize height -2%"
+        bindings: ["J", "Down"]
+      # Press enter/escape to return to default keybindings.
+      - command: "binding mode none"
+        bindings: ["Escape", "Enter"]
+
+keybindings:
+  # Shift focus in a given direction.
+  - command: "focus left"
+    bindings: ["Alt+H", "Alt+Left"]
+  - command: "focus right"
+    bindings: ["Alt+L", "Alt+Right"]
+  - command: "focus up"
+    bindings: ["Alt+K", "Alt+Up"]
+  - command: "focus down"
+    bindings: ["Alt+J", "Alt+Down"]
+
+  # Move focused window in a given direction.
+  - command: "move left"
+    bindings: ["Alt+Shift+H"]
+  - command: "move right"
+    bindings: ["Alt+Shift+L"]
+  - command: "move up"
+    bindings: ["Alt+Shift+K"]
+  - command: "move down"
+    bindings: ["Alt+Shift+J"]
+
+  # Resize focused window by a percentage or pixel amount.
+  - command: "resize width -2%"
+    binding: "Alt+Shift+Left"
+  - command: "resize width +2%"
+    binding: "Alt+Shift+Right"
+  - command: "resize height +2%"
+    binding: "Alt+Shift+Up"
+  - command: "resize height -2%"
+    binding: "Alt+Shift+Down"
+
+  # As an alternative to the resize keybindings above, resize mode enables resizing via
+  # HJKL or arrow keys. The binding mode is defined above with the name "resize".
+  - command: "binding mode resize"
+    binding: "Alt+Shift+4"
+
+  # Change tiling direction. This determines where new tiling windows will be inserted.
+  - command: "tiling direction horizontal"
+    binding: "Alt+Shift+V"
+  - command: "tiling direction vertical"
+    binding: "Alt+V"
+
+  # Change focus between floating / tiling windows.
+  - command: "toggle focus mode"
+    binding: "Alt+Space"
+
+  # Change the focused window to be floating / tiling.
+  - command: "toggle floating"
+    binding: "Alt+Shift+Space"
+
+  # Change the focused window to be maximized / unmaximized.
+  - command: "toggle maximized"
+    binding: "Alt+X"
+
+  # Minimize focused window.
+  - command: "set minimized"
+    binding: "Alt+M"
+
+  # Close focused window.
+  - command: "close"
+    binding: "Alt+Shift+F2"
+
+  # Kill GlazeWM process safely.
+  - command: "exit wm"
+    binding: "Alt+Shift+F1"
+
+  # Re-evaluate configuration file.
+  - command: "reload config"
+    binding: "Alt+Shift+F4"
+
+  # Launch CMD terminal (alternatively `exec wt` or `exec %ProgramFiles%/Git/git-bash.exe`
+  # to start Windows Terminal and Git Bash respectively.
+  #- command: "exec wezterm-gui.exe"
+  # binding: "Alt+Enter"
+
+  # Focus the workspace that last had focus.
+  - command: "focus workspace recent"
+    binding: "Alt+Shift+Z"
+
+  # Focus the next/previous workspace defined in `workspaces` config.
+  - command: "focus workspace next"
+    binding: "Alt+N"
+  - command: "focus workspace prev"
+    binding: "Alt+Shift+N"
+
+  # Change focus to a workspace defined in `workspaces` config.
+  - command: "focus workspace 01"
+    binding: "Alt+Q"
+  - command: "focus workspace 02"
+    binding: "Alt+W"
+  - command: "focus workspace 03"
+    binding: "Alt+E"
+  - command: "focus workspace 04"
+    binding: "Alt+R"
+  - command: "focus workspace 05"
+    binding: "Alt+T"
+  - command: "focus workspace 06"
+    binding: "Alt+Y"
+  - command: "focus workspace 07"
+    binding: "Alt+U"
+  - command: "focus workspace 08"
+    binding: "Alt+I"
+  - command: "focus workspace 09"
+    binding: "Alt+O"
+
+  # Move focused workspace to a monitor in a given direction.
+  - command: "move workspace left"
+    binding: "Alt+Shift+A"
+  - command: "move workspace right"
+    binding: "Alt+Shift+F"
+  - command: "move workspace up"
+    binding: "Alt+Shift+D"
+  - command: "move workspace down"
+    binding: "Alt+Shift+S"
+
+  # Move focused window to a workspace defined in `workspaces` config.
+  - commands: ["move to workspace 01", "focus workspace 01"]
+    binding: "Alt+Shift+Q"
+  - commands: ["move to workspace 02", "focus workspace 02"]
+    binding: "Alt+Shift+W"
+  - commands: ["move to workspace 03", "focus workspace 03"]
+    binding: "Alt+Shift+E"
+  - commands: ["move to workspace 04", "focus workspace 04"]
+    binding: "Alt+Shift+R"
+  - commands: ["move to workspace 05", "focus workspace 05"]
+    binding: "Alt+Shift+T"
+  - commands: ["move to workspace 06", "focus workspace 06"]
+    binding: "Alt+Shift+Y"
+  - commands: ["move to workspace 07", "focus workspace 07"]
+    binding: "Alt+Shift+U"
+  - commands: ["move to workspace 08", "focus workspace 08"]
+    binding: "Alt+Shift+I"
+  - commands: ["move to workspace 09", "focus workspace 09"]
+    bindings: ["Alt+Shift+O"]
