@@ -1,6 +1,11 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
 
+-- util
+function basename(s)
+  return string.gsub(s, '(.*[/\\])(.*)', '%2')
+end
+
 -- os
 local default_domain
 local wsl_domains = wezterm.default_wsl_domains()
@@ -20,7 +25,7 @@ wezterm.on('format-tab-title', function(tab, tabs)
   local TAB_BAR_BG = '#2E3440'
   local ACTIVE_TAB_BG = '#88C0D0'
   local ACTIVE_TAB_FG = '#ffffff'
-  local NORMAL_TAB_BG = '#434C5E'
+  local NORMAL_TAB_BG = '#4C566A'
   local NORMAL_TAB_FG = '#ffffff'
 
   local background = NORMAL_TAB_BG
@@ -51,28 +56,30 @@ wezterm.on('format-tab-title', function(tab, tabs)
     trailing_bg = NORMAL_TAB_BG
   end
 
-  local space
-  if is_first then
-    space = ''
-  else
-    space = ' '
+  local left_space = ''
+  if not is_first then
+    left_space = ' '
+  end
+
+  local divider = ''
+  local tab_next = tabs[tab.tab_id + 2]
+  if not tab.is_active and not is_last and not tab_next.is_active then
+    divider = ''
   end
 
   return {
     { Background = { Color = leading_bg } }, { Foreground = { Color = leading_fg } },
     { Text = '' },
     { Background = { Color = background } }, { Foreground = { Color = foreground } },
-    { Text = space .. tab.tab_index + 1 .. ': ' .. tab.active_pane.title .. ' ' },
+    { Text = left_space .. tab.tab_index + 1 .. ': ' .. tab.active_pane.title .. ' ' },
     { Background = { Color = trailing_bg } }, { Foreground = { Color = trailing_fg } },
     { Text = '' },
+    { Background = { Color = NORMAL_TAB_BG } }, { Foreground = { Color = NORMAL_TAB_FG } },
+    { Text = divider }
   }
 end)
 
 -- tab bar right
-function basename(s)
-  return string.gsub(s, '(.*[/\\])(.*)', '%2')
-end
-
 wezterm.on('update-right-status', function(window)
   window:set_right_status(
     wezterm.format({
@@ -116,6 +123,29 @@ return {
         bg_color = '#434C5E',
         fg_color = '#ffffff',
       },
+    },
+  },
+  -- style
+  window_background_opacity = 0.8,
+  window_decorations = 'RESIZE',
+  use_fancy_tab_bar = false,
+  tab_bar_at_bottom = true,
+  show_new_tab_button_in_tab_bar = false,
+  tab_max_width = 26,
+  window_padding = {
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
+  },
+  hyperlink_rules = {
+    {
+      regex = [[\bhttps?://\S+\b]],
+      format = '$0',
+    },
+    {
+      regex = [[\bfile://\S+\b]],
+      format = '$0',
     },
   },
   -- font
@@ -182,29 +212,7 @@ return {
   },
   -- preferences
   use_ime = true,
-  tab_bar_at_bottom = true,
-  window_background_opacity = 0.8,
-  window_decorations = 'RESIZE',
-  use_fancy_tab_bar = false,
-  window_padding = {
-    left = 0,
-    right = 0,
-    top = 0,
-    bottom = 0,
-  },
-  show_new_tab_button_in_tab_bar = false,
   check_for_updates = true,
   scrollback_lines = 3500,
-  hyperlink_rules = {
-    {
-      regex = [[\bhttps?://\S+\b]],
-      format = '$0',
-    },
-    {
-      regex = [[\bfile://\S+\b]],
-      format = '$0',
-    },
-  }
-  ,
   term = 'xterm-256color',
 }
