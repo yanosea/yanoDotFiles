@@ -49,6 +49,9 @@ export PATH=$PATH:$HOME/.local/bin
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # PREFERENCES
+## PKG_CONFIG_PATH
+export PKG_CONFIG_PATH="/usr/lib/pkgconfig:/usr/share/pkgconfig"
+
 ## GITHUB_TOKEN
 export GITHUB_TOKEN=`cat $HOME/work/credentials/GITHUB_TOKEN`
 
