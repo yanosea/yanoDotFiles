@@ -15,13 +15,13 @@ export EDITOR=/usr/sbin/nvim
 
 # HISTFILE
 ## zsh
-export HISTFILE="$XDG_STATE_HOME"/zsh/.histfile
+export HISTFILE=$XDG_STATE_HOME/zsh/.histfile
 
 ## less
-export LESSHISTFILE="$XDG_STATE_HOME"/less/.lesshst
+export LESSHISTFILE=$XDG_STATE_HOME/less/.lesshst
 
 ## node
-export NODE_REPL_HISTORY="$XDG_STATE_HOME"/node/.node_repl_history
+export NODE_REPL_HISTORY=$XDG_STATE_HOME/node/.node_repl_history
 
 # PATH
 ## MY PROGRAM
@@ -32,11 +32,11 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 ## cargo
-. "$HOME/.cargo/env"
+. $HOME/.cargo/env
 
 ## volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+export VOLTA_HOME=$HOME/.volta
+export PATH=$PATH:$VOLTA_HOME/bin
 
 ## fzf
 source /usr/share/fzf/key-bindings.zsh
@@ -46,11 +46,11 @@ source /usr/share/fzf/completion.zsh
 export PATH=$PATH:$HOME/.local/bin
 
 ## homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # PREFERENCES
 ## PKG_CONFIG_PATH
-export PKG_CONFIG_PATH="/usr/lib/pkgconfig:/usr/share/pkgconfig"
+export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/share/pkgconfig
 
 ## GITHUB_TOKEN
 export GITHUB_TOKEN=`cat $HOME/work/credentials/GITHUB_TOKEN`

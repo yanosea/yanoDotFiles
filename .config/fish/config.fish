@@ -7,6 +7,7 @@ if status is-interactive
     # alias
     alias ls='/usr/sbin/lsd'
     alias cat='/usr/sbin/bat'
+    alias rm='/usr/sbin/trash'
 
     # theme
     set -g theme_color_scheme nord
