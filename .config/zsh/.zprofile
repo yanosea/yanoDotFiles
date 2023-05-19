@@ -38,6 +38,11 @@ export PATH=$PATH:$GOPATH/bin
 export VOLTA_HOME=$HOME/.volta
 export PATH=$PATH:$VOLTA_HOME/bin
 
+## python
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PATH:$PYENV_ROOT/bin
+eval "$(pyenv init -)"
+
 ## fzf
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
