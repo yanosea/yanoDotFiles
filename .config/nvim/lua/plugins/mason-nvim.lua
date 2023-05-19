@@ -2,7 +2,7 @@ return {
   {
     -- https://github.com/williamboman/mason.nvim
     'williamboman/mason.nvim',
-    config = {
+    opts = {
       ui = {
         icons = {
           package_installed = '',

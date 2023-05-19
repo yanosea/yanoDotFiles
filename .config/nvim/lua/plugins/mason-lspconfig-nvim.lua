@@ -2,7 +2,7 @@ return {
   {
     -- https://github.com/williamboman/mason-lspconfig.nvim
     'williamboman/mason-lspconfig.nvim',
-    config = {
+    opts = {
       ensure_installed = {
         'angularls',
         'arduino_language_server',
