@@ -45,6 +45,7 @@ return {
           'lua',
           'make',
           'markdown',
+          'markdown_inline',
           'passwd',
           'php',
           'prisma',
