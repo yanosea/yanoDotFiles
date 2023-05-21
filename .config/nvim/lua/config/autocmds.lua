@@ -27,7 +27,7 @@ autocmd('TextYankPost', {
 })
 
 -- WSL clipboard sharing
-if os.getenv('WSL_DISTRO_NAME') ~= '' then
+if os.getenv('WSL_DISTRO_NAME') ~= nil then
   vim.g.clipboard = {
     name = 'win32yank',
     copy = {
