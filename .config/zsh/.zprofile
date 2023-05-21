@@ -13,6 +13,9 @@ setopt autocd beep extendedglob nomatch notify
 export VISUAL=/usr/sbin/nvim
 export EDITOR=/usr/sbin/nvim
 
+# TERM
+export TERM=xterm-256color
+
 # HISTFILE
 ## zsh
 export HISTFILE=$XDG_STATE_HOME/zsh/.histfile
