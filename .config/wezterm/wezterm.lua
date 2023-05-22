@@ -131,7 +131,7 @@ return {
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
   show_new_tab_button_in_tab_bar = false,
-  tab_max_width = 26,
+  tab_max_width = 52,
   window_padding = {
     left = 0,
     right = 0,
