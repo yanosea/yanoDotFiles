@@ -8,6 +8,8 @@ if status is-interactive
     alias ls='/usr/sbin/lsd'
     alias cat='/usr/sbin/bat'
     alias rm='/usr/sbin/trash'
+    alias shutdown='sudo systemctl poweroff'
+    alias reboot='sudo systemctl reboot'
 
     # theme
     set -g theme_color_scheme nord
