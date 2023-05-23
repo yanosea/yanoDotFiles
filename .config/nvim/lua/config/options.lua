@@ -82,3 +82,7 @@ end
 for k, v in pairs(append_opt) do
   vim.opt[k]:append(v)
 end
+
+-- other
+-- search
+vim.cmd([[set nowrapscan]])
