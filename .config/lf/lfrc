@@ -43,6 +43,9 @@ map O $mimeopen --ask $f
 # mkdir command. See wiki if you want it to select created dir
 map a :push %mkdir<space>
 
+# delete with D
+map D delete
+
 # quit with esc key
 # map <esc> quit
 
