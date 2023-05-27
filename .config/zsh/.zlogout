@@ -1,5 +1,0 @@
-#
-# ~/.zlogout
-#
-
-# Edited By yanosea

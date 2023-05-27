@@ -6,9 +6,6 @@
 
 # Edited By yanosea
 
-# ZSH
-setopt autocd beep extendedglob nomatch notify
-
 # EDITOR
 export VISUAL=/usr/sbin/nvim
 export EDITOR=/usr/sbin/nvim
@@ -69,6 +66,3 @@ export GITHUB_TOKEN=`cat $HOME/work/credentials/GITHUB_TOKEN`
 
 ## OPENAI_API_KEY
 export OPENAI_API_KEY=`cat $HOME/work/credentials/OPENAI_API_KEY`
-
-# FISH START
-exec fish
