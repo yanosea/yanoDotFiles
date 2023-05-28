@@ -44,10 +44,6 @@ export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PATH:$PYENV_ROOT/bin
 eval "$(pyenv init -)"
 
-## opam
-export PATH=$PATH:$HOME/.opam/default/bin
-eval $(opam env)
-
 ## fzf
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
