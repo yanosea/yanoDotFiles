@@ -13,6 +13,9 @@ PROMPT='[%n@%m %~]$ '
 # sheldon
 eval "$(sheldon source)"
 
+# zoxide
+eval "$(zoxide init zsh)"
+
 # alias
 alias cat='/usr/sbin/bat'
 alias ls='/usr/sbin/lsd'
