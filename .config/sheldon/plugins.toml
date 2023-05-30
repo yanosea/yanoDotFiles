@@ -23,7 +23,7 @@ fpath_comp = 'fpath=("{{ dir }}/completions" $fpath)'
 github = "romkatv/powerlevel10k"
 
 [plugins.compinit]
-inline = 'autoload -Uz compinit && zsh-defer compinit'
+inline = 'autoload -Uz compinit && zsh-defer compinit -d $XDG_STATE_HOME/zsh/.zcompdump'
 
 [plugins.minimal]
 github = "subnixr/minimal"
