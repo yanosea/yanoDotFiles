@@ -85,4 +85,5 @@ end
 
 -- other
 -- search
+vim.cmd([[set noignorecase]])
 vim.cmd([[set nowrapscan]])
