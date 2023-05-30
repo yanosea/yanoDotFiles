@@ -47,7 +47,7 @@ local set_opt = {
   splitbelow = false,
   splitright = false,
   -- shell
-  shell = 'fish',
+  shell = os.getenv('SHELL'),
   -- syntax highlight
   syntax = 'enable',
 }
