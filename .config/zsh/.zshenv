@@ -1,5 +1,5 @@
 #
-# ~/.zprofile
+# .zprofile
 #
 
 [[ -f ./.zshrc ]] && . ./.zshrc
@@ -13,10 +13,7 @@ export EDITOR=/usr/sbin/nvim
 # TERM
 export TERM=xterm-256color
 
-# HISTFILE
-## zsh
-export HISTFILE=$XDG_STATE_HOME/zsh/.histfile
-
+# HISTFILES
 ## less
 export LESSHISTFILE=$XDG_STATE_HOME/less/.lesshst
 

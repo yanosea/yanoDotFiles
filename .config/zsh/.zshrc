@@ -24,6 +24,11 @@ alias rm='/usr/sbin/trash'
 alias shutdown='sudo systemctl poweroff'
 alias zmv='noglob zmv -W'
 
+# history
+export HISTFILE=$XDG_STATE_HOME/zsh/.zhistory
+export HISTSIZE=1000
+export SAVEHIST=10000
+
 # zshopt
 ## easy cd
 setopt auto_cd
