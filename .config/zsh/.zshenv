@@ -23,7 +23,7 @@ export NODE_REPL_HISTORY=$XDG_STATE_HOME/node/.node_repl_history
 # PATH
 ## MY PROGRAM
 export PATH=$PATH:$HOME/work/bin
-source $HOME/.config/zsh/functions/*
+source $XDG_CONFIG_HOME/zsh/functions/*
 
 ## go
 export GOPATH=$HOME/go
