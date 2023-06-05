@@ -7,6 +7,7 @@ return {
         'angularls',
         'arduino_language_server',
         'asm_lsp',
+        'astro',
         'awk_ls',
         'bashls',
         'clangd',
