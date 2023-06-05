@@ -19,6 +19,7 @@ eval "$(zoxide init zsh)"
 # alias
 alias cat='/usr/sbin/bat'
 alias ls='/usr/sbin/lsd'
+alias nvimdiff='nvim -d'
 alias reboot='sudo systemctl reboot'
 alias rm='/usr/sbin/trash'
 alias shutdown='sudo systemctl poweroff'
