@@ -75,7 +75,7 @@ return {
           },
           footer = {
             '',
-            '[ 🏹 yanosea ]',
+            '[ 󱡁 yanosea ]',
             '',
           },
         },
