@@ -1,8 +1,6 @@
 # IGNORE FOLDER
 .config/configstore
 .config/gup
-.config/ranger/colorschemes
-.config/ranger/plugins
 .vim/autoload
 .vim/colors
 .vim/plugged
@@ -18,9 +16,6 @@
 .config/lazygit/state.yml
 .config/nekome/.cred.toml
 .config/nvim/lazy-lock.json
-.config/ranger/commands.py
-.config/ranger/commands_full.py
-.config/ranger/scope.sh
 .config/spotify-tui/.spotify_token_cache.json
 .config/spotify-tui/client.yml
 .config/tmux/plugins
