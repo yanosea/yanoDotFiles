@@ -4,7 +4,7 @@ let $LANG='en_US.UTF-8'
 set helplang=ja,en
 set encoding=utf8
 " .viminfo Path
-set viminfo+=n~/.vim/.viminfo
+set viminfo+=n~/.vim/viminfo
 " Show Line Number
 set number
 " Show Cursor Position
