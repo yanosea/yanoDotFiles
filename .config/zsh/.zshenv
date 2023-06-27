@@ -36,6 +36,9 @@ export PATH=$PATH:$GOPATH/bin
 export VOLTA_HOME=$HOME/.volta
 export PATH=$PATH:$VOLTA_HOME/bin
 
+## pnpm
+export PNPM_HOME=$XDG_DATA_HOME/pnpm
+
 ## python
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PATH:$PYENV_ROOT/bin
