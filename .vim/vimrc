@@ -36,8 +36,6 @@ syntax enable
 " PLUGIN SETTINGS
 call plug#begin()
 
-    " Set Document Japanese
-    Plug 'vim-jp/vimdoc-ja'
     " Enable Clipboard History
     Plug 'vim-scripts/YankRing.vim'
     " Set IME OFF When Escape From Insert Mode
