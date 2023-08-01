@@ -1,14 +1,28 @@
 #
-# .zprofile
+# .zshenv
 #
 
 [[ -f ./.zshrc ]] && . ./.zshrc
 
 # Edited By yanosea
 
+# OS
+export OS=$(uname)
+if [ "$OS" = "Linux" ]; then
+    export USBINPATH=/usr/sbin
+elif [ "$OS" = "Darwin" ]; then
+    export USBINPATH=/opt/homebrew/bin
+fi
+
+# XDG CONFIG
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+
 # EDITOR
-export VISUAL=/usr/sbin/nvim
-export EDITOR=/usr/sbin/nvim
+export VISUAL="$USBINPATH"/nvim
+export EDITOR="$USBINPATH"/nvim
 
 # TERM
 export TERM=xterm-256color
@@ -42,17 +56,30 @@ export PNPM_HOME=$XDG_DATA_HOME/pnpm
 ## python
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PATH:$PYENV_ROOT/bin
-eval "$(pyenv init -)"
+eval "$($USBINPATH/pyenv init -)"
 
 ## fzf
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+if [ "$OS" = "Linux" ]; then
+    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
+elif [ "$OS" = "Darwin" ]; then
+    source $HOME/work/bin/key-bindings.zsh
+    source $HOME/work/bin/completion.zsh
+fi
+
+# cabal
+export CABAL_CONFIG="$XDG_CONFIG_HOME"/cabal/config
+export CABAL_DIR="$XDG_CACHE_HOME"/cabal
 
 ## OTHER
 export PATH=$PATH:$HOME/.local/bin
 
 ## homebrew
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+if [ "$OS" = "Linux" ]; then
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+elif [ "$OS" = "Darwin" ]; then
+    eval $(/opt/homebrew/bin/brew shellenv)
+fi
 
 # PREFERENCES
 ## PKG_CONFIG_PATH

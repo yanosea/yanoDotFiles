@@ -20,4 +20,5 @@
 .config/spotify-tui/client.yml
 .config/tmux/plugins
 .vim/viminfo
+.DS_Store
 *.log
