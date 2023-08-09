@@ -12,7 +12,6 @@
 .config/fish/functions/fish_prompt.fish
 .config/fish/functions/fish_right_prompt.fish
 .config/fish/functions/fish_title.fish
-.config/git/credentials
 .config/lazygit/state.yml
 .config/nekome/.cred.toml
 .config/nvim/lazy-lock.json
