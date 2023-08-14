@@ -10,7 +10,6 @@ end
 local default_domain
 local wsl_domains = wezterm.default_wsl_domains()
 local default_prog
-local font
 local font_size
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
   default_domain = 'WSL:Arch'
@@ -18,17 +17,9 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     domain.default_cwd = '~'
   end
   default_prog = { 'wsl.exe' }
-  font = wezterm.font_with_fallback({
-    { family = 'GohuFont Nerd Font',  weight = 'Medium' },
-    { family = 'PlemolJP Console NF', weight = 'Medium' },
-  })
   font_size = 10.5
 elseif wezterm.target_triple == 'aarch64-apple-darwin' then
   default_domain = 'local'
-  font = wezterm.font_with_fallback({
-    { family = 'GohuFont uni14 Nerd Font', weight = 'Medium' },
-    { family = 'PlemolJP Console NF',      weight = 'Medium' },
-  })
   font_size = 14
 end
 
@@ -161,7 +152,10 @@ return {
     },
   },
   -- font
-  font = font,
+  font = wezterm.font_with_fallback({
+    { family = 'GohuFont Nerd Font',  weight = 'Medium' },
+    { family = 'PlemolJP Console NF', weight = 'Medium' },
+  }),
   font_size = font_size,
   -- cursor
   default_cursor_style = 'BlinkingBlock',
