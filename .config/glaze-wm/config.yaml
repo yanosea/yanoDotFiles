@@ -53,6 +53,10 @@ window_rules:
   - command: "ignore"
     match_process_name: "Taskmgr"
 
+  # Ignore capture process started by the shortcut 'win + shift + s'
+  - command: "ignore"
+    match_process_name: "ScreenClippingHost"
+
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
     match_class_name: "#32770"
@@ -66,37 +70,37 @@ binding_modes:
     keybindings:
       # Resize focused window by a percentage or pixel amount.
       - command: "resize width -2%"
-        bindings: ["H", "Left"]
+        bindings: [ "H", "Left" ]
       - command: "resize width +2%"
-        bindings: ["L", "Right"]
+        bindings: [ "L", "Right" ]
       - command: "resize height +2%"
-        bindings: ["K", "Up"]
+        bindings: [ "K", "Up" ]
       - command: "resize height -2%"
-        bindings: ["J", "Down"]
+        bindings: [ "J", "Down" ]
       # Press enter/escape to return to default keybindings.
       - command: "binding mode none"
-        bindings: ["Escape", "Enter"]
+        bindings: [ "Escape", "Enter" ]
 
 keybindings:
   # Shift focus in a given direction.
   - command: "focus left"
-    bindings: ["Alt+H", "Alt+Left"]
+    bindings: [ "Alt+H", "Alt+Left" ]
   - command: "focus right"
-    bindings: ["Alt+L", "Alt+Right"]
+    bindings: [ "Alt+L", "Alt+Right" ]
   - command: "focus up"
-    bindings: ["Alt+K", "Alt+Up"]
+    bindings: [ "Alt+K", "Alt+Up" ]
   - command: "focus down"
-    bindings: ["Alt+J", "Alt+Down"]
+    bindings: [ "Alt+J", "Alt+Down" ]
 
   # Move focused window in a given direction.
   - command: "move left"
-    bindings: ["Alt+Shift+H"]
+    bindings: [ "Alt+Shift+H" ]
   - command: "move right"
-    bindings: ["Alt+Shift+L"]
+    bindings: [ "Alt+Shift+L" ]
   - command: "move up"
-    bindings: ["Alt+Shift+K"]
+    bindings: [ "Alt+Shift+K" ]
   - command: "move down"
-    bindings: ["Alt+Shift+J"]
+    bindings: [ "Alt+Shift+J" ]
 
   # Resize focused window by a percentage or pixel amount.
   - command: "resize width -2%"
@@ -193,21 +197,21 @@ keybindings:
     binding: "Alt+Shift+S"
 
   # Move focused window to a workspace defined in `workspaces` config.
-  - commands: ["move to workspace 01", "focus workspace 01"]
+  - commands: [ "move to workspace 01", "focus workspace 01" ]
     binding: "Alt+Shift+Q"
-  - commands: ["move to workspace 02", "focus workspace 02"]
+  - commands: [ "move to workspace 02", "focus workspace 02" ]
     binding: "Alt+Shift+W"
-  - commands: ["move to workspace 03", "focus workspace 03"]
+  - commands: [ "move to workspace 03", "focus workspace 03" ]
     binding: "Alt+Shift+E"
-  - commands: ["move to workspace 04", "focus workspace 04"]
+  - commands: [ "move to workspace 04", "focus workspace 04" ]
     binding: "Alt+Shift+R"
-  - commands: ["move to workspace 05", "focus workspace 05"]
+  - commands: [ "move to workspace 05", "focus workspace 05" ]
     binding: "Alt+Shift+T"
-  - commands: ["move to workspace 06", "focus workspace 06"]
+  - commands: [ "move to workspace 06", "focus workspace 06" ]
     binding: "Alt+Shift+Y"
-  - commands: ["move to workspace 07", "focus workspace 07"]
+  - commands: [ "move to workspace 07", "focus workspace 07" ]
     binding: "Alt+Shift+U"
-  - commands: ["move to workspace 08", "focus workspace 08"]
+  - commands: [ "move to workspace 08", "focus workspace 08" ]
     binding: "Alt+Shift+I"
-  - commands: ["move to workspace 09", "focus workspace 09"]
-    bindings: ["Alt+Shift+O"]
+  - commands: [ "move to workspace 09", "focus workspace 09" ]
+    bindings: [ "Alt+Shift+O" ]
