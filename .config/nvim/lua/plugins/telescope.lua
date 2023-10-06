@@ -18,12 +18,14 @@ return {
       -- https://github.com/Allianaab2m/telescope-kensaku.nvim
       'Allianaab2m/telescope-kensaku.nvim',
       -- https://github.com/nvim-telescope/telescope-file-browser.nvim
-      'nvim-telescope/telescope-file-browser.nvim'
+      'nvim-telescope/telescope-file-browser.nvim',
+      -- https://github.com/fdschmidt93/telescope-egrepify.nvim
+      'fdschmidt93/telescope-egrepify.nvim',
     },
     cmd = 'Telescope',
     init = function()
       vim.keymap.set('n', '<LEADER>F', '<CMD>Telescope find_files<CR>')
-      vim.keymap.set('n', '<LEADER>G', '<CMD>Telescope live_grep<CR>')
+      vim.keymap.set('n', '<LEADER>G', '<CMD>Telescope egrepify<CR>')
       vim.keymap.set('n', '<LEADER>B', '<CMD>Telescope buffers<CR>')
       vim.keymap.set('n', '<LEADER>H', '<CMD>Telescope help_tags<CR>')
       vim.keymap.set('n', '<LEADER>K', '<CMD>Telescope kensaku<CR>')
@@ -95,6 +97,7 @@ return {
       require('telescope').load_extension('ui-select')
       require('telescope').load_extension('kensaku')
       require('telescope').load_extension('file_browser')
+      require('telescope').load_extension('egrepify')
     end,
   },
 }
