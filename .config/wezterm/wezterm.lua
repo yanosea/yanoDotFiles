@@ -11,6 +11,7 @@ local default_domain
 local wsl_domains = wezterm.default_wsl_domains()
 local default_prog
 local font_size
+local ctrl_key
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
   default_domain = 'WSL:Arch'
   for _, domain in ipairs(wsl_domains) do
@@ -18,9 +19,11 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
   end
   default_prog = { 'wsl.exe' }
   font_size = 10.5
+  ctrl_key = 'CTRL'
 elseif wezterm.target_triple == 'aarch64-apple-darwin' then
   default_domain = 'local'
   font_size = 14
+  ctrl_key = 'CMD'
 end
 
 -- tab bar left
@@ -162,47 +165,55 @@ return {
   cursor_blink_rate = 1000,
   -- keys
   disable_default_key_bindings = true,
-  leader = { key = 'Space', mods = 'SHIFT|CTRL', timeout_milliseconds = 1000 },
+  leader = { key = 'Space', mods = 'SHIFT|' .. ctrl_key, timeout_milliseconds = 1000 },
   keys = {
     -- clipboard
-    { key = 'c', mods = 'SHIFT|CTRL',        action = act.CopyTo 'Clipboard' },
-    { key = 'v', mods = 'SHIFT|CTRL',        action = act.PasteFrom 'Clipboard' },
+    { key = 'c', mods = 'SHIFT|' .. ctrl_key,        action = act.CopyTo 'Clipboard' },
+    { key = 'v', mods = 'SHIFT|' .. ctrl_key,        action = act.PasteFrom 'Clipboard' },
     -- tab
-    { key = 't', mods = 'SHIFT|CTRL',        action = act.SpawnTab 'DefaultDomain' },
-    { key = 'w', mods = 'LEADER|SHIFT|CTRL', action = act.CloseCurrentTab { confirm = true } },
-    { key = 'k', mods = 'SHIFT|CTRL',        action = act.ActivateTabRelative(-1) },
-    { key = 'j', mods = 'SHIFT|CTRL',        action = act.ActivateTabRelative(1) },
-    { key = '1', mods = 'LEADER',            action = act.ActivateTab(0) },
-    { key = '2', mods = 'LEADER',            action = act.ActivateTab(1) },
-    { key = '3', mods = 'LEADER',            action = act.ActivateTab(2) },
-    { key = '4', mods = 'LEADER',            action = act.ActivateTab(3) },
-    { key = '5', mods = 'LEADER',            action = act.ActivateTab(4) },
-    { key = '6', mods = 'LEADER',            action = act.ActivateTab(5) },
-    { key = '7', mods = 'LEADER',            action = act.ActivateTab(6) },
-    { key = '8', mods = 'LEADER',            action = act.ActivateTab(7) },
-    { key = '9', mods = 'LEADER',            action = act.ActivateTab(8) },
+    { key = 't', mods = 'SHIFT|' .. ctrl_key,        action = act.SpawnTab 'DefaultDomain' },
+    { key = 'w', mods = 'LEADER|SHIFT|' .. ctrl_key, action = act.CloseCurrentTab { confirm = true } },
+    { key = 'k', mods = 'SHIFT|' .. ctrl_key,        action = act.ActivateTabRelative(-1) },
+    { key = 'j', mods = 'SHIFT|' .. ctrl_key,        action = act.ActivateTabRelative(1) },
+    { key = '1', mods = 'LEADER',                    action = act.ActivateTab(0) },
+    { key = '2', mods = 'LEADER',                    action = act.ActivateTab(1) },
+    { key = '3', mods = 'LEADER',                    action = act.ActivateTab(2) },
+    { key = '4', mods = 'LEADER',                    action = act.ActivateTab(3) },
+    { key = '5', mods = 'LEADER',                    action = act.ActivateTab(4) },
+    { key = '6', mods = 'LEADER',                    action = act.ActivateTab(5) },
+    { key = '7', mods = 'LEADER',                    action = act.ActivateTab(6) },
+    { key = '8', mods = 'LEADER',                    action = act.ActivateTab(7) },
+    { key = '9', mods = 'LEADER',                    action = act.ActivateTab(8) },
     -- pane
-    { key = 'v', mods = 'LEADER|SHIFT|CTRL', action = act.SplitHorizontal { domain = 'DefaultDomain' } },
-    { key = 's', mods = 'LEADER|SHIFT|CTRL', action = act.SplitVertical { domain = 'DefaultDomain' } },
-    { key = 'h', mods = 'LEADER|SHIFT|CTRL', action = act.ActivatePaneDirection 'Left' },
-    { key = 'l', mods = 'LEADER|SHIFT|CTRL', action = act.ActivatePaneDirection 'Right' },
-    { key = 'k', mods = 'LEADER|SHIFT|CTRL', action = act.ActivatePaneDirection 'Up' },
-    { key = 'j', mods = 'LEADER|SHIFT|CTRL', action = act.ActivatePaneDirection 'Down' },
+    { key = 'v', mods = 'LEADER|SHIFT|' .. ctrl_key, action = act.SplitHorizontal { domain = 'DefaultDomain' } },
+    { key = 's', mods = 'LEADER|SHIFT|' .. ctrl_key, action = act.SplitVertical { domain = 'DefaultDomain' } },
+    { key = 'h', mods = 'LEADER|SHIFT|' .. ctrl_key, action = act.ActivatePaneDirection 'Left' },
+    { key = 'l', mods = 'LEADER|SHIFT|' .. ctrl_key, action = act.ActivatePaneDirection 'Right' },
+    { key = 'k', mods = 'LEADER|SHIFT|' .. ctrl_key, action = act.ActivatePaneDirection 'Up' },
+    { key = 'j', mods = 'LEADER|SHIFT|' .. ctrl_key, action = act.ActivatePaneDirection 'Down' },
     {
       key = 'r',
-      mods = 'LEADER|SHIFT|CTRL',
+      mods = 'LEADER|SHIFT|' .. ctrl_key,
       action = act.ActivateKeyTable {
         name = 'resize_pane',
         one_shot = false,
       },
     },
     -- copy sode
-    { key = 'c',     mods = 'LEADER|SHIFT|CTRL', action = wezterm.action.ActivateCopyMode },
-    { key = 'Enter', mods = 'LEADER|SHIFT|CTRL', action = 'QuickSelect' },
-    { key = '?',     mods = 'LEADER|SHIFT|CTRL', action = act.Search('CurrentSelectionOrEmptyString') },
-    { key = 'd',     mods = 'LEADER|SHIFT|CTRL', action = wezterm.action.ShowDebugOverlay },
-  }
-  ,
+    { key = 'c',     mods = 'LEADER|SHIFT|' .. ctrl_key, action = wezterm.action.ActivateCopyMode },
+    { key = 'Enter', mods = 'LEADER|SHIFT|' .. ctrl_key, action = 'QuickSelect' },
+    { key = '?',     mods = 'LEADER|SHIFT|' .. ctrl_key, action = act.Search('CurrentSelectionOrEmptyString') },
+    { key = 'd',     mods = 'LEADER|SHIFT|' .. ctrl_key, action = wezterm.action.ShowDebugOverlay },
+    -- key binding
+    {
+      key = 'l',
+      mods = ctrl_key,
+      action = act.Multiple {
+        act.ClearScrollback 'ScrollbackAndViewport',
+        act.SendKey { key = 'l', mods = 'CTRL' },
+      },
+    },
+  },
   key_tables = {
     resize_pane = {
       { key = 'h',      action = wezterm.action.AdjustPaneSize { 'Left', 1 } },
