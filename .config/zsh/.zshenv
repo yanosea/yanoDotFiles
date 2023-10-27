@@ -90,3 +90,9 @@ export GITHUB_TOKEN=`cat $HOME/work/credentials/GITHUB_TOKEN`
 
 ## OPENAI_API_KEY
 export OPENAI_API_KEY=`cat $HOME/work/credentials/OPENAI_API_KEY`
+
+## SPOTIFY
+### CLIENT_ID
+export SPOTIFY_CLIENT_ID=`cat $HOME/work/credentials/SPOTIFY_CLIENT_ID`
+### CLIENT_SECRET
+export SPOTIFY_CLIENT_SECRET=`cat $HOME/work/credentials/SPOTIFY_CLIENT_SECRET`
