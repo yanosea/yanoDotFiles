@@ -7,4 +7,6 @@ if osName == 'Darwin' then
       lazy = false,
     },
   }
+else
+  return {}
 end
