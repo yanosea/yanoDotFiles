@@ -92,7 +92,11 @@ export GITHUB_TOKEN=`cat $HOME/work/credentials/GITHUB_TOKEN`
 export OPENAI_API_KEY=`cat $HOME/work/credentials/OPENAI_API_KEY`
 
 ## SPOTIFY
-### CLIENT_ID
-export SPOTIFY_CLIENT_ID=`cat $HOME/work/credentials/SPOTIFY_CLIENT_ID`
-### CLIENT_SECRET
-export SPOTIFY_CLIENT_SECRET=`cat $HOME/work/credentials/SPOTIFY_CLIENT_SECRET`
+### ID
+export SPOTIFY_ID=`cat $HOME/work/credentials/SPOTIFY_ID`
+### SECRET
+export SPOTIFY_SECRET=`cat $HOME/work/credentials/SPOTIFY_SECRET`
+### REDIRECT_URI
+export SPOTIFY_REDIRECT_URI=`cat $HOME/work/credentials/SPOTIFY_REDIRECT_URI`
+### REFRSH_TOKEN
+export SPOTIFY_REFRESH_TOKEN=`cat $HOME/work/credentials/SPOTIFY_REFRESH_TOKEN`
