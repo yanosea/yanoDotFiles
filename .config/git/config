@@ -23,7 +23,10 @@
 
 [merge]
     conflictstyle = diff3
-	ff = false
+    ff = false
+
+[pull]
+    ff = only
 
 [diff]
     colorMoved = default
