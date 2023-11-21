@@ -24,6 +24,8 @@ alias reboot='sudo systemctl reboot'
 alias rm="$USBINPATH"/trash
 alias shutdown='sudo systemctl poweroff'
 alias zmv='noglob zmv -W'
+alias dot="cd $HOME/dotfiles"
+alias work="cd $HOME/work"
 
 # history
 HISTFILE=$XDG_STATE_HOME/zsh/.zhistory
