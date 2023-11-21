@@ -39,6 +39,9 @@ export NODE_REPL_HISTORY=$XDG_STATE_HOME/node/.node_repl_history
 export PATH=$PATH:$HOME/work/bin
 source $XDG_CONFIG_HOME/zsh/functions/*
 
+## brew
+export HOMEBREW_NO_INSTALL_FROM_API=1
+
 ## go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
