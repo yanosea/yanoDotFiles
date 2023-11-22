@@ -18,3 +18,6 @@ vim.keymap.set('n', '<C-k>', '<CMD>bprevious<CR>', { desc = 'move previous buffe
 vim.keymap.set('n', '<C-j>', '<CMD>bnext<CR>', { desc = 'move next buffer' })
 vim.keymap.set('n', '<C-t>', '<CMD>enew<CR>', { desc = 'new empty buffer' })
 vim.keymap.set('n', '<C-c>', '<CMD>bd<CR>', { desc = 'close buffer' })
+
+-- visual
+vim.keymap.set('v', '<C-p>', '<CMD>"0p<CR>', { desc = 'paste in a row' })
