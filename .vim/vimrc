@@ -1,56 +1,63 @@
-" PREFERENCES
-" Language and Character Code
+" preferences
+" encoding
+set encoding=utf-8
+set fileencoding=utf-8
+scriptencoding utf-8
+" lang
 let $LANG='en_US.UTF-8'
 set helplang=ja,en
-set encoding=utf8
-" .viminfo Path
+" .viminfo path
 set viminfo+=n~/.vim/viminfo
-" Show Line Number
+" line number
 set number
-" Show Cursor Position
-set ruler
-" Highlight Current Line
+" highlight current line
 set cursorline
-" Show Status Bar Constantly
-set laststatus=2
-" GUI Setting
-set guifontwide=DroidSansMono\ Nerd\ Font\ 10
-set guifont=DroidSansMono\ Nerd\ Font\ 10
-set guicursor+=i:block,a:-blinkwait175-blinkoff150-blinkon175
+" cursor position
+set ruler
+" sign
+set signcolumn=yes
+" invisible character
+set list
+set listchars=tab:▸-,trail:⋅,nbsp:␣,extends:❯,precedes:❮
+" status line
+set laststatus=3
+" gui setting
+set guifont=GohuFont\ Nerd\ Font,PlemolJP\ Console\ NF
+set guifontwide=GohuFont\ Nerd\ Font,PlemolJP\ Console\ NF
+set termguicolors
 set mouse-=a
-" Highlight Search Result
+set guicursor+=i:block,a:-blinkwait175-blinkoff150-blinkon175
+" search
 set hlsearch
-" Command History
+set ignorecase
+set smartcase
+set incsearch
+set noignorecase
+set nowrapscan
+" command history
 set history=1000
-" Enable Command Complement
+" complement
 set wildmenu
-" Indent Automatically (4 Half Spaces)
+set completeopt=menuone,noinsert
+" indent
 set autoindent
 set smartindent
 set expandtab
-set tabstop=4
-set shiftwidth=4
-" Enable Syntax Highlight
+set tabstop=2
+set shiftwidth=2
+" window split
+set splitbelow
+set splitright
+" syntax highlight
 syntax enable
-
-" PLUGIN SETTINGS
-call plug#begin()
-
-    " Enable Clipboard History
-    Plug 'vim-scripts/YankRing.vim'
-    " Set IME OFF When Escape From Insert Mode
-    Plug 'kaz399/spzenhan.vim'
-
-call plug#end()
-
-" Hide Highlight Search Result SETTING
+" disable intro
+set shortmess=I
+set clipboard+=unnamedplus
+" hide highlight search
 nnoremap <ESC><ESC> :nohlsearch<CR>
-
-" YankRing
-let g:yankring_history_dir = '$XDG_STATE_HOME/yankring'
-
-" WSL Clipboard
+" wsl
 if !empty($WSL_DISTRO_NAME)
+    " clipboard sharing
     let s:clip = '/mnt/c/Windows/System32/clip.exe'
     if executable(s:clip)
         augroup WSLYank
@@ -58,8 +65,22 @@ if !empty($WSL_DISTRO_NAME)
             autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
         augroup END
     endif
+    " ime off when leave insert mode
     if executable('spzenhan.exe')
         autocmd InsertLeave * :call system('spzenhan.exe 0')
         autocmd CmdlineLeave * :call system('spzenhan.exe 0')
     endif
 endif
+" plugin
+call plug#begin()
+    " colorscheme
+    Plug 'arcticicestudio/nord-vim'
+    " clipboard history
+    Plug 'vim-scripts/YankRing.vim'
+    " ime off when leave insert mode
+    Plug 'kaz399/spzenhan.vim'
+call plug#end()
+" colorscheme
+colorscheme nord
+" yankRing
+let g:yankring_history_dir = '$XDG_STATE_HOME/yankring'

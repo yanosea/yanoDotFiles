@@ -1,89 +1,74 @@
 -- preferences
-local set_opt = {
-  -- language
-  helplang = 'ja',
-  -- character code
-  encoding = 'utf-8',
-  fileencoding = 'utf-8',
-  -- backup file
-  backup = false,
-  -- swap file
-  swapfile = false,
-  -- line number
-  number = true,
-  -- cursor position
-  ruler = true,
-  -- highlight current line
-  signcolumn = 'yes',
-  cursorline = true,
-  -- invisible character
-  list = true,
-  listchars = { tab = '>>', trail = '-', nbsp = '+' },
-  -- status line
-  laststatus = 3,
-  -- GUI setting
-  guifont = { 'GohuFont Nerd Font', 'PlemolJP Console NF' },
-  guifontwide = { 'GohuFont Nerd Font', 'PlemolJP Console NF' },
-  termguicolors = true,
-  mouse = '',
-  -- highlight search
-  hlsearch = true,
-  -- search
-  ignorecase = true,
-  smartcase = true,
-  incsearch = true,
-  -- command history
-  history = 1000,
-  -- complement
-  wildmenu = true,
-  completeopt = 'menu,noinsert',
-  -- indent
-  autoindent = true,
-  smartindent = true,
-  expandtab = true,
-  tabstop = 2,
-  shiftwidth = 2,
-  -- window split
-  splitbelow = false,
-  splitright = false,
-  -- shell
-  shell = os.getenv('SHELL'),
-  -- syntax highlight
-  syntax = 'enable',
-}
-
-local append_opt = {
-  -- intro
-  shortmess = 'I',
-  -- clipboaed
-  clipboard = 'unnamedplus',
-  -- GUI setting
-  guicursor = 'i:block,a:-blinkwait175-blinkoff150-blinkon175',
-}
-
+-- encoding
+vim.opt.encoding = "utf-8"
+vim.fileencoding = "utf-8"
+vim.scriptencoding = "utf-8"
+-- lang
+vim.opt.helplang = "ja"
+-- backup file
+vim.opt.backup = false
+-- swap file
+vim.opt.swapfile = false
+-- line number
+vim.opt.number = true
+-- highlight current line
+vim.opt.cursorline = true
+-- cuesor position
+vim.opt.ruler = true
+-- sign
+vim.opt.signcolumn = "yes"
+-- invisible character
+vim.opt.list = true
+vim.opt.listchars = { tab = "▸ ", trail = '⋅', nbsp = '␣', extends = '❯', precedes = '❮' }
+-- status line
+vim.opt.laststatus = 3
+-- gui setting
+vim.opt.guifont = { "GohuFont Nerd Font", "PlemolJP Console NF" }
+vim.opt.guifontwide = { "GohuFont Nerd Font", "PlemolJP Console NF" }
+vim.opt.termguicolors = true
+vim.opt.mouse = ""
+vim.opt.guicursor:append("i:block,a:-blinkwait175-blinkoff150-blinkon175")
+-- search
+vim.opt.hlsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.incsearch = true
+vim.cmd([[set noignorecase]])
+vim.cmd([[set nowrapscan]])
+-- command history
+vim.opt.history = 1000
+-- complement
+vim.opt.wildmenu = true
+vim.opt.completeopt = "menuone,noinsert"
+-- indent
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+-- window split
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+-- shell
+vim.opt.shell = os.getenv("SHELL")
+-- syntax highlight
+vim.opt.syntax = "enable"
+-- disable intro
+vim.opt.shortmess:append('I')
+-- clipboaed
+vim.opt.clipboard:append("unnamedplus")
+-- ignore auto format
+vim.api.nvim_create_user_command('W', "noautocmd w", {})
+vim.api.nvim_create_user_command("Wq", "noautocmd wq", {})
 -- lsp
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   virtual_text = {
     format = function(diagnostic)
-      return string.format('%s (%s: %s)', diagnostic.message, diagnostic.source, diagnostic.code)
+      if not diagnostic.source then
+        return diagnostic.message
+      end
+
+      return string.format("%s (%s: %s)", diagnostic.message, diagnostic.source, diagnostic.code)
     end,
   },
 })
-
--- ignore auto format
-vim.api.nvim_create_user_command('W', 'noautocmd w', {})
-vim.api.nvim_create_user_command('Wq', 'noautocmd wq', {})
-
--- set preferences
-for k, v in pairs(set_opt) do
-  vim.opt[k] = v
-end
-
-for k, v in pairs(append_opt) do
-  vim.opt[k]:append(v)
-end
-
--- other
--- search
-vim.cmd([[set noignorecase]])
-vim.cmd([[set nowrapscan]])
