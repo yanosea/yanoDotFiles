@@ -51,7 +51,7 @@ set splitright
 " syntax highlight
 syntax enable
 " disable intro
-set shortmess=I
+" set shortmess=I
 set clipboard+=unnamedplus
 " hide highlight search
 nnoremap <ESC><ESC> :nohlsearch<CR>
