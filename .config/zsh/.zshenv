@@ -14,6 +14,13 @@ elif [ "$OS" = "Darwin" ]; then
     export USBINPATH=/opt/homebrew/bin
 fi
 
+## WINDOWS
+if [ -n "$WSL_DISTRO_NAME" ]; then
+    export PATH=$PATH:/mnt/c/Windows
+    export PATH=$PATH:/mnt/c/Windows/System32
+    source $XDG_CONFIG_HOME/zsh/functions_win/*
+fi
+
 # XDG CONFIG
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
