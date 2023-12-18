@@ -11,13 +11,12 @@ local default_prog
 local font_size
 local ctrl_key
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-  default_domain = "WSL:Arch"
-
-  for _, domain in ipairs(wsl_domains) do
-    domain.default_cwd = "~"
-  end
-
-  default_prog = { "wsl.exe" }
+  -- default_domain = "WSL:Arch"
+  -- for _, domain in ipairs(wsl_domains) do
+  --   domain.default_cwd = "~"
+  -- end
+  default_prog = { "powershell.exe", "-NoLogo" }
+  default_domain = "local"
   font_size = 10.5
   ctrl_key = "CTRL"
 elseif wezterm.target_triple == "aarch64-apple-darwin" then
@@ -213,4 +212,5 @@ return {
   check_for_updates = true,
   scrollback_lines = 3500,
   term = "xterm-256color",
+  enable_wayland = false,
 }

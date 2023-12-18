@@ -23,7 +23,7 @@ return {
             eggLikeNewline = true,
             registerConvertResult = true,
             globalDictionaries = dictionaries,
-            userJisyo = "~/.config/skk/.skkeleton",
+            userJisyo = os.getenv("XDG_CONFIG_HOME") .. "/skk/.skkeleton",
           })
         end,
       })
