@@ -1,7 +1,7 @@
 local wezterm = require "wezterm"
 local act = wezterm.action
 -- util
-function basename(s)
+function Basename(s)
   return string.gsub(s, "(.*[/\\])(.*)", "%2")
 end
 -- os, font
@@ -24,6 +24,8 @@ elseif wezterm.target_triple == "aarch64-apple-darwin" then
   font_size = 14
   ctrl_key = "CMD"
 end
+-- style
+local background_opacity = 0.8
 -- tab bar left
 wezterm.on("format-tab-title", function(tab, tabs)
   local TAB_BAR_BG = "#2E3440"
@@ -90,7 +92,7 @@ wezterm.on("update-right-status", function(window)
       { Text = '' },
       { Foreground = { Color = "#ffffff" } },
       { Background = { Color = "#5E81AC" } },
-      { Text = ' ' .. basename(wezterm.home_dir) .. " " },
+      { Text = ' ' .. Basename(wezterm.home_dir) .. " " },
       { Foreground = { Color = "#81A1C1" } },
       { Background = { Color = "#5E81AC" } },
       { Text = '' },
@@ -106,6 +108,16 @@ wezterm.on("update-right-status", function(window)
     })
   );
 end);
+-- toggle window opacity
+wezterm.on('toggle-opacity', function(window)
+  local overrides = window:get_config_overrides() or {}
+  if overrides.window_background_opacity == background_opacity then
+    overrides.window_background_opacity = 1.0
+  else
+    overrides.window_background_opacity = background_opacity
+  end
+  window:set_config_overrides(overrides)
+end)
 
 return {
   -- os
@@ -128,7 +140,7 @@ return {
     },
   },
   -- style
-  window_background_opacity = 0.8,
+  window_background_opacity = background_opacity,
   window_decorations = "RESIZE",
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
@@ -150,6 +162,7 @@ return {
       format = "$0",
     },
   },
+  adjust_window_size_when_changing_font_size = false,
   -- font
   font = wezterm.font_with_fallback({
     { family = "GohuFont Nerd Font",  weight = "Medium" },
@@ -190,12 +203,15 @@ return {
     { key = 'r', mods = "LEADER|SHIFT|" .. ctrl_key, action = act.ActivateKeyTable {  name = "resize_pane", one_shot = false, },
     },
     -- copy sode
-    { key = 'c',     mods = "LEADER|SHIFT|" .. ctrl_key, action = wezterm.action.ActivateCopyMode },
+    { key = 'c',     mods = "LEADER|SHIFT|" .. ctrl_key, action = act.ActivateCopyMode },
     { key = "Enter", mods = "LEADER|SHIFT|" .. ctrl_key, action = "QuickSelect" },
     { key = '?',     mods = "LEADER|SHIFT|" .. ctrl_key, action = act.Search("CurrentSelectionOrEmptyString") },
-    { key = 'd',     mods = "LEADER|SHIFT|" .. ctrl_key, action = wezterm.action.ShowDebugOverlay },
+    { key = 'd',     mods = "LEADER|SHIFT|" .. ctrl_key, action = act.ShowDebugOverlay },
     -- key binding
     { key = "l", mods = ctrl_key, action = act.Multiple { act.ClearScrollback "ScrollbackAndViewport",act.SendKey { key = 'l', mods = "CTRL" }, }, },
+    { key = 'u', mods = "SHIFT|" .. ctrl_key, action = wezterm.action.IncreaseFontSize },
+    { key = 'm', mods = "SHIFT|" .. ctrl_key, action = wezterm.action.DecreaseFontSize },
+    { key = 'b', mods = "SHIFT|" .. ctrl_key, action = wezterm.action.EmitEvent 'toggle-opacity' },
   },
   key_tables = {
     resize_pane = {
@@ -214,3 +230,5 @@ return {
   term = "xterm-256color",
   enable_wayland = false,
 }
+
+
