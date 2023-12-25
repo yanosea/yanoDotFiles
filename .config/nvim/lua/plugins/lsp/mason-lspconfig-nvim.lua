@@ -33,6 +33,7 @@ return {
         "omnisharp_mono",
         "perlnavigator",
         "powershell_es",
+        "pyright",
         "rust_analyzer",
         "spectral",
         "sqlls",
