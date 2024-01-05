@@ -18,7 +18,7 @@ require("lazy").setup({
   defaults = { lazy = true },
   spec = {
     { import = "plugins.git" },
-    { import = "plugins.graph" },
+    { import = "plugins.gui" },
     { import = "plugins.lsp" },
     { import = "plugins.misc" },
     { import = "plugins.style" },
