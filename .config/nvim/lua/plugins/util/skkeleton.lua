@@ -6,8 +6,8 @@ return {
     -- https://github.com/vim-denops/denops.vim
     dependencies = { "vim-denops/denops.vim" },
     init = function()
-      vim.keymap.set('i',"<C-Space>", "<Plug>(skkeleton-enable)")
-      vim.keymap.set('c',"<C-Space>", "<Plug>(skkeleton-enable)")
+      vim.keymap.set('i',"<C-Space>", "<Plug>(skkeleton-toggle)")
+      vim.keymap.set('c',"<C-Space>", "<Plug>(skkeleton-toggle)")
       local dictionaries = {}
       local handle = io.popen("ls $XDG_CONFIG_HOME/skk/*")
       if handle then
