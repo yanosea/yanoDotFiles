@@ -20,6 +20,7 @@
 .config/spotify-tui/.spotify_token_cache.json
 .config/spotify-tui/client.yml
 .config/tmux/plugins
+.config/zsh/.zcompdump
 .vim/viminfo
 .DS_Store
 *.log
