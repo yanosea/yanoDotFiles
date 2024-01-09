@@ -69,7 +69,7 @@ cmd open &{{
 
 # define a custom 'delete' command
 cmd delete ${{
-    "$USBINPATH"/trash -fr $fx
+    trash -fr $fx
 }}
 
 # use '<delete>' key for either 'trash' or 'delete' command
@@ -96,7 +96,7 @@ cmd tar ${{
     mkdir $1
     cp -r $fx $1
     tar czf $1.tar.gz $1
-    "$USBINPATH"/trash -fr $1
+    trash -fr $1
 }}
 
 # compress current file or selected files with zip
@@ -105,7 +105,7 @@ cmd zip ${{
     mkdir $1
     cp -r $fx $1
     zip -r $1.zip $1
-    "$USBINPATH"/trash -fr $1
+    trash -fr $1
 }}
 
 # quit with :q
