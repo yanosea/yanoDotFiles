@@ -6,6 +6,12 @@
 
 # Edited By yanosea
 
+# XDG CONFIG
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+
 # OS
 export OS=$(uname)
 if [ "$OS" = "Linux" ]; then
@@ -20,12 +26,6 @@ if [ -n "$WSL_DISTRO_NAME" ]; then
     export PATH=$PATH:/mnt/c/Windows/System32
     source $XDG_CONFIG_HOME/zsh/functions_win/*
 fi
-
-# XDG CONFIG
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_STATE_HOME=$HOME/.local/state
 
 # EDITOR
 export VISUAL="$USBINPATH"/nvim
