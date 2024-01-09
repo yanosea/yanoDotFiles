@@ -54,7 +54,11 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 ## cargo
-. $HOME/.cargo/env
+if [ "$WSL_DISTRO_NAME" = "Arch" ]; then
+    . $HOME/.cargo/env
+else
+    export PATH=$PATH:$HOME/.cargo/bin
+fi
 
 ## volta
 export VOLTA_HOME=$HOME/.volta
@@ -93,7 +97,9 @@ fi
 
 # PREFERENCES
 ## PKG_CONFIG_PATH
-export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/share/pkgconfig
+if [ "$WSL_DISTRO_NAME" = "Arch" ]; then
+    export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/share/pkgconfig
+fi
 
 ## GITHUB_TOKEN
 export GITHUB_TOKEN=`cat $HOME/work/credentials/GITHUB_TOKEN`
