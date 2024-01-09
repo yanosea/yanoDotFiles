@@ -15,7 +15,11 @@ export XDG_STATE_HOME=$HOME/.local/state
 # OS
 export OS=$(uname)
 if [ "$OS" = "Linux" ]; then
-    export USBINPATH=/usr/sbin
+    if [ "$WSL_DISTRO_NAME" = "Arch" ]; then
+        export USBINPATH=/usr/sbin
+    elif [ "$WSL_DISTRO_NAME" = "NixOS" ]; then
+        export USBINPATH=/run/current-system/sw/bin
+    fi
 elif [ "$OS" = "Darwin" ]; then
     export USBINPATH=/opt/homebrew/bin
 fi
@@ -54,10 +58,10 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 ## cargo
-if [ "$WSL_DISTRO_NAME" = "Arch" ]; then
-    . $HOME/.cargo/env
-else
+if [ "$WSL_DISTRO_NAME" = "NixOS" ]; then
     export PATH=$PATH:$HOME/.cargo/bin
+else
+    . $HOME/.cargo/env
 fi
 
 ## volta
@@ -74,8 +78,17 @@ eval "$($USBINPATH/pyenv init -)"
 
 ## fzf
 if [ "$OS" = "Linux" ]; then
-    source /usr/share/fzf/key-bindings.zsh
-    source /usr/share/fzf/completion.zsh
+    if [ "$WSL_DISTRO_NAME" = "Arch" ]; then
+        source /usr/share/fzf/key-bindings.zsh
+        source /usr/share/fzf/completion.zsh
+    elif [ "$WSL_DISTRO_NAME" = "NixOS" ]; then
+        TARGET_PATH=$(readlink -f $(which fzf))
+        ORIGINAL="/bin/fzf"
+        REPLACEMENT="/share/fzf"
+        FZF_PATH=${TARGET_PATH//$ORIGINAL/$REPLACEMENT}
+        source $FZF_PATH/key-bindings.zsh
+        source $FZF_PATH/completion.zsh
+    fi
 elif [ "$OS" = "Darwin" ]; then
     source $HOME/work/bin/key-bindings.zsh
     source $HOME/work/bin/completion.zsh
@@ -90,7 +103,9 @@ export PATH=$PATH:$HOME/.local/bin
 
 ## homebrew
 if [ "$OS" = "Linux" ]; then
-    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    if [ "$WSL_DISTRO_NAME" = "Arch" ]; then
+        eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    fi
 elif [ "$OS" = "Darwin" ]; then
     eval $(/opt/homebrew/bin/brew shellenv)
 fi

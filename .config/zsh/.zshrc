@@ -17,13 +17,15 @@ eval "$(sheldon source)"
 eval "$(zoxide init zsh)"
 
 # alias
-alias cat=bat
-alias ls=lsd
-alias nvimdiff='nvim -d'
+alias cat="$USBINPATH"/bat
+alias ls="$USBINPATH"/lsd
+alias nvimdiff="$USBINPATH/nvim -d"
 alias reboot='sudo systemctl reboot'
-alias rm=trash
+alias rm="$USBINPATH"/trash
 alias shutdown='sudo systemctl poweroff'
 alias zmv='noglob zmv -W'
+
+## directories
 alias dot="cd $HOME/dotfiles"
 alias work="cd $HOME/work"
 
