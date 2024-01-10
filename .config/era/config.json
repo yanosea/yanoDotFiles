@@ -1,0 +1,8 @@
+{
+  "interval":80,
+  "frequency":60,
+  "rain1":"│",
+  "rain2":" ",
+  "timecolor":"#4C566A",
+  "raincolor":"#5E81AC"
+}
