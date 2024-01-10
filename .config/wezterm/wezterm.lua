@@ -15,7 +15,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   -- for _, domain in ipairs(wsl_domains) do
   --   domain.default_cwd = "~"
   -- end
-  default_prog = { "powershell.exe", "-NoLogo" }
+  default_prog = { "pwsh.exe", "-NoLogo" }
   default_domain = "local"
   font_size = 10.5
   ctrl_key = "CTRL"
