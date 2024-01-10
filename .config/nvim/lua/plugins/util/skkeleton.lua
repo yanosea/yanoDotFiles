@@ -21,8 +21,10 @@ return {
         callback = function()
           vim.fn["skkeleton#config"]({
             eggLikeNewline = true,
-            registerConvertResult = true,
             globalDictionaries = dictionaries,
+            registerConvertResult = true,
+            showCandidatesCount = 1,
+            useGoogleJapaneseInput = true,
             userJisyo = os.getenv("XDG_CONFIG_HOME") .. "/skk/.skkeleton",
           })
         end,
