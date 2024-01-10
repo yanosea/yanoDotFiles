@@ -41,6 +41,8 @@ return {
           always_show_bufferline = true,
         },
       })
+      vim.keymap.set('n', "<C-UP>", "<CMD>BufferLineMovePrev<CR>")
+      vim.keymap.set('n', "<C-DOWN>", "<CMD>BufferLineMoveNext<CR>")
     end,
   },
 }
