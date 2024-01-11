@@ -79,6 +79,8 @@ call plug#begin()
     Plug 'vim-scripts/YankRing.vim'
     " ime off when leave insert mode
     Plug 'kaz399/spzenhan.vim'
+    " checkhealth
+    Plug 'rhysd/vim-healthcheck'
 call plug#end()
 " colorscheme
 colorscheme nord
