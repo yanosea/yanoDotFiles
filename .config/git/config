@@ -1,36 +1,27 @@
+[user]
+	email = myanoshi0626@gmail.com
+	name = yanosea
+[credential]
+	helper = store --file $HOME/.local/credentials/GIT_CREDENTIAL
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-
-[user]
-	email = myanoshi0626@gmail.com
-	name = yanosea
-
-[credential]
-	helper = store --file $HOME/work/credentials/GIT_CREDENTIAL
-
 [core]
     pager = git-split-diffs --color | less -RFX
-
 [interactive]
     diffFilter = delta --color-only
-
 [delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-
+    navigate = true
+    light = false
 [merge]
     conflictstyle = diff3
     ff = false
-
 [pull]
     ff = only
-
 [diff]
     colorMoved = default
-
 [init]
 	defaultBranch = main
 [safe]

@@ -1,11 +1,11 @@
-# IGNORE FOLDER
+# ignore folders
 .config/configstore
 .config/gup
 .vim/autoload
 .vim/colors
 .vim/plugged
 
-# IGNORE FILE
+# ignore files
 .config/dlv/.dbg_history
 .config/fish/functions/fish_greeting.fish
 .config/fish/functions/fish_mode_prompt.fish

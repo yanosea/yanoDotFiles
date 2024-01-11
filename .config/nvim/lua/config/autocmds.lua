@@ -31,23 +31,25 @@ autocmd({ "VimLeave" }, {
 -- wsl
 if os.getenv("WSL_DISTRO_NAME") ~= nil then
   -- clipboard sharing
-  vim.g.clipboard = {
-    name = "win32yank",
-    copy = {
-      ["+"] = "win32yank.exe -i",
-      ["*"] = "win32yank.exe -i",
-    },
-    paste = {
-      ["+"] = "win32yank.exe -o",
-      ["*"] = "win32yank.exe -o",
-    },
-    cache_enable = 0,
-  }
+  if vim.fn.executable("win32yank.exe") ~= 0 then
+    vim.g.clipboard = {
+      name = "win32yank",
+      copy = {
+        ["+"] = "win32yank.exe -i",
+        ["*"] = "win32yank.exe -i",
+      },
+      paste = {
+        ["+"] = "win32yank.exe -o",
+        ["*"] = "win32yank.exe -o",
+      },
+      cache_enable = 0,
+    }
+  end
   -- ime off when leave insert mode
-  vim.cmd [[
-    if executable("spzenhan.exe")
+  if vim.fn.executable("spzenhan.exe") ~= 0 then
+    vim.cmd [[
       autocmd InsertLeave *  :call system("spzenhan.exe 0")
       autocmd CmdlineLeave * :call system("spzenhan.exe 0")
-    endif
-  ]]
+    ]]
+  end
 end

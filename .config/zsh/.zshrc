@@ -8,14 +8,12 @@
 alias ls='ls --color=auto'
 PROMPT='[%n@%m %~]$ '
 
-# Edited By yanosea
+# edited by yanosea
 
 # sheldon
 eval "$(sheldon source)"
-
 # zoxide
 eval "$(zoxide init zsh)"
-
 # alias
 alias cat="$USBINPATH"/bat
 alias ls="$USBINPATH"/lsd
@@ -24,16 +22,14 @@ alias reboot='sudo systemctl reboot'
 alias rm="$USBINPATH"/trash
 alias shutdown='sudo systemctl poweroff'
 alias zmv='noglob zmv -W'
-
 ## directories
-alias dot="cd $HOME/dotfiles"
-alias work="cd $HOME/work"
-
+alias repos="cd $HOME/ghq/github.com/yanosea"
+alias dot="cd $HOME/ghq/github.com/yanosea/yanoDotFiles"
+alias work="cd $WORKSPACE"
 # history
 HISTFILE=$XDG_STATE_HOME/zsh/.zhistory
 HISTSIZE=1000
 SAVEHIST=10000
-
 # zshopt
 ## easy cd
 setopt auto_cd
@@ -71,8 +67,7 @@ zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 ## zmv
 autoload -Uz zmv
-
-# Powerlevel10k
+# powerlevel10k
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi

@@ -1,5 +1,5 @@
-# IGNORE FOLDER
+# ignore folders
 
-# IGNORE FILE
+# ignore files
 .DS_Store
 *.log
