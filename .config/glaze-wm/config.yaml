@@ -60,7 +60,9 @@ window_rules:
   # Ignore splashtop
   - command: "ignore"
     match_process_name: "strwinclt"
-
+  # Ignore terraria
+  - command: "ignore"
+    match_process_name: "Terraria"
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
     match_class_name: "#32770"
