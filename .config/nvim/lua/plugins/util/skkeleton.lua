@@ -26,7 +26,7 @@ return {
             eggLikeNewline = true,
             registerConvertResult = true,
             showCandidatesCount = 1,
-            userJisyo = os.getenv("XDG_STATE_HOME") .. "/skk/.skkeleton",
+            userDictionary = os.getenv("XDG_STATE_HOME") .. "/skk/.skkeleton",
           })
         end,
       })
