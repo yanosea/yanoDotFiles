@@ -62,7 +62,7 @@
     <key name="drawapi" value="1" />
     <key name="colorfont" value="1" />
     <key name="untilcandlist" value="3" />
-    <key name="pagecandnum" value="7" />
+    <key name="pagecandnum" value="8" />
     <key name="dispcandno" value="0" />
     <key name="verticalcand" value="1" />
     <key name="annotation" value="1" />
@@ -98,7 +98,7 @@
     <key name="5" value="ＪJj" />
     <key name="6" value="ＫKk" />
     <key name="7" value="ＬLl" />
-    <key name="8" value="ＧGg" />
+    <key name="8" value="；;;" />
     <key name="9" value="ＨHh" />
   </section>
   <section name="preservedkeyon">
