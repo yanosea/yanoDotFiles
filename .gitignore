@@ -1,6 +1,8 @@
 # ignore folders
 .config/configstore
 .config/gup
+.config/PowerShell/Modules
+.config/PowerShell/Scripts
 .vim/autoload
 .vim/colors
 .vim/plugged
