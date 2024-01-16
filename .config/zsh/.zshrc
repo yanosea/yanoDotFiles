@@ -16,6 +16,7 @@ eval "$(sheldon source)"
 eval "$(zoxide init zsh)"
 # alias
 alias cat="$USBINPATH"/bat
+alias ghq="gh q"
 alias ls="$USBINPATH"/lsd
 alias nvimdiff="$USBINPATH/nvim -d"
 alias reboot='sudo systemctl reboot'

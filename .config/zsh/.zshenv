@@ -86,6 +86,8 @@ if [ -n "$WSL_DISTRO_NAME" ]; then
 elif [ "$OS" = "Darwin" ]; then
     eval $(/opt/homebrew/bin/brew shellenv)
 fi
+## ghq
+export GHQ_ROOT="$HOME"/ghq
 # pkg config path
 if [ "$WSL_DISTRO_NAME" = "Arch" ]; then
     export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/share/pkgconfig
