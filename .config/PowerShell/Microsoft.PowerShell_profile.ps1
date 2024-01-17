@@ -3,11 +3,11 @@
 Import-Module -Name PSReadLine
 Set-PSReadLineOption -PredictionSource History
 Import-Module -Name CompletionPredictor
-# fzf
+## fzf
 Import-Module PSFzf
 Enable-PsFzfAliases
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
-# zoxide
+## zoxide
 Import-Module ZLocation
 # keymap
 Set-PSReadLineKeyHandler -Key "Ctrl+d" -Function DeleteChar
