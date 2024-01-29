@@ -53,6 +53,8 @@ vim.opt.splitright = true
 vim.opt.shell = os.getenv("SHELL")
 -- syntax highlight
 vim.opt.syntax = "enable"
+
+vim.opt.updatetime = 200
 -- disable intro
 vim.opt.shortmess:append('I')
 -- clipboaed

@@ -19,13 +19,30 @@ local enable_fmt_on_attach = function(client, bufnr)
   common_on_attach(client, bufnr)
 
   if client.supports_method("textDocument/formatting") and enable_autoformat() then
-    local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
-    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    local augLspFormatting = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
+    vim.api.nvim_clear_autocmds({ group = augLspFormatting, buffer = bufnr })
     vim.api.nvim_create_autocmd("BufWritePre", {
       callback = function()
         vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 5000 })
       end,
-      group = augroup,
+      group = augLspFormatting,
+      buffer = bufnr,
+    })
+
+    local augLspDocumentHighlight = vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = false })
+    vim.api.nvim_clear_autocmds({ group = augLspDocumentHighlight, buffer = bufnr })
+    vim.api.nvim_create_autocmd({"CursorHold","CursorHoldI"}, {
+      callback = function()
+        vim.lsp.buf.document_highlight()
+      end,
+      group = augLspDocumentHighlight,
+      buffer = bufnr,
+    })
+    vim.api.nvim_create_autocmd({"CursorMoved","CursorMovedI"}, {
+      callback = function()
+        vim.lsp.buf.clear_references()
+      end,
+      group = augLspDocumentHighlight,
       buffer = bufnr,
     })
   end
