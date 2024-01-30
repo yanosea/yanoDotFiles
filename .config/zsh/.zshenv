@@ -8,16 +8,16 @@
 
 # os
 export OS=$(uname)
-if [ -n "$WSL_DISTRO_NAME" ]; then
+if [[ -n "$WSL_DISTRO_NAME" ]]; then
     export PATH=$PATH:/mnt/c/Windows
     export PATH=$PATH:/mnt/c/Windows/System32
     source $XDG_CONFIG_HOME/zsh/functions_win/*
-    if [ "$WSL_DISTRO_NAME" = "Arch" ]; then
+    if [[ "$WSL_DISTRO_NAME" = "Arch" ]]; then
         export USBINPATH=/usr/sbin
-    elif [ "$WSL_DISTRO_NAME" = "NixOS" ]; then
+    elif [[ "$WSL_DISTRO_NAME" = "NixOS" ]]; then
         export USBINPATH=/run/current-system/sw/bin
     fi
-elif [ "$OS" = "Darwin" ]; then
+elif [[ "$OS" = "Darwin" ]]; then
     export USBINPATH=/opt/homebrew/bin
 fi
 # xdg config
@@ -46,7 +46,7 @@ source $XDG_CONFIG_HOME/zsh/functions/*
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 ## cargo
-if [ "$WSL_DISTRO_NAME" = "NixOS" ]; then
+if [[ -n "$WSL_DISTRO_NAME" && "$WSL_DISTRO_NAME" = "NixOS" ]]; then
     export PATH=$PATH:$HOME/.cargo/bin
 else
     . $HOME/.cargo/env
@@ -61,11 +61,11 @@ export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PATH:$PYENV_ROOT/bin
 eval "$($USBINPATH/pyenv init -)"
 ## fzf
-if [ -n "$WSL_DISTRO_NAME" ]; then
-    if [ "$WSL_DISTRO_NAME" = "Arch" ]; then
+if [[ -n "$WSL_DISTRO_NAME" ]]; then
+    if [[ "$WSL_DISTRO_NAME" = "Arch" ]]; then
         source /usr/share/fzf/key-bindings.zsh
         source /usr/share/fzf/completion.zsh
-    elif [ "$WSL_DISTRO_NAME" = "NixOS" ]; then
+    elif [[ "$WSL_DISTRO_NAME" = "NixOS" ]]; then
         TARGET_PATH=$(readlink -f $(which fzf))
         ORIGINAL="/bin/fzf"
         REPLACEMENT="/share/fzf"
@@ -79,17 +79,17 @@ export CABAL_CONFIG="$XDG_CONFIG_HOME"/cabal/config
 export CABAL_DIR="$XDG_CACHE_HOME"/cabal
 # homebrew
 export HOMEBREW_NO_INSTALL_FROM_API=1
-if [ -n "$WSL_DISTRO_NAME" ]; then
-    if [ "$WSL_DISTRO_NAME" = "Arch" ]; then
+if [[ -n "$WSL_DISTRO_NAME" ]]; then
+    if [[ "$WSL_DISTRO_NAME" = "Arch" ]]; then
         eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
     fi
-elif [ "$OS" = "Darwin" ]; then
+elif [[ "$OS" = "Darwin" ]]; then
     eval $(/opt/homebrew/bin/brew shellenv)
 fi
 ## ghq
 export GHQ_ROOT="$HOME"/ghq
 # pkg config path
-if [ "$WSL_DISTRO_NAME" = "Arch" ]; then
+if [[ -n "$WSL_DISTRO_NAME" && "$WSL_DISTRO_NAME" = "Arch" ]]; then
     export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/share/pkgconfig
 fi
 # credentials
