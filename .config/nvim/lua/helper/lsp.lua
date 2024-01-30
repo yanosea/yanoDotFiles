@@ -28,23 +28,6 @@ local enable_fmt_on_attach = function(client, bufnr)
       group = augLspFormatting,
       buffer = bufnr,
     })
-
-    local augLspDocumentHighlight = vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = false })
-    vim.api.nvim_clear_autocmds({ group = augLspDocumentHighlight, buffer = bufnr })
-    vim.api.nvim_create_autocmd({"CursorHold","CursorHoldI"}, {
-      callback = function()
-        vim.lsp.buf.document_highlight()
-      end,
-      group = augLspDocumentHighlight,
-      buffer = bufnr,
-    })
-    vim.api.nvim_create_autocmd({"CursorMoved","CursorMovedI"}, {
-      callback = function()
-        vim.lsp.buf.clear_references()
-      end,
-      group = augLspDocumentHighlight,
-      buffer = bufnr,
-    })
   end
 end
 
