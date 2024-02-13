@@ -1,5 +1,6 @@
 # ignore folders
 .config/configstore
+.config/github-copilot/hosts.json
 .config/gup
 .config/PowerShell/Modules
 .config/PowerShell/Scripts
