@@ -8,22 +8,18 @@ return {
       vim.keymap.set('n', "<Leader>at", "<CMD>GpChatNew tabnew<CR>")
       vim.keymap.set('n', "<Leader>as", "<CMD>GpChatNew split<CR>")
       vim.keymap.set('n', "<Leader>av", "<CMD>GpChatNew vsplit<CR>")
-      vim.keymap.set('n', "<Leader>aa", "<CMD>GpChatToggle<CR>")
       vim.keymap.set('n', "<Leader>af", "<CMD>GpChatFinder<CR>")
+      vim.keymap.set('n', "<Leader>aa", "<CMD>GpChatRespond<CR>")
+      vim.keymap.set('n', "<Leader>ad", "<CMD>GpChatDelete<CR>")
     end,
     config = function()
       require("gp").setup({
         agents = {
           {
-            name = "ChatGPT4",
-          },
-          {
             name = "ChatGPT3-5",
             chat = true,
             command = false,
-            -- string with model name or table with model name and parameters
             model = { model = "gpt-3.5-turbo-1106", temperature = 1.1, top_p = 1 },
-            -- system prompt (use this to specify the persona/role of the AI)
             system_prompt = "You are a general AI assistant.\n\n"
               .. "The user provided the additional info about how they would like you to respond:\n\n"
               .. "- If you're unsure don't guess and say you don't know instead.\n"
@@ -37,23 +33,10 @@ return {
               .. "- Take a deep breath; You've got this!\n",
           },
           {
-            name = "CodeGPT4",
-            chat = false,
-            command = true,
-            -- string with model name or table with model name and parameters
-            model = { model = "gpt-4-1106-preview", temperature = 0.8, top_p = 1 },
-            -- system prompt (use this to specify the persona/role of the AI)
-            system_prompt = "You are an AI working as a code editor.\n\n"
-              .. "Please AVOID COMMENTARY OUTSIDE OF THE SNIPPET RESPONSE.\n"
-              .. "START AND END YOUR ANSWER WITH:\n\n```",
-          },
-          {
             name = "CodeGPT3-5",
             chat = false,
             command = true,
-            -- string with model name or table with model name and parameters
-            model = { model = "gpt-3.5-turbo-1106", temperature = 0.8, top_p = 1 },
-            -- system prompt (use this to specify the persona/role of the AI)
+            model = { model = "gpt-1.5-turbo-1106", temperature = 0.8, top_p = 1 },
             system_prompt = "You are an AI working as a code editor.\n\n"
               .. "Please AVOID COMMENTARY OUTSIDE OF THE SNIPPET RESPONSE.\n"
               .. "START AND END YOUR ANSWER WITH:\n\n```",
