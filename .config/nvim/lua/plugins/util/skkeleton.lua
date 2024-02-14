@@ -21,13 +21,15 @@ return {
         pattern = "skkeleton-initialize-pre",
         callback = function()
           vim.fn["skkeleton#config"]({
-            globalDictionaries = dictionaries,
-            sources = src,
             eggLikeNewline = true,
+            globalDictionaries = dictionaries,
+            immediatelyCancel = false,
             registerConvertResult = true,
             showCandidatesCount = 1,
+            sources = src,
             userDictionary = os.getenv("XDG_STATE_HOME") .. "/skk/.skkeleton",
           })
+          vim.fn["skkeleton#register_keymap"]("henkan", "<Esc>", "cancel")
         end,
       })
     end,
