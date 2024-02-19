@@ -24,6 +24,7 @@
 .config/skk
 .config/spotify-tui/.spotify_token_cache.json
 .config/spotify-tui/client.yml
+.config/tool_state
 .config/tmux/plugins
 .config/zsh/.zcompdump
 .DS_Store
