@@ -2,9 +2,20 @@
 <skk>
   <section name="dictionary">
     <list>
-      <row path="https://skk-dev.github.io/dict/SKK-JISYO.L.gz" enabled="1" />
-      <row path="https://skk-dev.github.io/dict/SKK-JISYO.lisp.gz" enabled="1" />
-      <row path="https://skk-dev.github.io/dict/SKK-JISYO.jinmei.gz" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.L" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.lisp" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.jinmei" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.fullname" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.emoji" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.edict" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.edict2" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.geo" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.hukugougo" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.mazegaki" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.notes" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.propernoun" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.requested" enabled="1" />
+      <row path="https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.station" enabled="1" />
     </list>
   </section>
   <section name="server">
