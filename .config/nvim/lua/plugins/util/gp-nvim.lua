@@ -16,10 +16,10 @@ return {
       require("gp").setup({
         agents = {
           {
-            name = "ChatGPT3-5",
+            name = "ChatGPT4",
             chat = true,
             command = false,
-            model = { model = "gpt-3.5-turbo-1106", temperature = 1.1, top_p = 1 },
+            model = { model = "gpt-4-1106-preview", temperature = 1.1, top_p = 1 },
             system_prompt = "You are a general AI assistant.\n\n"
               .. "The user provided the additional info about how they would like you to respond:\n\n"
               .. "- If you're unsure don't guess and say you don't know instead.\n"
@@ -33,14 +33,17 @@ return {
               .. "- Take a deep breath; You've got this!\n",
           },
           {
-            name = "CodeGPT3-5",
+            name = "CodeGPT4",
             chat = false,
             command = true,
-            model = { model = "gpt-1.5-turbo-1106", temperature = 0.8, top_p = 1 },
+            model = { model = "gpt-4-1106-preview", temperature = 0.8, top_p = 1 },
             system_prompt = "You are an AI working as a code editor.\n\n"
               .. "Please AVOID COMMENTARY OUTSIDE OF THE SNIPPET RESPONSE.\n"
               .. "START AND END YOUR ANSWER WITH:\n\n```",
           },
+          {
+            name = "ChatGPT3-5"
+          }
         },
         -- state_dir = os.getenv("GOOGLE_DRIVE") .. "/gp-nvim/persisted",
         -- chat_dir = os.getenv("GOOGLE_DRIVE") .. "/gp-nvim/chats",
