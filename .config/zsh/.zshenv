@@ -99,6 +99,8 @@ fi
 export GITHUB_TOKEN=`cat $HOME/.local/credentials/GITHUB_TOKEN`
 ## openapi
 export OPENAI_API_KEY=`cat $HOME/.local/credentials/OPENAI_API_KEY`
+## gemini
+export GEMINI_API_KEY=`cat $HOME/.local/credentials/GEMINI_API_KEY`
 ## brew
 export HOMEBREW_NO_INSTALL_FROM_API=1
 ## spotify
