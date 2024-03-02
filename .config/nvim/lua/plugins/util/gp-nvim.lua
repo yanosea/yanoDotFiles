@@ -46,7 +46,7 @@ return {
           }
         },
         state_dir = os.getenv("GOOGLE_DRIVE") .. "/gp-nvim/persisted",
-        chat_dir = os.getenv("GOOGLE_DRIVE") .. "/gp-nvim/chats",
+        chat_dir = os.getenv("XDG_STATE_HOME") .. "/gp-nvim/chats",
       })
       vim.api.nvim_set_hl(0, "GpHandlerStandout", { link = "Normal" })
       vim.api.nvim_set_hl(0, "GpExplorerSearch", { link = "Normal" })
