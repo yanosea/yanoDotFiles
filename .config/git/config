@@ -27,3 +27,5 @@
 	defaultBranch = main
 [safe]
 	directory = /opt/flutter
+[alias]
+	ac = !git add -A && aicommits -a
