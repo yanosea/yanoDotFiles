@@ -37,6 +37,20 @@ export TERM=xterm-256color
 export LESSHISTFILE=$XDG_STATE_HOME/less/.lesshst
 ## node
 export NODE_REPL_HISTORY=$XDG_STATE_HOME/node/.node_repl_history
+# credentials
+## github
+export GITHUB_TOKEN=`cat $HOME/.local/credentials/GITHUB_TOKEN`
+## openapi
+export OPENAI_API_KEY=`cat $HOME/.local/credentials/OPENAI_API_KEY`
+## gemini
+export GEMINI_API_KEY=`cat $HOME/.local/credentials/GEMINI_API_KEY`
+## brew
+export HOMEBREW_NO_INSTALL_FROM_API=1
+## spotify
+export SPOTIFY_ID=`cat $HOME/.local/credentials/SPOTIFY_ID`
+export SPOTIFY_SECRET=`cat $HOME/.local/credentials/SPOTIFY_SECRET`
+export SPOTIFY_REDIRECT_URI=`cat $HOME/.local/credentials/SPOTIFY_REDIRECT_URI`
+export SPOTIFY_REFRESH_TOKEN=`cat $HOME/.local/credentials/SPOTIFY_REFRESH_TOKEN`
 # path
 ## local
 export PATH=$PATH:$HOME/.local/bin
@@ -90,21 +104,10 @@ elif [[ "$OS" = "Darwin" ]]; then
 fi
 ## ghq
 export GHQ_ROOT="$HOME"/ghq
-# pkg config path
+## pkg config path
 if [[ -n "$WSL_DISTRO_NAME" && "$WSL_DISTRO_NAME" = "Arch" ]]; then
     export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/share/pkgconfig
 fi
-# credentials
-## github
-export GITHUB_TOKEN=`cat $HOME/.local/credentials/GITHUB_TOKEN`
-## openapi
-export OPENAI_API_KEY=`cat $HOME/.local/credentials/OPENAI_API_KEY`
-## gemini
-export GEMINI_API_KEY=`cat $HOME/.local/credentials/GEMINI_API_KEY`
-## brew
-export HOMEBREW_NO_INSTALL_FROM_API=1
-## spotify
-export SPOTIFY_ID=`cat $HOME/.local/credentials/SPOTIFY_ID`
-export SPOTIFY_SECRET=`cat $HOME/.local/credentials/SPOTIFY_SECRET`
-export SPOTIFY_REDIRECT_URI=`cat $HOME/.local/credentials/SPOTIFY_REDIRECT_URI`
-export SPOTIFY_REFRESH_TOKEN=`cat $HOME/.local/credentials/SPOTIFY_REFRESH_TOKEN`
+# oatmeal
+export OATMEAL_OPENAI_TOKEN=$OPENAI_API_KEY
+export OATMEAL_GEMINI_TOKEN=$GEMINI_API_KEY
