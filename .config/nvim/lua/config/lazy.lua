@@ -20,7 +20,6 @@ require("lazy").setup({
     { import = "plugins.git" },
     { import = "plugins.gui" },
     { import = "plugins.lsp" },
-    { import = "plugins.misc" },
     { import = "plugins.style" },
     { import = "plugins.util" },
   },
