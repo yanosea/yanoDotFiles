@@ -5,6 +5,7 @@ return {
     lazy = false,
     -- https://github.com/nvim-tree/nvim-web-devicons
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    cond = not vim.g.started_by_firenvim,
     init = function()
       require("bufferline").setup({
         options = {

@@ -3,6 +3,7 @@ return {
     -- https://github.com/nvim-lualine/lualine.nvim
     "nvim-lualine/lualine.nvim",
     lazy = false,
+    cond = not vim.g.started_by_firenvim,
     init = function()
       require("lualine").setup {
         options = {

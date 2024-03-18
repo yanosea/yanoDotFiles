@@ -9,6 +9,7 @@ return {
       -- https://github.com/rcarriga/nvim-notify
       "rcarriga/nvim-notify",
     },
+    cond = not vim.g.started_by_firenvim,
     config = function()
       require("notify").setup({
         background_colour = "#000000",
