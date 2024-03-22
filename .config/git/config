@@ -1,13 +1,13 @@
 [user]
-	email = myanoshi0626@gmail.com
-	name = yanosea
+    email = myanoshi0626@gmail.com
+    name = yanosea
 [credential]
-	helper = store --file $HOME/.local/credentials/GIT_CREDENTIAL
+    helper = store --file $HOME/.local/credentials/GIT_CREDENTIAL
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [core]
     pager = git-split-diffs --color | less -RFX
     symlinks = true
@@ -24,8 +24,8 @@
 [diff]
     colorMoved = default
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [safe]
-	directory = /opt/flutter
+    directory = /opt/flutter
 [alias]
-	ac = !git add -A && aicommits -a
+    ac = !git add -A && aicommits -a
