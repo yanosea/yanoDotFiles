@@ -29,3 +29,5 @@
     directory = /opt/flutter
 [alias]
     ac = !git add -A && aicommits -a
+[fetch]
+	prune = true
