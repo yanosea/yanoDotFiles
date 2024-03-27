@@ -5,12 +5,12 @@ return {
     lazy = true,
     cmd = { "GpChatNew", "GpChatPaste", "GpChatToggle", "GpChatFinder" },
     init = function()
-      vim.keymap.set('n', "<Leader>at", "<CMD>GpChatNew tabnew<CR>")
-      vim.keymap.set('n', "<Leader>as", "<CMD>GpChatNew split<CR>")
-      vim.keymap.set('n', "<Leader>av", "<CMD>GpChatNew vsplit<CR>")
-      vim.keymap.set('n', "<Leader>af", "<CMD>GpChatFinder<CR>")
-      vim.keymap.set('n', "<Leader>aa", "<CMD>GpChatRespond<CR>")
-      vim.keymap.set('n', "<Leader>ad", "<CMD>GpChatDelete<CR>")
+      vim.keymap.set('n', "<LEADER>at", "<CMD>GpChatNew tabnew<CR>")
+      vim.keymap.set('n', "<LEADER>as", "<CMD>GpChatNew split<CR>")
+      vim.keymap.set('n', "<LEADER>av", "<CMD>GpChatNew vsplit<CR>")
+      vim.keymap.set('n', "<LEADER>af", "<CMD>GpChatFinder<CR>")
+      vim.keymap.set('n', "<LEADER>aa", "<CMD>GpChatRespond<CR>")
+      vim.keymap.set('n', "<LEADER>ad", "<CMD>GpChatDelete<CR>")
     end,
     config = function()
       require("gp").setup({

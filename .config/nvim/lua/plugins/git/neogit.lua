@@ -10,8 +10,8 @@ return {
       "sindrets/diffview.nvim",
     },
     init = function()
-      vim.keymap.set('n', "<Leader>gg", "<CMD>Neogit<CR>", { desc = "Open Neogit" })
-      vim.keymap.set('n', "<Leader>gc", "<CMD>Neogit commit<CR>", { desc = "git commit" })
+      vim.keymap.set('n', "<LEADER>gg", "<CMD>Neogit<CR>", { desc = "Open Neogit" })
+      vim.keymap.set('n', "<LEADER>gc", "<CMD>Neogit commit<CR>", { desc = "git commit" })
     end,
     config = function()
       require("neogit").setup({
