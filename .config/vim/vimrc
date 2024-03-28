@@ -50,39 +50,54 @@ set splitbelow
 set splitright
 " syntax highlight
 syntax enable
-" disable intro
-" set shortmess=I
+" clipboard
 set clipboard+=unnamedplus
 " hide highlight search
 nnoremap <ESC><ESC> :nohlsearch<CR>
 " wsl
 if !empty($WSL_DISTRO_NAME)
-    " clipboard sharing
-    let s:clip = '/mnt/c/Windows/System32/clip.exe'
-    if executable(s:clip)
-        augroup WSLYank
-            autocmd!
-            autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-        augroup END
-    endif
-    " ime off when leave insert mode
-    if executable('spzenhan.exe')
-        autocmd InsertLeave * :call system('spzenhan.exe 0')
-        autocmd CmdlineLeave * :call system('spzenhan.exe 0')
-    endif
+  " clipboard sharing (only yank)
+  let s:clip = '/mnt/c/Windows/System32/clip.exe'
+  if executable(s:clip)
+    augroup WSLYank
+      autocmd!
+      autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+  endif
 endif
 " plugin
 call plug#begin()
-    " colorscheme
-    Plug 'arcticicestudio/nord-vim'
-    " clipboard history
-    Plug 'vim-scripts/YankRing.vim'
-    " ime off when leave insert mode
-    Plug 'kaz399/spzenhan.vim'
-    " checkhealth
-    Plug 'rhysd/vim-healthcheck'
+  " colorscheme
+  Plug 'arcticicestudio/nord-vim'
+  " clipboard history
+  Plug 'vim-scripts/YankRing.vim'
+  " checkhealth
+  Plug 'rhysd/vim-healthcheck'
+  " skkeleton
+  Plug 'vim-skk/skkeleton'
+  Plug 'vim-denops/denops.vim'
 call plug#end()
 " colorscheme
 colorscheme nord
+" skkeleton
+inoremap <NUL> <Plug>(skkeleton-toggle)
+cnoremap <NUL> <Plug>(skkeleton-toggle)
+let g:skkeleton_dictionaries = []
+for file in split(glob('$XDG_DATA_HOME/skk/*'), '\n')
+  call add(g:skkeleton_dictionaries, file)
+endfor
+function! SkkeletonConfig()
+  call skkeleton#config({
+  \ 'eggLikeNewline': v:true,
+  \ 'globalDictionaries': g:skkeleton_dictionaries,
+  \ 'immediatelyCancel': v:false,
+  \ 'registerConvertResult': v:true,
+  \ 'showCandidatesCount': 1,
+  \ 'sources': ['skk_dictionary', 'google_japanese_input'],
+  \ 'userDictionary': $XDG_STATE_HOME.'/skk/.skkeleton',
+  \ })
+  call skkeleton#register_keymap('henkan', '<Esc>', 'cancel')
+endfunction
+autocmd User skkeleton-initialize-pre call SkkeletonConfig()
 " yankRing
-let g:yankring_history_dir = '$XDG_STATE_HOME/yankring'
+let g:yankring_history_dir = "$XDG_STATE_HOME/yankring"

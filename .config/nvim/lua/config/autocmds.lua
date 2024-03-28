@@ -45,11 +45,4 @@ if os.getenv("WSL_DISTRO_NAME") ~= nil then
       cache_enable = 0,
     }
   end
-  -- ime off when leave insert mode
-  if vim.fn.executable("spzenhan.exe") ~= 0 then
-    vim.cmd [[
-      autocmd InsertLeave *  :call system("spzenhan.exe 0")
-      autocmd CmdlineLeave * :call system("spzenhan.exe 0")
-    ]]
-  end
 end
