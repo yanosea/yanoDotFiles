@@ -25,9 +25,6 @@ github = "romkatv/powerlevel10k"
 [plugins.compinit]
 inline = 'autoload -Uz compinit && zsh-defer compinit -d $XDG_STATE_HOME/zsh/.zcompdump'
 
-[plugins.minimal]
-github = "subnixr/minimal"
-
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
 
@@ -38,4 +35,8 @@ apply = ["defer"]
 
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
+apply = ["defer"]
+
+[plugins.zsh-you-should-use]
+github = "MichaelAquilina/zsh-you-should-use"
 apply = ["defer"]
