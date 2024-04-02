@@ -11,6 +11,7 @@ return {
       vim.keymap.set('n', "<LEADER>af", "<CMD>GpChatFinder<CR>")
       vim.keymap.set('n', "<LEADER>aa", "<CMD>GpChatRespond<CR>")
       vim.keymap.set('n', "<LEADER>ad", "<CMD>GpChatDelete<CR>")
+      vim.keymap.set('n', "<LEADER>ac", "<CMD>GpChatStop<CR>")
     end,
     config = function()
       require("gp").setup({

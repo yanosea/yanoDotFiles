@@ -5,7 +5,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 -- normal
 -- hide highlight search
-vim.keymap.set('n', "<ESC>", "<CMD>nohlsearch<CR>", { desc = "Hide highlight" })
+vim.keymap.set('n', "<ESC>", "<CMD>nohlsearch<CR>", { silent = true, desc = "Hide highlight" })
 -- line
 vim.keymap.set('n', 'j', "gj")
 vim.keymap.set('n', 'k', "gk")

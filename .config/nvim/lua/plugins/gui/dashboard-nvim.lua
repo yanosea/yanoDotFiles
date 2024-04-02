@@ -22,7 +22,7 @@ return {
             enable = true,
             action = "Telescope find_files cwd="
           },
-          mru = { enable = true, },
+          mru = { enable = true, cwd_only = true },
           shortcut = {
             {
               icon = '󰒲',

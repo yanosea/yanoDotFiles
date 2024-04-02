@@ -53,32 +53,54 @@ syntax enable
 " clipboard
 set clipboard+=unnamedplus
 " hide highlight search
-nnoremap <ESC><ESC> :nohlsearch<CR>
+nnoremap <silent> <ESC> :nohlsearch<CR>
+" leader
+let g:mapleader = ' '
+let g:maplocalleader = ' '
+" line
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+" buffer
+nnoremap <C-k> :bprevious<CR>
+nnoremap <C-j> :bnext<CR>
+nnoremap <C-t> :enew<CR>
+nnoremap <C-c> :bd<CR>
+" visual
+vnoremap <C-p> \"0p<CR>
 " wsl
 if !empty($WSL_DISTRO_NAME)
-  " clipboard sharing (only yank)
-  let s:clip = '/mnt/c/Windows/System32/clip.exe'
-  if executable(s:clip)
+  " clipboard sharing
+  if executable('win32yank.exe')
     augroup WSLYank
       autocmd!
-      autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+      autocmd TextYankPost * :call system('win32yank.exe -i', @")
     augroup END
+    autocmd VimEnter * nnoremap <silent> p :call setreg('"',system('win32yank.exe -o'))<CR>""p
   endif
 endif
-" plugin
+" plugins
 call plug#begin()
-  " colorscheme
-  Plug 'arcticicestudio/nord-vim'
-  " clipboard history
-  Plug 'vim-scripts/YankRing.vim'
   " checkhealth
   Plug 'rhysd/vim-healthcheck'
+  " colorscheme
+  Plug 'arcticicestudio/nord-vim'
+  " fuzzy-motion
+  Plug 'yuki-yano/fuzzy-motion.vim'
+  Plug 'vim-denops/denops.vim',
+  Plug 'lambdalisue/kensaku.vim',
   " skkeleton
   Plug 'vim-skk/skkeleton'
   Plug 'vim-denops/denops.vim'
+  " yankring
+  Plug 'vim-scripts/YankRing.vim'
 call plug#end()
 " colorscheme
 colorscheme nord
+" fuzzy-motion
+nnoremap <silent> <LEADER><SPACE> :FuzzyMotion<CR>
+let g:fuzzy_motion_matchers = ['fzf', 'kensaku']
 " skkeleton
 inoremap <NUL> <Plug>(skkeleton-toggle)
 cnoremap <NUL> <Plug>(skkeleton-toggle)
@@ -101,3 +123,4 @@ endfunction
 autocmd User skkeleton-initialize-pre call SkkeletonConfig()
 " yankRing
 let g:yankring_history_dir = "$XDG_STATE_HOME/yankring"
+nnoremap <LEADER>yh :YRShow<CR>
