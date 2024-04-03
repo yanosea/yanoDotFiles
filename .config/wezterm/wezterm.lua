@@ -125,7 +125,7 @@ return {
   default_domain = default_domain,
   default_prog = default_prog,
   -- colorscheme
-  color_scheme = "iceberg-dark",
+  color_scheme = "nord",
   colors = {
     tab_bar = {
       background = "#2E3440",
