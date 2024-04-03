@@ -33,9 +33,10 @@ return {
               { default = false })
             return icon, hl
           end,
+          show_buffer_close_icons = false,
           show_buffer_icons = true,
-          show_tab_indicators = true,
           show_duplicate_prefix = false,
+          show_tab_indicators = true,
           persist_buffer_sort = true,
           separator_style = "slope",
           enforce_regular_tabs = true,
