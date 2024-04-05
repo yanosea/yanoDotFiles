@@ -38,8 +38,6 @@ export LESSHISTFILE=$XDG_STATE_HOME/less/.lesshst
 ## node
 export NODE_REPL_HISTORY=$XDG_STATE_HOME/node/.node_repl_history
 # credentials
-## github
-export GITHUB_TOKEN=`cat $HOME/.local/credentials/GITHUB_TOKEN`
 ## openapi
 export OPENAI_API_KEY=`cat $HOME/.local/credentials/OPENAI_API_KEY`
 ## gemini
@@ -111,3 +109,5 @@ fi
 # oatmeal
 export OATMEAL_OPENAI_TOKEN=$OPENAI_API_KEY
 export OATMEAL_GEMINI_TOKEN=$GEMINI_API_KEY
+# github copilot cli
+eval "$(gh copilot alias -- zsh)"

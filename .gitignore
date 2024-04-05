@@ -1,6 +1,9 @@
 # ignore folders
 .config/astro
 .config/configstore
+.config/gh
+.config/gh-copilot
+.config/github-copilot
 .config/gup
 .config/PowerShell/Modules
 .config/PowerShell/Scripts
@@ -16,8 +19,6 @@
 .config/fish/functions/fish_prompt.fish
 .config/fish/functions/fish_right_prompt.fish
 .config/fish/functions/fish_title.fish
-.config/github-copilot/hosts.json
-.config/github-copilot/versions.json
 .config/go/telemetry
 .config/lazygit/state.yml
 .config/nekome/.cred.toml
