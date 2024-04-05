@@ -110,4 +110,4 @@ fi
 export OATMEAL_OPENAI_TOKEN=$OPENAI_API_KEY
 export OATMEAL_GEMINI_TOKEN=$GEMINI_API_KEY
 # github copilot cli
-eval "$(gh copilot alias -- zsh)"
+eval "$(cat "$XDG_CONFIG_HOME"/zsh/functions/gh-copilot-alias-zsh)"
