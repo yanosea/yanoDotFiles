@@ -23,8 +23,8 @@ vim.opt.listchars = { tab = "▸ ", trail = '⋅', nbsp = '␣', extends = '❯'
 -- status line
 vim.opt.laststatus = 3
 -- gui setting
-vim.opt.guifont = { "GohuFont Nerd Font", "PlemolJP Console NF" }
-vim.opt.guifontwide = { "GohuFont Nerd Font", "PlemolJP Console NF" }
+vim.opt.guifont = { "GohuFont Nerd Font", "X12Y16PxMaruMonica Nerd Font", "PlemolJP Console NF", }
+vim.opt.guifontwide = { "GohuFont Nerd Font", "X12Y16PxMaruMonica Nerd Font", "PlemolJP Console NF", }
 vim.opt.termguicolors = true
 vim.opt.mouse = ""
 vim.opt.guicursor:append("i:block,a:-blinkwait175-blinkoff150-blinkon175")

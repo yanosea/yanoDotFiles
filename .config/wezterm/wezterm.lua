@@ -166,6 +166,7 @@ return {
   -- font
   font = wezterm.font_with_fallback({
     { family = "GohuFont Nerd Font",  weight = "Medium" },
+    { family = "X12Y16PxMaruMonica Nerd Font",  weight = "Medium" },
     { family = "PlemolJP Console NF", weight = "Medium" },
   }),
   font_size = font_size,

@@ -22,8 +22,8 @@ set listchars=tab:▸-,trail:⋅,nbsp:␣,extends:❯,precedes:❮
 " status line
 set laststatus=3
 " gui setting
-set guifont=GohuFont\ Nerd\ Font,PlemolJP\ Console\ NF
-set guifontwide=GohuFont\ Nerd\ Font,PlemolJP\ Console\ NF
+set guifont=GohuFont\ Nerd\ Font,X12Y16PxMaruMonica\ Nerd\ Font,PlemolJP\ Console\ NF
+set guifontwide=GohuFont\ Nerd\ Font,X12Y16PxMaruMonica\ Nerd\ Font,PlemolJP\ Console\ NF
 set termguicolors
 set mouse-=a
 set guicursor+=i:block,a:-blinkwait175-blinkoff150-blinkon175
