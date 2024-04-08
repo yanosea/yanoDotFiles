@@ -1,5 +1,4 @@
-
-function open() {
+open() {
   if [ $# != 1 ]; then
     explorer.exe .
   else

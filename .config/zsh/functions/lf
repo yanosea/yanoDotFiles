@@ -1,4 +1,4 @@
-function lf() {
+lf() {
   local tempfile="$(mktemp)"
   command lf -command "map Q \$echo \$PWD >$tempfile; lf -remote \"send \$id quit\"" "$@"
 

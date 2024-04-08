@@ -11,7 +11,11 @@ export OS=$(uname)
 if [[ -n "$WSL_DISTRO_NAME" ]]; then
     export PATH=$PATH:/mnt/c/Windows
     export PATH=$PATH:/mnt/c/Windows/System32
-    source $XDG_CONFIG_HOME/zsh/functions_win/*
+    for file in $XDG_CONFIG_HOME/zsh/functions_win/*; do
+        if [ -f "$file" ]; then
+            source "$file"
+        fi
+    done
     if [[ "$WSL_DISTRO_NAME" = "Arch" ]]; then
         export USBINPATH=/usr/sbin
     elif [[ "$WSL_DISTRO_NAME" = "NixOS" ]]; then
@@ -55,7 +59,11 @@ export PATH=$PATH:$HOME/.local/bin
 export WORKSPACE=$HOME/ghq/github.com/yanosea/yanoLocalEnv
 export PATH=$PATH:$WORKSPACE/bin
 ## zsh functions
-source $XDG_CONFIG_HOME/zsh/functions/*
+for file in $XDG_CONFIG_HOME/zsh/functions/*; do
+    if [ -f "$file" ]; then
+        source "$file"
+    fi
+done
 ## go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
@@ -109,5 +117,3 @@ fi
 # oatmeal
 export OATMEAL_OPENAI_TOKEN=$OPENAI_API_KEY
 export OATMEAL_GEMINI_TOKEN=$GEMINI_API_KEY
-# github copilot cli
-eval "$(cat "$XDG_CONFIG_HOME"/zsh/functions/gh-copilot-alias-zsh)"
