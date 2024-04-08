@@ -4,10 +4,10 @@ return {
     "hedyhli/outline.nvim",
     lazy = true,
     keys = { "<LEADER>o" },
-    cmd = { "SymbolsOutline" },
+    cmd = { "Outline" },
     init = function()
       require("outline").setup({})
-      vim.keymap.set('n', "<LEADER>o", "<CMD>SymbolsOutline<CR>")
+      vim.keymap.set('n', "<LEADER>o", "<CMD>Outline<CR>")
     end,
   },
 }
