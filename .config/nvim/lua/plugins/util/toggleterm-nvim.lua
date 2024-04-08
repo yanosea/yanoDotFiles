@@ -5,7 +5,6 @@ return {
     lazy = true,
     opts = function()
       require("toggleterm").setup({
-        open_mapping = [[<LEADER>t]],
         hide_numbers = true,
         shade_filetypes = {},
         autochdir = false,
@@ -14,12 +13,12 @@ return {
         terminal_mappings = true,
         persist_size = true,
         persist_mode = true,
-        direction = 'horizontal',
+        direction = "horizontal",
         close_on_exit = true,
         shell = vim.o.shell,
         auto_scroll = true,
       })
-      vim.keymap.set('n', "<LEADER>t", "<CMD>ToggleTerm<CR>", {noremap = true})
+      vim.keymap.set("n", "<LEADER>t", "<CMD>ToggleTerm<CR>", {noremap = true})
       vim.api.nvim_create_autocmd({ "TermEnter" }, {
         callback = function()
           for _, buffers in ipairs(vim.fn.getbufinfo()) do
