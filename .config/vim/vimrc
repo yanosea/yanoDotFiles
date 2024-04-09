@@ -62,6 +62,11 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
+" tab
+nnoremap <LEADER><C-k> :tabprevious<CR>
+nnoremap <LEADER><C-j> :tabnext<CR>
+nnoremap <LEADER><C-t> :tabnew<CR>
+nnoremap <LEADER><C-c> :tabclose<CR>
 " buffer
 nnoremap <C-k> :bprevious<CR>
 nnoremap <C-j> :bnext<CR>
