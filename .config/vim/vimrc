@@ -98,6 +98,10 @@ call plug#begin()
   Plug 'rhysd/vim-healthcheck'
   " colorscheme
   Plug 'arcticicestudio/nord-vim'
+  " file explorer
+  Plug 'ptzz/lf.vim'
+  " terminal
+  Plug 'voldikss/vim-floaterm'
   " fuzzy-motion
   Plug 'yuki-yano/fuzzy-motion.vim'
   Plug 'vim-denops/denops.vim',
@@ -110,9 +114,13 @@ call plug#begin()
 call plug#end()
 " colorscheme
 colorscheme nord
+" floaterm
+nnoremap <silent> <LEADER>t :FloatermToggle<CR>
 " fuzzy-motion
 nnoremap <silent> <LEADER><SPACE> :FuzzyMotion<CR>
 let g:fuzzy_motion_matchers = ['fzf', 'kensaku']
+" lf
+nnoremap <silent> <LEADER>f :Lf<CR>
 " skkeleton
 inoremap <NUL> <Plug>(skkeleton-toggle)
 cnoremap <NUL> <Plug>(skkeleton-toggle)
