@@ -98,6 +98,8 @@ call plug#begin()
   Plug 'rhysd/vim-healthcheck'
   " colorscheme
   Plug 'arcticicestudio/nord-vim'
+  " copilot
+  Plug 'github/copilot.vim'
   " file explorer
   Plug 'ptzz/lf.vim'
   " terminal
@@ -114,6 +116,9 @@ call plug#begin()
 call plug#end()
 " colorscheme
 colorscheme nord
+" copilot
+let g:copilot_no_tab_map = 1
+inoremap <silent><expr> <C-a><Tab> copilot#Accept("\<CR>")
 " floaterm
 nnoremap <silent> <LEADER>t :FloatermToggle<CR>
 " fuzzy-motion
