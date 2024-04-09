@@ -1,10 +1,7 @@
 # ignore folders
-.config/astro
-.config/configstore
 .config/gh
 .config/gh-copilot
 .config/github-copilot
-.config/gup
 .config/PowerShell/Modules
 .config/PowerShell/Scripts
 .config/vim/autoload
@@ -14,20 +11,13 @@
 
 # ignore files
 .config/dlv/.dbg_history
-.config/fish/functions/fish_greeting.fish
-.config/fish/functions/fish_mode_prompt.fish
-.config/fish/functions/fish_prompt.fish
-.config/fish/functions/fish_right_prompt.fish
-.config/fish/functions/fish_title.fish
-.config/go/telemetry
+.config/go
 .config/lazygit/state.yml
 .config/nekome/.cred.toml
 .config/nvim/lazy-lock.json
-.config/scoop
 .config/skk
 .config/spotify-tui/.spotify_token_cache.json
 .config/spotify-tui/client.yml
-.config/tool_state
 .config/tmux/plugins
 .config/zsh/.zcompdump
 .DS_Store
