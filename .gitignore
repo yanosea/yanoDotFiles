@@ -10,6 +10,7 @@
 .config/vim/plugged
 .config/vim/viminfo
 # ignore files
+.config/Bitwarden CLI
 .config/dlv/.dbg_history
 .config/go
 .config/gup
