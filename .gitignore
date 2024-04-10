@@ -12,6 +12,7 @@
 # ignore files
 .config/dlv/.dbg_history
 .config/go
+.config/gup
 .config/lazygit/state.yml
 .config/nekome/.cred.toml
 .config/nvim/lazy-lock.json
