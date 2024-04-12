@@ -1,4 +1,5 @@
 # ignore folders
+.config/astro
 .config/gh
 .config/gh-copilot
 .config/github-copilot
