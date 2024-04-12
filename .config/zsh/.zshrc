@@ -22,6 +22,7 @@ alias reboot='sudo systemctl reboot'
 alias rm="$USBINPATH"/trash
 alias shutdown='sudo systemctl poweroff'
 alias zmv='noglob zmv -W'
+alias bw="NODE_OPTIONS="--no-deprecation" bw"
 ## directories
 alias repos="cd $HOME/ghq/github.com/yanosea"
 alias dot="cd $HOME/ghq/github.com/yanosea/yanoDotFiles"
