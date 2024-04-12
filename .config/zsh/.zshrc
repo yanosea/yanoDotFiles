@@ -18,10 +18,10 @@ eval "$(zoxide init zsh)"
 alias cat="$USBINPATH"/bat
 alias ls="$USBINPATH"/lsd
 alias nvimdiff="$USBINPATH/nvim -d"
-alias reboot='sudo systemctl reboot'
+alias reboot="sudo systemctl reboot"
 alias rm="$USBINPATH"/trash
-alias shutdown='sudo systemctl poweroff'
-alias zmv='noglob zmv -W'
+alias shutdown="sudo systemctl poweroff"
+alias zmv="noglob zmv -W"
 alias bw="NODE_OPTIONS="--no-deprecation" bw"
 ## directories
 alias repos="cd $HOME/ghq/github.com/yanosea"
@@ -63,9 +63,9 @@ setopt notify
 ## Japanese file name
 setopt print_eight_bit
 ## choose completion with arrow keys
-zstyle ':completion:*:default' menu select=2
+zstyle ":completion:*:default" menu select=2
 ## upper case or lowercase
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}"
 ## zmv
 autoload -Uz zmv
 # powerlevel10k
