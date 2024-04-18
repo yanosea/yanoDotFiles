@@ -117,5 +117,3 @@ fi
 # oatmeal
 export OATMEAL_OPENAI_TOKEN=$OPENAI_API_KEY
 export OATMEAL_GEMINI_TOKEN=$GEMINI_API_KEY
-# bitwarden
-export BW_SESSION=`cat $HOME/.local/credentials/BW_SESSION`
