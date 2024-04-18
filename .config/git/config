@@ -2,7 +2,8 @@
     email = myanoshi0626@gmail.com
     name = yanosea
 [credential]
-    helper = store --file $HOME/.local/credentials/GIT_CREDENTIAL
+    helper = cache --timeout 7200
+    helper = oauth
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
@@ -30,4 +31,4 @@
 [alias]
     ac = !git add -A && aicommits -a
 [fetch]
-	prune = true
+    prune = true
