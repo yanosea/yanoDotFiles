@@ -7,7 +7,7 @@ local autocmd = vim.api.nvim_create_autocmd
 -- remove Whitespace on save
 autocmd("BufWritePre", {
   pattern = '*',
-  command = ":%s/\\s\\+$//e",
+  command = "if expand('%:e') != 'mdx' | %s/\\s\\+$//e | endif",
 })
 -- open terminal with insert mode
 autocmd("TermOpen", {
