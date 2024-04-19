@@ -20,6 +20,7 @@ alias ls="$USBINPATH"/lsd
 alias nvimdiff="$USBINPATH/nvim -d"
 alias reboot="sudo systemctl reboot"
 alias rm="$USBINPATH"/trash
+alias rrm="/bin/rm"
 alias shutdown="sudo systemctl poweroff"
 alias zmv="noglob zmv -W"
 ## directories
