@@ -1,5 +1,6 @@
 # ignore folders
 .config/astro
+.config/browsh/firefox_profile
 .config/gh
 .config/gh-copilot
 .config/github-copilot
