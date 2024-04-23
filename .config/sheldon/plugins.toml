@@ -40,3 +40,6 @@ apply = ["defer"]
 [plugins.zsh-you-should-use]
 github = "MichaelAquilina/zsh-you-should-use"
 apply = ["defer"]
+
+[plugins.zsh-vim-mode]
+github = "jeffreytse/zsh-vi-mode"
