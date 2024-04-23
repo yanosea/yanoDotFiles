@@ -6,6 +6,7 @@
 .config/github-copilot
 .config/PowerShell/Modules
 .config/PowerShell/Scripts
+.config/scoop
 .config/vim/.netrwhist
 .config/vim/autoload
 .config/vim/colors
