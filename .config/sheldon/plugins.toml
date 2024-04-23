@@ -43,3 +43,4 @@ apply = ["defer"]
 
 [plugins.zsh-vim-mode]
 github = "jeffreytse/zsh-vi-mode"
+apply = ["defer"]
