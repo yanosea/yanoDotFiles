@@ -5,6 +5,7 @@ return {
     lazy = false,
     -- https://github.com/nvim-tree/nvim-web-devicons
     dependencies = { { "nvim-tree/nvim-web-devicons" } },
+    vim.keymap.set({ 'n', }, "<leader>d", "<CMD>Dashboard<CR>"),
     config = function()
       require("dashboard").setup({
         theme = "hyper",
@@ -13,7 +14,7 @@ return {
         change_to_vcs_root = true,
         hide = {
           statusline = false,
-          tabline = true,
+          tabline = false,
           winbar = true,
         },
         config = {
@@ -33,12 +34,26 @@ return {
               key = 'L',
             },
             {
-              icon = ',',
-              desc = " Update",
+              icon = '',
+              desc = "  Update",
               icon_hl = "@variable",
               group = "Label",
               action = "Lazy update",
               key = 'U',
+            },
+            {
+              icon = '󰔱',
+              desc = "  TSUpdate",
+              group = "Number",
+              action = "TSUpdate",
+              key = 'T',
+            },
+            {
+              icon = '󱌣',
+              desc = "  Mason",
+              group = "Number",
+              action = "Mason",
+              key = 'M',
             },
             {
               icon = '󰈢 ',
@@ -46,13 +61,6 @@ return {
               group = "Number",
               action = "Telescope find_files",
               key = 'F',
-            },
-            {
-              icon = '󰭎',
-              desc = "  Explorer",
-              group = "Number",
-              action = "Telescope file_browser",
-              key = 'E',
             },
             {
               icon = '',
