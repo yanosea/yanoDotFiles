@@ -1,9 +1,8 @@
 general:
   show_floating_on_top: true
   floating_window_move_amount: "5%"
-  # When enabled, switching to the current workspace activates the previously focused workspace
   toggle_workspace_on_refocus: true
-  focus_border_color: "#20242cc4"
+  focus_border_color: "#88C0D0"
 
 gaps:
   inner_gap: 10
@@ -13,23 +12,23 @@ bar:
   height: "30px"
   position: "top"
   opacity: 1.0
-  background: "#20242cc4"
-  foreground: "#ffffff"
-  font_family: "Arial"
+  background: "#2E3440"
+  foreground: "#D8DEE9"
+  font_family: "GohuFont Nerd Font"
   font_size: "13px"
   padding: "4px 6px"
   components_left:
     - type: "workspaces"
-      focused_workspace_background: "#ffffff33"
-      displayed_workspace_background: "#00000033"
+      focused_workspace_background: "#4C566A"
+      displayed_workspace_background: "#3B4252"
       default_workspace_background: "transparent"
   components_right:
     - type: "tiling direction"
-      background: "#ffffff33"
+      background: "#D8DEE9"
       margin: "0 4px"
       padding: "0 8px"
     - type: "binding mode"
-      background: "#ffffff33"
+      background: "#D8DEE9"
       margin: "0 4px 0 0"
       padding: "0 8px"
     - type: "clock"
