@@ -43,7 +43,7 @@ return {
             },
             {
               icon = '󰔱',
-              desc = "  TSUpdate",
+              desc = " TSUpdate",
               group = "Number",
               action = "TSUpdate",
               key = 'T',
