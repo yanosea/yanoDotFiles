@@ -1,39 +1,67 @@
 general:
+  focus_follows_cursor: true
+  cursor_follows_focus: false
+  toggle_workspace_on_refocus: true
   show_floating_on_top: true
   floating_window_move_amount: "5%"
-  toggle_workspace_on_refocus: true
-  focus_border_color: "#88C0D0"
+  window_animations: "unchanged"
+  center_new_floating_windows: false
+
+focus_border:
+  active:
+    enabled: true
+    color: "#88C0D0"
+  inactive:
+    enabled: true
+    color: "#3B4252"
 
 gaps:
-  inner_gap: 10
-  outer_gap: 10
+  inner_gap: "10px"
+  outer_gap: "10px"
 
 bar:
+  enabled: true
   height: "30px"
   position: "top"
-  opacity: 1.0
+  always_on_top: false
+  opacity: 0.9
   background: "#2E3440"
   foreground: "#D8DEE9"
   font_family: "GohuFont Nerd Font"
   font_size: "13px"
-  padding: "4px 6px"
+  font_weight: "400"
+  border_width: "1"
+  border_color: "#3B4252"
+  padding: "0px 0px 0px 0px"
   components_left:
     - type: "workspaces"
       focused_workspace_background: "#4C566A"
       displayed_workspace_background: "#3B4252"
       default_workspace_background: "transparent"
+    - type: "cpu"
+      label: "   🧠 {percent_usage}%"
+      refresh_interval_ms: 1000
+    - type: "memory"
+      label: "   💾 {percent_usage}%"
+      refresh_interval_ms: 1000
+    - type: "gpu"
+      label: "   🎨 {percent_usage}%"
+      refresh_interval_ms: 1000
   components_right:
-    - type: "tiling direction"
-      background: "#D8DEE9"
-      margin: "0 4px"
-      padding: "0 8px"
-    - type: "binding mode"
-      background: "#D8DEE9"
-      margin: "0 4px 0 0"
-      padding: "0 8px"
+    - type: "system tray"
+      label_expand_text: "  <  "
+      label_collapse_text: "  >  "
+    - type: "music"
+      label_not_playing: ""
+      label_paused: "   ⏸️  {song_title}  -  {artist_name}"
+      label_playing: "   ▶️ {song_title}  -  {artist_name}"
+      max_title_length: 20
+      max_artist_length: 20
     - type: "clock"
-      time_formatting: "HH:mm:ss ddd MMM d"
+      time_formatting: "🕒 yyyy/MM/dd HH:mm:ss"
       margin: "0 0 0 10px"
+  offset_x: "3px"
+  offset_y: "5px"
 
 workspaces:
   - name: "01"
