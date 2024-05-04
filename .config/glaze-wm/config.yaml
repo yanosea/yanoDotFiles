@@ -12,12 +12,12 @@ focus_border:
     enabled: true
     color: "#88C0D0"
   inactive:
-    enabled: true
-    color: "#3B4252"
+    enabled: false
+    # color: "#3B4252"
 
 gaps:
-  inner_gap: "10px"
-  outer_gap: "10px"
+  inner_gap: 10
+  outer_gap: 10
 
 bar:
   enabled: true
@@ -34,32 +34,54 @@ bar:
   border_color: "#3B4252"
   padding: "0px 0px 0px 0px"
   components_left:
+    - type: "image"
+      padding: "3px"
+      source: "D:\\Users\\yanosea\\.glaze-wm\\images\\yanosea.png"
     - type: "workspaces"
-      focused_workspace_background: "#4C566A"
-      displayed_workspace_background: "#3B4252"
+      margin: "0px 0px 0px 3px"
+      focused_workspace_background: "#2E3440"
+      focused_workspace_foreground: "#88C0D0"
+      displayed_workspace_background: "#2E3440"
       default_workspace_background: "transparent"
     - type: "cpu"
-      label: "   🧠 {percent_usage}%"
+      margin: "0px 0px 0px 5px"
+      label: "🧠 {percent_usage}%"
       refresh_interval_ms: 1000
     - type: "memory"
-      label: "   💾 {percent_usage}%"
+      margin: "0px 0px 0px 15px"
+      label: "💾 {percent_usage}%"
       refresh_interval_ms: 1000
     - type: "gpu"
-      label: "   🎨 {percent_usage}%"
+      margin: "0px 0px 0px 15px"
+      label: "🎨 {percent_usage}%"
       refresh_interval_ms: 1000
+  components_center:
+    - type: "window title"
   components_right:
     - type: "system tray"
+      padding: "6px 8px"
       label_expand_text: "  <  "
       label_collapse_text: "  >  "
     - type: "music"
+      margin: "0px 15px 0px 0px"
       label_not_playing: ""
-      label_paused: "   ⏸️  {song_title}  -  {artist_name}"
-      label_playing: "   ▶️ {song_title}  -  {artist_name}"
-      max_title_length: 20
-      max_artist_length: 20
+      label_paused: "⏸️ {song_title}  -  {artist_name}"
+      label_playing: "▶️ {song_title}  -  {artist_name}"
+      max_title_length: 10
+      max_artist_length: 10
+    - type: "tiling direction"
+      margin: "0px 15px 0px 0px"
+      label_horizontal: "⮂"
+      label_vertical: "⮁"
+      foreground: "#88C0D0"
+      background: "#2E3440"
+    - type: "binding mode"
+      margin: "0px 15px 0px 0px"
+      foreground: "#88C0D0"
+      background: "#2E3440"
     - type: "clock"
+      margin: "0px 3px 0px 0px"
       time_formatting: "🕒 yyyy/MM/dd HH:mm:ss"
-      margin: "0 0 0 10px"
   offset_x: "3px"
   offset_y: "5px"
 
@@ -87,9 +109,11 @@ window_rules:
   # Ignore splashtop
   - command: "ignore"
     match_process_name: "strwinclt"
+
   # Ignore terraria
   - command: "ignore"
     match_process_name: "Terraria"
+
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
     match_class_name: "#32770"
@@ -148,17 +172,15 @@ keybindings:
   # As an alternative to the resize keybindings above, resize mode enables resizing via
   # HJKL or arrow keys. The binding mode is defined above with the name "resize".
   - command: "binding mode resize"
-    binding: "Alt+Shift+4"
+    binding: "Alt+Shift+S"
 
   # Change tiling direction. This determines where new tiling windows will be inserted.
-  - command: "tiling direction horizontal"
-    binding: "Alt+Shift+V"
-  - command: "tiling direction vertical"
+  - command: "tiling direction toggle"
     binding: "Alt+V"
 
   # Change focus between floating / tiling windows.
-  - command: "toggle focus mode"
-    binding: "Alt+Space"
+  # - command: "toggle focus mode"
+  #   binding: "Alt+Space"
 
   # Change the focused window to be floating / tiling.
   - command: "toggle floating"

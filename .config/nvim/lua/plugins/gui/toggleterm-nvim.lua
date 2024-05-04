@@ -3,6 +3,7 @@ return {
     -- https://github.com/akinsho/toggleterm.nvim
     "akinsho/toggleterm.nvim",
     lazy = true,
+    keys = { "<LEADER>t"},
     opts = function()
       require("toggleterm").setup({
         hide_numbers = true,
