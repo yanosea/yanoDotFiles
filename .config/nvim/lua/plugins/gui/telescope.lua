@@ -25,7 +25,7 @@ return {
     cmd = "Telescope",
     init = function()
       vim.keymap.set('n', "<LEADER>B", "<CMD>Telescope buffers<CR>")
-      vim.keymap.set('n', "<LEADER>f", function() return "<CMD>Telescope file_browser cwd=" .. vim.fn.expand("%:p:h") .. "<CR>" end, { silent = true, expr = true })
+      vim.keymap.set('n', "<LEADER>E", function() return "<CMD>Telescope file_browser cwd=" .. vim.fn.expand("%:p:h") .. "<CR>" end, { silent = true, expr = true })
       vim.keymap.set('n', "<LEADER>F", "<CMD>Telescope find_files<CR>")
       vim.keymap.set('n', "<LEADER>G", "<CMD>Telescope egrepify<CR>")
       vim.keymap.set('n', "<LEADER>H", "<CMD>Telescope help_tags<CR>")

@@ -56,6 +56,13 @@ return {
               key = 'M',
             },
             {
+              icon = '󰭎',
+              desc = "  Explorer",
+              group = "Number",
+              action = "Telescope file_browser",
+              key = 'E',
+            },
+            {
               icon = '󰈢 ',
               desc = " Files",
               group = "Number",
