@@ -124,9 +124,9 @@ return {
           auto_open = true,
         },
         update_focused_file = {
-          enable = false,
+          enable = true,
           update_root = {
-            enable = false,
+            enable = true,
             ignore_list = {},
           },
           exclude = false,
@@ -260,7 +260,9 @@ return {
             watcher = false,
           },
         },
-        })
-      end,
+        sync_root_with_cwd = true,
+        respect_buf_cwd = true,
+      })
+    end,
   },
 }
