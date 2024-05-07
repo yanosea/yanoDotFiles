@@ -24,6 +24,7 @@ alias rrm="/bin/rm"
 alias shutdown="sudo systemctl poweroff"
 alias zmv="noglob zmv -W"
 alias st="systemctl-tui"
+alias trl="trello-tui -board yanoBoard"
 ## directories
 alias repos="cd $HOME/ghq/github.com/yanosea"
 alias dot="cd $HOME/ghq/github.com/yanosea/yanoDotFiles"

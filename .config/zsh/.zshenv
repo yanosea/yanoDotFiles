@@ -112,6 +112,10 @@ export SPOTIFY_ID=`rbw get spotify --field SPOTIFY_ID`
 export SPOTIFY_SECRET=`rbw get spotify --field SPOTIFY_SECRET`
 export SPOTIFY_REDIRECT_URI=`rbw get spotify --field SPOTIFY_REDIRECT_URI`
 export SPOTIFY_REFRESH_TOKEN=`rbw get spotify --field SPOTIFY_REFRESH_TOKEN`
+## trello
+export TRELLO_USER=`rbw get trello --field user`
+export TRELLO_KEY=`rbw get trello --field TRELLO_KEY`
+export TRELLO_TOKEN=`rbw get trello --field TRELLO_TOKEN`
 # oatmeal
 export OATMEAL_OPENAI_TOKEN=$OPENAI_API_KEY
 export OATMEAL_GEMINI_TOKEN=$GEMINI_API_KEY
