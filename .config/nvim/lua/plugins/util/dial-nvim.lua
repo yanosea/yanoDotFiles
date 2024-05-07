@@ -3,7 +3,7 @@ return {
     -- https://github.com/monaqa/dial.nvim
     "monaqa/dial.nvim",
     lazy = true,
-    keys = { "<C-a>", "<C-z>" },
+    keys = { "<C-a>", "<C-x>" },
     config = function()
       local augend = require("dial.augend")
       require("dial.config").augends:register_group({
@@ -18,8 +18,8 @@ return {
           augend.date.alias["%m月%d日"],
         }
       })
-      vim.keymap.set('i', "<C-a>", require("dial.map").inc_normal(), { noremap = true })
-      vim.keymap.set('i', "<C-z>", require("dial.map").dec_normal(), { noremap = true })
+      vim.keymap.set('n', "<C-a>", require("dial.map").inc_normal(), { noremap = true })
+      vim.keymap.set('n', "<C-x>", require("dial.map").dec_normal(), { noremap = true })
     end,
   },
 }
