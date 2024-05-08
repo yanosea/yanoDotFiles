@@ -46,3 +46,9 @@ if os.getenv("WSL_DISTRO_NAME") ~= nil then
     }
   end
 end
+-- disable end of buffer
+autocmd("BufEnter", {
+  group = augroup("disable_end_of_buffer", {}),
+  pattern = "*",
+  command = "highlight link EndOfBuffer Ignore",
+})
