@@ -2,7 +2,7 @@ general:
   focus_follows_cursor: true
   cursor_follows_focus: false
   toggle_workspace_on_refocus: true
-  show_floating_on_top: true
+  show_floating_on_top: false
   floating_window_move_amount: "5%"
   window_animations: "unchanged"
   center_new_floating_windows: false
@@ -113,6 +113,10 @@ window_rules:
   # Ignore terraria
   - command: "ignore"
     match_process_name: "Terraria"
+
+  # Ignore HakkoAI
+  - command: "ignore"
+    match_process_name: "HakkoAI"
 
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
