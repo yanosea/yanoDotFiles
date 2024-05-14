@@ -1,10 +1,8 @@
 -- auto commands
 vim.cmd("autocmd!")
--- get autogroup
 local augroup = vim.api.nvim_create_augroup
--- create autocommand
 local autocmd = vim.api.nvim_create_autocmd
--- remove Whitespace on save
+-- remove whitespace on save
 autocmd("BufWritePre", {
   pattern = '*',
   command = "if expand('%:e') != 'mdx' | %s/\\s\\+$//e | endif",
@@ -46,7 +44,7 @@ if os.getenv("WSL_DISTRO_NAME") ~= nil then
     }
   end
 end
--- disable end of buffer
+-- disable highlight end of buffer
 autocmd("BufEnter", {
   group = augroup("disable_end_of_buffer", {}),
   pattern = "*",

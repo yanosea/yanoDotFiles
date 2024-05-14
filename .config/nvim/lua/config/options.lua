@@ -9,17 +9,19 @@ vim.opt.helplang = "ja"
 vim.opt.backup = false
 -- swap file
 vim.opt.swapfile = false
+-- recovery time
+vim.opt.updatetime = 200
 -- line number
 vim.opt.number = true
 -- highlight current line
 vim.opt.cursorline = true
 -- cuesor position
 vim.opt.ruler = true
--- sign
+-- sign column
 vim.opt.signcolumn = "yes"
 -- invisible character
 vim.opt.list = true
-vim.opt.listchars = { tab = "▸ ", trail = '⋅', nbsp = '␣', extends = '❯', precedes = '❮' }
+vim.opt.listchars = { tab = "▸ ", trail = "⋅", nbsp = "␣", extends = "❯", precedes = "❮" }
 -- status line
 vim.opt.laststatus = 3
 -- gui setting
@@ -53,15 +55,13 @@ vim.opt.splitright = true
 vim.opt.shell = os.getenv("SHELL")
 -- syntax highlight
 vim.opt.syntax = "enable"
-
-vim.opt.updatetime = 200
--- disable intro
-vim.opt.shortmess:append('I')
 -- clipboaed
 vim.opt.clipboard:append("unnamedplus")
 -- ignore auto format
-vim.api.nvim_create_user_command('W', "noautocmd w", {})
+vim.api.nvim_create_user_command("W", "noautocmd w", {})
 vim.api.nvim_create_user_command("Wq", "noautocmd wq", {})
+-- nowrap
+vim.opt.wrap = false
 -- lsp
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   virtual_text = {
