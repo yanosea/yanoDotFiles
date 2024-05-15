@@ -1,12 +1,14 @@
 lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "github/copilot.vim",
+  event = "InsertEnter",
   init = function()
     vim.g.copilot_no_tab_map = true
-    vim.api.nvim_set_keymap("i", "<C-a><TAB>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-    vim.keymap.set("i", "<C-a>n", "<Plug>(copilot-next)")
-    vim.keymap.set("i", "<C-a>b", "<Plug>(copilot-previous)")
-    vim.keymap.set("i", "<C-a>d", "<Plug>(copilot-dismiss)")
-    vim.keymap.set("i", "<C-a><Space>", "<Plug>(copilot-suggest)")
+    vim.api.nvim_set_keymap("i", "<C-a><TAB>", 'copilot#Accept("<CR>")', { silent = true, expr = true, desc = "Copilot accept" })
+
+    vim.keymap.set("i", "<C-a>n", "<Plug>(copilot-next)", { silent = true, desc = "Copilot next" })
+    vim.keymap.set("i", "<C-a>b", "<Plug>(copilot-previous)", { silent = true, desc = "Copilot previous" })
+    vim.keymap.set("i", "<C-a>d", "<Plug>(copilot-dismiss)", { silent = true, desc = "Copilot dismiss" })
+    vim.keymap.set("i", "<C-a><Space>", "<Plug>(copilot-suggest)", { silent = true, desc = "Copilot suggest" })
   end,
 })
