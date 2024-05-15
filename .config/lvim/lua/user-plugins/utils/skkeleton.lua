@@ -2,9 +2,8 @@ lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "vim-skk/skkeleton",
   dependencies = { "vim-denops/denops.vim" },
+  event = "InsertEnter",
   init = function()
-    vim.keymap.set('i',"<C-J>", "<Plug>(skkeleton-toggle)")
-    vim.keymap.set('c',"<C-J>", "<Plug>(skkeleton-toggle)")
     local dictionaries = {}
     local handle = io.popen("ls $XDG_DATA_HOME/skk/*")
     if handle then
@@ -29,5 +28,8 @@ table.insert(lvim.plugins, {
         vim.fn["skkeleton#register_keymap"]("henkan", "<Esc>", "cancel")
       end,
     })
+
+    vim.keymap.set("i","<C-J>", "<Plug>(skkeleton-toggle)", { silent = true, desc = "Toggle skkeleton" })
+    vim.keymap.set("c","<C-J>", "<Plug>(skkeleton-toggle)", { silent = true, desc = "Toggle skkeleton" })
   end,
 })
