@@ -9,6 +9,6 @@ table.insert(lvim.plugins, {
   init = function()
     vim.g.fuzzy_motion_matchers = { "fzf", "kensaku" }
 
-    vim.keymap.set('n', "<LEADER><SPACE>", "<CMD>FuzzyMotion<CR>", { silent = true })
+    vim.keymap.set('n', "<LEADER><SPACE>", "<CMD>FuzzyMotion<CR>", { silent = true, desc = "FuzzyMotion"})
   end,
 })
