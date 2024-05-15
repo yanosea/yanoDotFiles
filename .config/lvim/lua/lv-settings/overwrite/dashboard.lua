@@ -1,4 +1,5 @@
 -- dashboard
+-- define buttons
 lvim.builtin.alpha.dashboard.section.buttons.entries = {}
 local buttons = {
   { "f", "󰈞  Find File", "<CMD>Telescope find_files<CR>" },

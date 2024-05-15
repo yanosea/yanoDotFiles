@@ -61,4 +61,4 @@ vim.opt.clipboard:append("unnamedplus")
 vim.api.nvim_create_user_command("W", "noautocmd w", {})
 vim.api.nvim_create_user_command("Wq", "noautocmd wq", {})
 -- disable line move with h and l
-vim.opt.whichwrap = vim.opt.whichwrap - 'h' - 'l'
+vim.opt.whichwrap = vim.opt.whichwrap - "h" - "l"

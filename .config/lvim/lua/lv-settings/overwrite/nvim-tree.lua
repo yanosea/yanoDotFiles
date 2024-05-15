@@ -1,3 +1,4 @@
+-- nvim-tree
 lvim.builtin.nvimtree.setup = {
   -- sort = {
   --   sorter = "filetype",
@@ -250,8 +251,6 @@ lvim.builtin.nvimtree.setup = {
   sync_root_with_cwd = true,
   respect_buf_cwd = true,
 }
-
 vim.loaded_netrw = 1
 vim.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
-
