@@ -20,7 +20,7 @@ return {
             name = "ChatGPT4",
             chat = true,
             command = false,
-            model = { model = "gpt-4-1106-preview", temperature = 1.1, top_p = 1 },
+            model = { model = "gpt-4o", temperature = 1.1, top_p = 1 },
             system_prompt = "You are a general AI assistant.\n\n"
               .. "The user provided the additional info about how they would like you to respond:\n\n"
               .. "- If you're unsure don't guess and say you don't know instead.\n"
