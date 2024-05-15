@@ -7,6 +7,6 @@ table.insert(lvim.plugins, {
     vim.keymap.set("i", "<C-a>n", "<Plug>(copilot-next)")
     vim.keymap.set("i", "<C-a>b", "<Plug>(copilot-previous)")
     vim.keymap.set("i", "<C-a>d", "<Plug>(copilot-dismiss)")
-    vim.keymap.set("i", "<C-a>s", "<Plug>(copilot-suggest)")
+    vim.keymap.set("i", "<C-a><Space>", "<Plug>(copilot-suggest)")
   end,
 })
