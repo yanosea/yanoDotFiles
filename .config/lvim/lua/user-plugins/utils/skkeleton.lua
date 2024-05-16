@@ -2,7 +2,7 @@ lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "vim-skk/skkeleton",
   dependencies = { "vim-denops/denops.vim" },
-  event = "InsertEnter",
+  event = "VimEnter",
   init = function()
     local dictionaries = {}
     local handle = io.popen("ls $XDG_DATA_HOME/skk/*")
