@@ -2,8 +2,8 @@ lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "yuki-yano/fuzzy-motion.vim",
   dependencies = {
-      "vim-denops/denops.vim",
-      "lambdalisue/kensaku.vim",
+    "vim-denops/denops.vim",
+    "lambdalisue/kensaku.vim",
   },
   event = "VimEnter",
   init = function()
