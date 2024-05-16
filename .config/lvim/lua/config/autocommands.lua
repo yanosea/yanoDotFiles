@@ -1,3 +1,4 @@
+-- autocommands
 lvim.autocommands = {
   -- remove trailing whitespace on save except for markdown files
   {
