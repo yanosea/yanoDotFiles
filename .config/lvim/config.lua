@@ -5,6 +5,8 @@ require("lv-settings.overwrite")
 require("config.options")
 -- autocommands
 require("config.autocommands")
+-- colorscheme
+require("config.colorscheme")
 -- keymaps
 require("config.keymaps")
 -- wsl
