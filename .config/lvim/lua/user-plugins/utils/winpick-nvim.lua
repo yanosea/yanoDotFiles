@@ -8,7 +8,7 @@ table.insert(lvim.plugins, {
       chars = { "A", "S", "D", "F", "J", "K", "L", ";" }
     })
 
-    vim.api.nvim_set_keymap("n", "<C-w><C-w>", "<CMD>lua WinPick()<CR>", { noremap = true, silent = true })
+    vim.api.nvim_set_keymap("n", "<C-w><C-w>", "<CMD>lua WinPick()<CR>", { noremap = true, silent = true, desc = "Pick Windows"})
   end,
 })
 
