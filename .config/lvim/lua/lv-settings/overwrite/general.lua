@@ -1,3 +1,3 @@
 -- general
 -- transparent window
-lvim.transparent_window = true
+-- lvim.transparent_window = true
