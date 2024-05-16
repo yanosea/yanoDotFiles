@@ -13,7 +13,7 @@ local buttons = {
   { "S", "󰚰  Sync Core Plugins", "<CMD>LvimSyncCorePlugins<CR>" },
   { "T", "󰔱  Sync Tree-Sitter parser", "<CMD>TSUpdateSync<CR>" },
   { "m", "󱌣  Lsp", "<CMD>Mason<CR>" },
-  { "q", "󰅖  Quit", "<CMD>quit<CR>" }
+  { "q", "󰅖  Quit", "<CMD>quit<CR>" },
 }
 for i, btn in ipairs(buttons) do
   lvim.builtin.alpha.dashboard.section.buttons.entries[i] = btn

@@ -8,9 +8,9 @@ lvim.autocommands = {
       callback = function()
         local file_ext = vim.fn.expand("%:e")
         if file_ext ~= "mdx" and file_ext ~= "md" then
-          vim.cmd [[%s/\s\+$//e]]
+          vim.cmd([[%s/\s\+$//e]])
         end
-      end
-    }
-  }
+      end,
+    },
+  },
 }

@@ -32,8 +32,8 @@ table.insert(lvim.plugins, {
             .. "START AND END YOUR ANSWER WITH:\n\n```",
         },
         {
-          name = "ChatGPT3-5"
-        }
+          name = "ChatGPT3-5",
+        },
       },
       state_dir = os.getenv("GOOGLE_DRIVE") .. "/gp-nvim/persisted",
       chat_dir = os.getenv("GOOGLE_DRIVE") .. "/gp-nvim/chats",
@@ -41,13 +41,13 @@ table.insert(lvim.plugins, {
     vim.api.nvim_set_hl(0, "GpHandlerStandout", { link = "Normal" })
     vim.api.nvim_set_hl(0, "GpExplorerSearch", { link = "Normal" })
 
-    vim.keymap.set('n', "<LEADER>at", "<CMD>GpChatNew tabnew<CR>", { silent = true, desc = "GpChatNew tabnew" })
-    vim.keymap.set('n', "<LEADER>as", "<CMD>GpChatNew split<CR>", { silent = true, desc = "GpChatNew split" })
-    vim.keymap.set('n', "<LEADER>av", "<CMD>GpChatNew vsplit<CR>", { silent = true, desc = "GpChatNew vsplit" })
-    vim.keymap.set('n', "<LEADER>ap", "<CMD>GpChatNew popup<CR>", { silent = true, desc = "GpChatNew popup" })
-    vim.keymap.set('n', "<LEADER>ae", "<CMD>GpChatFinder<CR>", { silent = true, desc = "GpChatNew finder" })
-    vim.keymap.set('n', "<LEADER>aa", "<CMD>GpChatRespond<CR>", { silent = true, desc = "GpChatNew respond" })
-    vim.keymap.set('n', "<LEADER>ad", "<CMD>GpChatDelete<CR>", { silent = true, desc = "GpChatNew delete" })
-    vim.keymap.set('n', "<LEADER>ac", "<CMD>GpChatStop<CR>", { silent = true, desc = "GpChatNew stop" })
+    vim.keymap.set("n", "<LEADER>at", "<CMD>GpChatNew tabnew<CR>", { silent = true, desc = "GpChatNew tabnew" })
+    vim.keymap.set("n", "<LEADER>as", "<CMD>GpChatNew split<CR>", { silent = true, desc = "GpChatNew split" })
+    vim.keymap.set("n", "<LEADER>av", "<CMD>GpChatNew vsplit<CR>", { silent = true, desc = "GpChatNew vsplit" })
+    vim.keymap.set("n", "<LEADER>ap", "<CMD>GpChatNew popup<CR>", { silent = true, desc = "GpChatNew popup" })
+    vim.keymap.set("n", "<LEADER>ae", "<CMD>GpChatFinder<CR>", { silent = true, desc = "GpChatNew finder" })
+    vim.keymap.set("n", "<LEADER>aa", "<CMD>GpChatRespond<CR>", { silent = true, desc = "GpChatNew respond" })
+    vim.keymap.set("n", "<LEADER>ad", "<CMD>GpChatDelete<CR>", { silent = true, desc = "GpChatNew delete" })
+    vim.keymap.set("n", "<LEADER>ac", "<CMD>GpChatStop<CR>", { silent = true, desc = "GpChatNew stop" })
   end,
 })

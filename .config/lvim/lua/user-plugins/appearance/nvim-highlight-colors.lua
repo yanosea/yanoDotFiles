@@ -8,5 +8,5 @@ table.insert(lvim.plugins, {
       enable_named_colors = true,
       enable_tailwind = true,
     })
-  end
+  end,
 })

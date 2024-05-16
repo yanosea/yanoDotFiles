@@ -24,7 +24,7 @@ M.load_lua_files = function(dir)
   for _, file in ipairs(plugin_files) do
     local relative_path = file:sub(#vim.fn.stdpath("config") + 2, -5):gsub("/", ".")
     local module_path = relative_path:gsub("^lua%.", "")
-    if not M.isRequiredModule(module_path ) then
+    if not M.isRequiredModule(module_path) then
       require(module_path)
     end
   end

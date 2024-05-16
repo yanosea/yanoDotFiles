@@ -12,7 +12,7 @@ table.insert(lvim.plugins, {
       end
       handle:close()
     end
-    local src = {"skk_dictionary", "google_japanese_input"}
+    local src = { "skk_dictionary", "google_japanese_input" }
     vim.api.nvim_create_autocmd("User", {
       pattern = "skkeleton-initialize-pre",
       callback = function()
@@ -29,7 +29,7 @@ table.insert(lvim.plugins, {
       end,
     })
 
-    vim.keymap.set("i","<C-J>", "<Plug>(skkeleton-toggle)", { silent = true, desc = "Toggle skkeleton" })
-    vim.keymap.set("c","<C-J>", "<Plug>(skkeleton-toggle)", { silent = true, desc = "Toggle skkeleton" })
+    vim.keymap.set("i", "<C-J>", "<Plug>(skkeleton-toggle)", { silent = true, desc = "Toggle skkeleton" })
+    vim.keymap.set("c", "<C-J>", "<Plug>(skkeleton-toggle)", { silent = true, desc = "Toggle skkeleton" })
   end,
 })

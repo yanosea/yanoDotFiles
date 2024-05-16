@@ -10,10 +10,14 @@ table.insert(lvim.plugins, {
     debug = true,
   },
   init = function()
-    vim.keymap.set('n', "<LEADER>Ct", "<CMD>CopilotChat<CR>", { silent = true, desc = "CopilotChat chat" })
-    vim.keymap.set('n', "<LEADER>Cc", "<CMD>CopilotChatStop<CR>", { silent = true, desc = "CopilotChat stop" })
-    vim.api.nvim_set_keymap("n", "<LEADER>Cq", "<CMD>lua CopilotChatBuffer()<CR>",
-      { noremap = true, silent = true, desc = "CopilotChat quick chat" })
+    vim.keymap.set("n", "<LEADER>Ct", "<CMD>CopilotChat<CR>", { silent = true, desc = "CopilotChat chat" })
+    vim.keymap.set("n", "<LEADER>Cc", "<CMD>CopilotChatStop<CR>", { silent = true, desc = "CopilotChat stop" })
+    vim.api.nvim_set_keymap(
+      "n",
+      "<LEADER>Cq",
+      "<CMD>lua CopilotChatBuffer()<CR>",
+      { noremap = true, silent = true, desc = "CopilotChat quick chat" }
+    )
   end,
 })
 

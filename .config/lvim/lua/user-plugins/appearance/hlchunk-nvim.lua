@@ -76,7 +76,7 @@ table.insert(lvim.plugins, {
           "│",
         },
         style = {
-          { fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui") }
+          { fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui") },
         },
       },
       line_num = {
@@ -94,5 +94,5 @@ table.insert(lvim.plugins, {
         },
       },
     })
-  end
+  end,
 })

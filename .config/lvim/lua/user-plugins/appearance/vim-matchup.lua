@@ -4,5 +4,5 @@ table.insert(lvim.plugins, {
   event = "VimEnter",
   init = function()
     vim.g.matchup_matchparen_offscreen = { method = "popup" }
-  end
+  end,
 })
