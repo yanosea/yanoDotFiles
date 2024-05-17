@@ -17,6 +17,7 @@
   "denops-translate.vim": { "branch": "main", "commit": "e72b7315023de72e7ef039f6e0cc9b71757b06c3" },
   "denops.vim": { "branch": "main", "commit": "9dd9ae9da9b8d65916dd44e0e4d881665397de63" },
   "dial.nvim": { "branch": "master", "commit": "27eb570085db2ef44bff4f620d3806039184651c" },
+  "everforest-nvim": { "branch": "main", "commit": "5e0e32a569fb464911342f0d421721cc1c94cf25" },
   "friendly-snippets": { "branch": "main", "commit": "3e9a3f5a0cfcef1741e352c37bda4e82e5eb846a" },
   "fuzzy-motion.vim": { "branch": "main", "commit": "f926a6080489d03b08af66cdd1e89b8c2f5c4f39" },
   "gitsigns.nvim": { "branch": "main", "commit": "805610a9393fa231f2c2b49cb521bfa413fadb3d" },
