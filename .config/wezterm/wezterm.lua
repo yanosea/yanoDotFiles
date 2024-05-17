@@ -4,6 +4,7 @@ local act = wezterm.action
 function Basename(s)
   return string.gsub(s, "(.*[/\\])(.*)", "%2")
 end
+
 -- os, font
 local default_domain
 local wsl_domains = wezterm.default_wsl_domains()
@@ -30,9 +31,9 @@ local background_opacity = 0.8
 wezterm.on("format-tab-title", function(tab, tabs)
   local TAB_BAR_BG = "#2E3440"
   local ACTIVE_TAB_BG = "#88C0D0"
-  local ACTIVE_TAB_FG = "#ffffff"
-  local NORMAL_TAB_BG = "#4C566A"
-  local NORMAL_TAB_FG = "#ffffff"
+  local ACTIVE_TAB_FG = "#ECEFF4"
+  local NORMAL_TAB_BG = "#3B4252"
+  local NORMAL_TAB_FG = "#4C566A"
   local background = NORMAL_TAB_BG
   local foreground = NORMAL_TAB_FG
   local is_first = tab.tab_id == tabs[1].tab_id
@@ -90,19 +91,19 @@ wezterm.on("update-right-status", function(window)
       { Foreground = { Color = "#5E81AC" } },
       { Background = { Color = "#2E3440" } },
       { Text = '' },
-      { Foreground = { Color = "#ffffff" } },
+      { Foreground = { Color = "#ECEFF4" } },
       { Background = { Color = "#5E81AC" } },
       { Text = ' ' .. Basename(wezterm.home_dir) .. " " },
       { Foreground = { Color = "#81A1C1" } },
       { Background = { Color = "#5E81AC" } },
       { Text = '' },
-      { Foreground = { Color = "#ffffff" } },
+      { Foreground = { Color = "#ECEFF4" } },
       { Background = { Color = "#81A1C1" } },
       { Text = ' ' .. wezterm.hostname() .. " " },
       { Foreground = { Color = "#88C0D0" } },
       { Background = { Color = "#81A1C1" } },
       { Text = '' },
-      { Foreground = { Color = "#ffffff" } },
+      { Foreground = { Color = "#ECEFF4" } },
       { Background = { Color = "#88C0D0" } },
       { Text = ' ' .. wezterm.strftime(" %Y/%m/%d %I:%M:%S") .. " " },
     })
@@ -165,9 +166,9 @@ return {
   adjust_window_size_when_changing_font_size = false,
   -- font
   font = wezterm.font_with_fallback({
-    { family = "GohuFont Nerd Font",  weight = "Medium" },
-    { family = "X12Y16PxMaruMonica Nerd Font",  weight = "Medium" },
-    { family = "PlemolJP Console NF", weight = "Medium" },
+    { family = "GohuFont Nerd Font",           weight = "Medium" },
+    { family = "X12Y16PxMaruMonica Nerd Font", weight = "Medium" },
+    { family = "PlemolJP Console NF",          weight = "Medium" },
   }),
   font_size = font_size,
   -- cursor
@@ -203,18 +204,18 @@ return {
     { key = 'l',         mods = "LEADER|SHIFT|" .. ctrl_key, action = act.ActivatePaneDirection "Right" },
     { key = 'k',         mods = "LEADER|SHIFT|" .. ctrl_key, action = act.ActivatePaneDirection "Up" },
     { key = 'j',         mods = "LEADER|SHIFT|" .. ctrl_key, action = act.ActivatePaneDirection "Down" },
-    { key = 'r',         mods = "LEADER|SHIFT|" .. ctrl_key, action = act.ActivateKeyTable {  name = "resize_pane", one_shot = false, },
+    { key = 'r', mods = "LEADER|SHIFT|" .. ctrl_key, action = act.ActivateKeyTable { name = "resize_pane", one_shot = false, },
     },
     -- copy sode
-    { key = 'c',         mods = "LEADER|SHIFT|" .. ctrl_key, action = act.ActivateCopyMode },
-    { key = "Enter",     mods = "LEADER|SHIFT|" .. ctrl_key, action = "QuickSelect" },
-    { key = '?',         mods = "LEADER|SHIFT|" .. ctrl_key, action = act.Search("CurrentSelectionOrEmptyString") },
-    { key = 'd',         mods = "LEADER|SHIFT|" .. ctrl_key, action = act.ShowDebugOverlay },
+    { key = 'c',     mods = "LEADER|SHIFT|" .. ctrl_key, action = act.ActivateCopyMode },
+    { key = "Enter", mods = "LEADER|SHIFT|" .. ctrl_key, action = "QuickSelect" },
+    { key = '?',     mods = "LEADER|SHIFT|" .. ctrl_key, action = act.Search("CurrentSelectionOrEmptyString") },
+    { key = 'd',     mods = "LEADER|SHIFT|" .. ctrl_key, action = act.ShowDebugOverlay },
     -- key binding
-    { key = "l",         mods = ctrl_key,                    action = act.Multiple { act.ClearScrollback "ScrollbackAndViewport",act.SendKey { key = 'l', mods = "CTRL" }, }, },
-    { key = 'u',         mods = "SHIFT|" .. ctrl_key,        action = wezterm.action.IncreaseFontSize },
-    { key = 'm',         mods = "SHIFT|" .. ctrl_key,        action = wezterm.action.DecreaseFontSize },
-    { key = 'b',         mods = "SHIFT|" .. ctrl_key,        action = wezterm.action.EmitEvent 'toggle-opacity' },
+    { key = "l",     mods = ctrl_key,                    action = act.Multiple { act.ClearScrollback "ScrollbackAndViewport", act.SendKey { key = 'l', mods = "CTRL" }, }, },
+    { key = 'u',     mods = "SHIFT|" .. ctrl_key,        action = wezterm.action.IncreaseFontSize },
+    { key = 'm',     mods = "SHIFT|" .. ctrl_key,        action = wezterm.action.DecreaseFontSize },
+    { key = 'b',     mods = "SHIFT|" .. ctrl_key,        action = wezterm.action.EmitEvent 'toggle-opacity' },
   },
   key_tables = {
     resize_pane = {
