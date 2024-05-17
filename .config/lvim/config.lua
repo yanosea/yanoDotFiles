@@ -1,5 +1,5 @@
--- yanosea nvim initialize
--- lv setting overwrite
+-- yanosea lvim initialize
+-- lvim setting overwrite
 require("lv-settings.overwrite")
 -- preferences
 require("config.options")
