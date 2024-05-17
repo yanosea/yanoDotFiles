@@ -1,4 +1,4 @@
--- preferences
+-- options
 -- encoding
 vim.opt.encoding = "utf-8"
 vim.fileencoding = "utf-8"
