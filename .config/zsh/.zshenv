@@ -32,8 +32,16 @@ export XDG_STATE_HOME=$HOME/.local/state
 # google drive
 export GOOGLE_DRIVE=$HOME/GoogleDrive
 # editor
-export VISUAL="$USBINPATH"/nvim
-export EDITOR="$USBINPATH"/nvim
+if command -v lvim >/dev/null 2>&1; then
+    export VISUAL="lvim"
+    export EDITOR="lvim"
+elif command -v vim >/dev/null 2>&1; then
+    export VISUAL="nvim"
+    export EDITOR="nvim"
+else
+    export VISUAL="vim"
+    export EDITOR="vim"
+fi
 # term
 export TERM=xterm-256color
 # histfiles
