@@ -29,7 +29,6 @@ return {
     init = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          -- "awk_ls",
           "angularls",
           "arduino_language_server",
           "asm_lsp",
