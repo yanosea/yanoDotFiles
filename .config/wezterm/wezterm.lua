@@ -29,11 +29,11 @@ end
 local background_opacity = 0.8
 -- tab bar left
 wezterm.on("format-tab-title", function(tab, tabs)
-  local TAB_BAR_BG = "#2E3440"
-  local ACTIVE_TAB_BG = "#88C0D0"
-  local ACTIVE_TAB_FG = "#ECEFF4"
-  local NORMAL_TAB_BG = "#3B4252"
-  local NORMAL_TAB_FG = "#4C566A"
+  local TAB_BAR_BG = "#1f2335"
+  local ACTIVE_TAB_BG = "#7aa2f7"
+  local ACTIVE_TAB_FG = "#000000"
+  local NORMAL_TAB_BG = "#3b4261"
+  local NORMAL_TAB_FG = "#7aa2f7"
   local background = NORMAL_TAB_BG
   local foreground = NORMAL_TAB_FG
   local is_first = tab.tab_id == tabs[1].tab_id
@@ -73,11 +73,20 @@ wezterm.on("format-tab-title", function(tab, tabs)
     divider = ""
   end
 
+  local limit_length = 30
+  local title_length = #tab.active_pane.title
+  local suffix = " ..."
+  local active_pane_title = tab.active_pane.title
+
+  if title_length > limit_length then
+    active_pane_title = string.sub(active_pane_title, 1, limit_length) .. suffix
+  end
+
   return {
     { Background = { Color = leading_bg } }, { Foreground = { Color = leading_fg } },
     { Text = '' },
     { Background = { Color = background } }, { Foreground = { Color = foreground } },
-    { Text = left_space .. tab.tab_index + 1 .. ": " .. tab.active_pane.title .. " " },
+    { Text = left_space .. tab.tab_index + 1 .. " : " .. active_pane_title .. " " },
     { Background = { Color = trailing_bg } }, { Foreground = { Color = trailing_fg } },
     { Text = '' },
     { Background = { Color = NORMAL_TAB_BG } }, { Foreground = { Color = NORMAL_TAB_FG } },
@@ -88,23 +97,23 @@ end)
 wezterm.on("update-right-status", function(window)
   window:set_right_status(
     wezterm.format({
-      { Foreground = { Color = "#5E81AC" } },
-      { Background = { Color = "#2E3440" } },
-      { Text = '' },
-      { Foreground = { Color = "#ECEFF4" } },
-      { Background = { Color = "#5E81AC" } },
+      { Foreground = { Color = "#a9b1d6" } },
+      { Background = { Color = "#1f2335" } },
+      { Text = '' },
+      { Foreground = { Color = "#a9b1d6" } },
+      { Background = { Color = "#1f2335" } },
       { Text = ' ' .. Basename(wezterm.home_dir) .. " " },
-      { Foreground = { Color = "#81A1C1" } },
-      { Background = { Color = "#5E81AC" } },
+      { Foreground = { Color = "#3b4261" } },
+      { Background = { Color = "#1f2335" } },
       { Text = '' },
-      { Foreground = { Color = "#ECEFF4" } },
-      { Background = { Color = "#81A1C1" } },
+      { Foreground = { Color = "#7aa2f7" } },
+      { Background = { Color = "#3b4261" } },
       { Text = ' ' .. wezterm.hostname() .. " " },
-      { Foreground = { Color = "#88C0D0" } },
-      { Background = { Color = "#81A1C1" } },
+      { Foreground = { Color = "#7aa2f7" } },
+      { Background = { Color = "#3b4261" } },
       { Text = '' },
-      { Foreground = { Color = "#ECEFF4" } },
-      { Background = { Color = "#88C0D0" } },
+      { Foreground = { Color = "#000000" } },
+      { Background = { Color = "#7aa2f7" } },
       { Text = ' ' .. wezterm.strftime(" %Y/%m/%d %I:%M:%S") .. " " },
     })
   );
@@ -126,17 +135,17 @@ return {
   default_domain = default_domain,
   default_prog = default_prog,
   -- colorscheme
-  color_scheme = "nord",
+  color_scheme = "tokyonight",
   colors = {
     tab_bar = {
-      background = "#2E3440",
+      background = "#1f2335",
       active_tab = {
-        bg_color = "#88C0D0",
-        fg_color = "#ffffff",
+        bg_color = "#7aa2f7",
+        fg_color = "#000000",
       },
       inactive_tab = {
-        bg_color = "#434C5E",
-        fg_color = "#ffffff",
+        bg_color = "#3b4261",
+        fg_color = "#7aa2f7",
       },
     },
   },

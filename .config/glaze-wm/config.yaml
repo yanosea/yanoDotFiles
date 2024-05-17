@@ -10,10 +10,9 @@ general:
 focus_border:
   active:
     enabled: true
-    color: "#88C0D0"
+    color: "#2ac3de"
   inactive:
     enabled: false
-    # color: "#3B4252"
 
 gaps:
   inner_gap: 10
@@ -25,13 +24,13 @@ bar:
   position: "top"
   always_on_top: false
   opacity: 0.9
-  background: "#2E3440"
-  foreground: "#D8DEE9"
+  background: "#1f2335"
+  foreground: "#7aa2f7"
   font_family: "GohuFont Nerd Font"
   font_size: "13px"
   font_weight: "400"
-  border_width: "1"
-  border_color: "#3B4252"
+  border_width: "0"
+  border_color: "#7aa2f7"
   padding: "0px 0px 0px 0px"
   components_left:
     - type: "image"
@@ -39,9 +38,10 @@ bar:
       source: "D:\\Users\\yanosea\\.glaze-wm\\images\\yanosea.png"
     - type: "workspaces"
       margin: "0px 0px 0px 3px"
-      focused_workspace_background: "#2E3440"
-      focused_workspace_foreground: "#88C0D0"
-      displayed_workspace_background: "#2E3440"
+      focused_workspace_background: "#7aa2f7"
+      focused_workspace_foreground: "#000000"
+      displayed_workspace_background: "#1f2335"
+      displayed_workspace_foreground: "#7aa2f7"
       default_workspace_background: "transparent"
     - type: "cpu"
       margin: "0px 0px 0px 5px"
@@ -73,12 +73,12 @@ bar:
       margin: "0px 15px 0px 0px"
       label_horizontal: "⮂"
       label_vertical: "⮁"
-      foreground: "#88C0D0"
-      background: "#2E3440"
+      foreground: "#2ac3de"
+      background: "#1f2335"
     - type: "binding mode"
       margin: "0px 15px 0px 0px"
-      foreground: "#88C0D0"
-      background: "#2E3440"
+      foreground: "#2ac3de"
+      background: "#1f2335"
     - type: "clock"
       margin: "0px 3px 0px 0px"
       time_formatting: "🕒 yyyy/MM/dd HH:mm:ss"

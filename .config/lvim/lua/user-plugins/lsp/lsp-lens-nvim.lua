@@ -1,7 +1,7 @@
 lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "VidocqH/lsp-lens.nvim",
-  event = { "BufRead", "BufEnter", },
+  event = { "BufRead", "BufEnter" },
   init = function()
     require("lsp-lens").setup({
       enable = true,
@@ -15,5 +15,5 @@ table.insert(lvim.plugins, {
         "prisma",
       },
     })
-  end
+  end,
 })

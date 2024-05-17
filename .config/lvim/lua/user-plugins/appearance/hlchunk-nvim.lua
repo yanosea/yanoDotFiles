@@ -1,7 +1,7 @@
 lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "shellRaining/hlchunk.nvim",
-  event = { "BufRead", "BufEnter", },
+  event = { "BufRead", "BufEnter" },
   init = function()
     require("hlchunk").setup({
       chunk = {
@@ -62,8 +62,8 @@ table.insert(lvim.plugins, {
           right_arrow = ">",
         },
         style = {
-          { fg = "#8fbcbb" },
-          { fg = "#bf616a" },
+          { fg = "#7aa2f7" },
+          { fg = "#f7768e" },
         },
         textobject = "",
         max_file_size = 1024 * 1024,
@@ -82,7 +82,7 @@ table.insert(lvim.plugins, {
       line_num = {
         enable = true,
         use_treesitter = true,
-        style = "#8fbcbb",
+        style = "#7aa2f7",
       },
       blank = {
         enable = true,

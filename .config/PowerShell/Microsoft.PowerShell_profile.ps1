@@ -26,4 +26,5 @@ Set-PSReadLineKeyHandler -Key "Ctrl+n" -Function NextHistory
 Set-Alias ls lsd
 Set-Alias cat bat
 # oh my posh init
-oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/blue-owl.omp.json | Invoke-Expression
+$ENV:STARSHIP_CONFIG = "$HOME\.config\starship\starship.toml"
+Invoke-Expression (&starship init powershell)

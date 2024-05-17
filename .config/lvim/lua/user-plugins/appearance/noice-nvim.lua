@@ -8,7 +8,7 @@ table.insert(lvim.plugins, {
   event = "VimEnter",
   init = function()
     require("notify").setup({
-      background_colour = "#4c566a",
+      background_colour = "#000000",
     })
     require("noice").setup({
       cmdline = {

@@ -97,7 +97,7 @@ call plug#begin()
   " checkhealth
   Plug 'rhysd/vim-healthcheck'
   " colorscheme
-  Plug 'arcticicestudio/nord-vim'
+  Plug 'ghifarit53/tokyonight-vim'
   " copilot
   Plug 'github/copilot.vim'
   " file explorer
@@ -115,7 +115,9 @@ call plug#begin()
   Plug 'vim-scripts/YankRing.vim'
 call plug#end()
 " colorscheme
-colorscheme nord
+let g:tokyonight_style = 'storm'
+let g:tokyonight_enable_italic = 1
+colorscheme tokyonight
 " copilot
 let g:copilot_no_tab_map = 1
 inoremap <silent><expr> <C-a><Tab> copilot#Accept("\<CR>")
