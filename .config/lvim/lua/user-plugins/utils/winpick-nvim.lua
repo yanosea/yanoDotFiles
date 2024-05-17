@@ -1,7 +1,7 @@
 lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "gbrlsnchs/winpick.nvim",
-  event = "VimEnter",
+  keys = { "<C-w><C-w>" },
   init = function()
     require("winpick").setup({
       border = "single",

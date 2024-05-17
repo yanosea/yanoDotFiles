@@ -5,7 +5,7 @@ table.insert(lvim.plugins, {
     "vim-denops/denops.vim",
     "lambdalisue/kensaku.vim",
   },
-  event = "VimEnter",
+  event = { "BufRead", "BufEnter" },
   init = function()
     vim.g.fuzzy_motion_matchers = { "fzf", "kensaku" }
 

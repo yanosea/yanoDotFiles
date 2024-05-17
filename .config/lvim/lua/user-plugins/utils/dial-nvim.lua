@@ -1,7 +1,7 @@
 lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "monaqa/dial.nvim",
-  event = "VimEnter",
+  event = { "BufRead", "BufEnter" },
   init = function()
     require("dial.config").augends:register_group({
       default = {

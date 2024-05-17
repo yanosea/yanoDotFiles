@@ -1,7 +1,7 @@
 lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "brenoprata10/nvim-highlight-colors",
-  event = "VimEnter",
+  event = { "BufRead", "BufEnter" },
   init = function()
     require("nvim-highlight-colors").setup({
       render = "background",

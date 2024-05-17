@@ -1,7 +1,7 @@
 lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "shellRaining/hlchunk.nvim",
-  event = "VimEnter",
+  event = { "BufRead", "BufEnter" },
   init = function()
     require("hlchunk").setup({
       chunk = {

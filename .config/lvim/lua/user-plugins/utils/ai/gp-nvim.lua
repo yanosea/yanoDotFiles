@@ -1,7 +1,14 @@
 lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "robitx/gp.nvim",
-  event = "VimEnter",
+  cmd = {
+    "GpChatNew tabnew",
+    "GpChatNew split",
+    "GpChatNew vsplit",
+    "GpChatNew popup",
+    "GpChatFinder",
+    "GpChatRespond",
+  },
   init = function()
     require("gp").setup({
       agents = {
