@@ -18,3 +18,8 @@ lvim.builtin.which_key.mappings["C"] = {
 lvim.builtin.which_key.mappings["t"] = { "<CMD>ToggleTerm<CR>", "ToggleTerm" }
 -- fuzzy motion
 lvim.builtin.which_key.mappings["<SPACE>"] = { "<CMD>FuzzyMotion<CR>", "FuzzyMotion" }
+-- yankring
+lvim.builtin.which_key.mappings["y"] = {
+  name = "+Yankring",
+  h = { "<CMD>YRShow<CR>", "YankRing show" },
+}
