@@ -27,10 +27,10 @@ table.insert(lvim.plugins, {
       },
       messages = {
         enabled = true,
-        view = "notify",
-        view_error = "notify",
-        view_warn = "notify",
-        view_history = "messages",
+        view = "mini",
+        view_error = "mini",
+        view_warn = "mini",
+        view_history = "mini",
         view_search = "virtualtext",
       },
       popupmenu = {
@@ -52,7 +52,7 @@ table.insert(lvim.plugins, {
               { error = true },
               { warning = true },
               { event = "msg_show", kind = { "" } },
-              { event = "lsp", kind = "message" },
+              { event = "lsp",      kind = "message" },
             },
           },
         },
@@ -65,7 +65,7 @@ table.insert(lvim.plugins, {
               { error = true },
               { warning = true },
               { event = "msg_show", kind = { "" } },
-              { event = "lsp", kind = "message" },
+              { event = "lsp",      kind = "message" },
             },
           },
           filter_opts = { count = 1 },
@@ -79,7 +79,7 @@ table.insert(lvim.plugins, {
       },
       notify = {
         enabled = true,
-        view = "notify",
+        view = "mini",
       },
       lsp = {
         progress = {
@@ -113,7 +113,7 @@ table.insert(lvim.plugins, {
         },
         message = {
           enabled = true,
-          view = "notify",
+          view = "mini",
           opts = {},
         },
         documentation = {
