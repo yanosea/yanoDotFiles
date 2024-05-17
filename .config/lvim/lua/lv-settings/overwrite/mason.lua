@@ -1,7 +1,7 @@
 table.insert(lvim.plugins, {
   "williamboman/mason-lspconfig.nvim",
   dependencies = { "williamboman/mason.nvim" },
-  event = "VimEnter",
+  event = { "BufRead", "BufEnter" },
   init = function()
     require("mason-lspconfig").setup({
       ensure_installed = {
