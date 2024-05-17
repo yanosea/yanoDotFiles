@@ -23,3 +23,5 @@ lvim.builtin.which_key.mappings["y"] = {
   name = "+Yankring",
   h = { "<CMD>YRShow<CR>", "YankRing show" },
 }
+-- outline
+lvim.builtin.which_key.mappings["o"] = { "<CMD>Outline<CR>", "Outline" }
