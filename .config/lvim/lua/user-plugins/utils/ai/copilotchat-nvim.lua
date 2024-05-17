@@ -5,7 +5,7 @@ table.insert(lvim.plugins, {
     "github/copilot.vim",
     "nvim-lua/plenary.nvim",
   },
-  cmd = { "CopilotChat", "CopilotChatBuffer", },
+  cmd = { "CopilotChat", "CopilotChatBuffer" },
   opts = {
     debug = true,
   },

@@ -48,5 +48,5 @@ table.insert(lvim.plugins, {
       },
       automatic_installation = true,
     })
-  end
+  end,
 })
