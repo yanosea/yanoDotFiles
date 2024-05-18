@@ -12,7 +12,7 @@ table.insert(lvim.plugins, {
 
         local excluded_buftypes = {
           "nofile",
-          "prompt"
+          "prompt",
         }
         local excluded_filetypes = {
           "noice",
@@ -24,7 +24,7 @@ table.insert(lvim.plugins, {
         end
 
         return not is_excluded
-      end
+      end,
     })
 
     vim.api.nvim_set_keymap(
