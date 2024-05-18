@@ -4,7 +4,7 @@ table.insert(lvim.plugins, {
     "MunifTanjim/nui.nvim",
     "rcarriga/nvim-notify",
   },
-  event = "VimEnter",
+  event = { "BufRead", "BufEnter" },
   init = function()
     require("notify").setup({
       background_colour = "#000000",
