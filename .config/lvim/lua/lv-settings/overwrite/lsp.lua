@@ -49,7 +49,7 @@ table.insert(lvim.plugins, {
     })
   end,
 })
-
+-- formatters
 require("lvim.lsp.null-ls.formatters").setup({
   {
     name = "stylua",
@@ -61,14 +61,14 @@ require("lvim.lsp.null-ls.formatters").setup({
     filetypes = { "typescript", "typescriptreact" },
   },
 })
-
+-- linters
 require("lvim.lsp.null-ls.linters").setup({
   {
     name = "shellcheck",
     args = { "--severity", "warning" },
   },
 })
-
+-- code actions
 require("lvim.lsp.null-ls.code_actions").setup({
   {
     name = "proselint",
