@@ -1,4 +1,3 @@
-lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "folke/noice.nvim",
   dependencies = {
@@ -52,7 +51,7 @@ table.insert(lvim.plugins, {
               { error = true },
               { warning = true },
               { event = "msg_show", kind = { "" } },
-              { event = "lsp", kind = "message" },
+              { event = "lsp",      kind = "message" },
             },
           },
         },
@@ -65,7 +64,7 @@ table.insert(lvim.plugins, {
               { error = true },
               { warning = true },
               { event = "msg_show", kind = { "" } },
-              { event = "lsp", kind = "message" },
+              { event = "lsp",      kind = "message" },
             },
           },
           filter_opts = { count = 1 },

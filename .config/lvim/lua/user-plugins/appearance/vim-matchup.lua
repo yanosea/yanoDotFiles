@@ -1,4 +1,3 @@
-lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "andymass/vim-matchup",
   event = { "BufRead", "BufEnter" },

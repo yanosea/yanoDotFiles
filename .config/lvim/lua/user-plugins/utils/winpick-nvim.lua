@@ -1,4 +1,3 @@
-lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "gbrlsnchs/winpick.nvim",
   keys = { "<C-w><C-w>" },

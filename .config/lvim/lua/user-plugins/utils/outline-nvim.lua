@@ -1,4 +1,3 @@
-lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "hedyhli/outline.nvim",
   cmd = { "Outline" },

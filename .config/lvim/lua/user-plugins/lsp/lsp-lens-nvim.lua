@@ -1,4 +1,3 @@
-lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "VidocqH/lsp-lens.nvim",
   event = { "BufRead", "BufEnter" },

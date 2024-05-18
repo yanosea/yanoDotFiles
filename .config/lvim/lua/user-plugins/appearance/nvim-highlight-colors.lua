@@ -1,4 +1,3 @@
-lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "brenoprata10/nvim-highlight-colors",
   event = { "BufRead", "BufEnter" },

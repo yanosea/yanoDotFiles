@@ -1,4 +1,3 @@
-lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "shellRaining/hlchunk.nvim",
   event = { "BufRead", "BufEnter" },

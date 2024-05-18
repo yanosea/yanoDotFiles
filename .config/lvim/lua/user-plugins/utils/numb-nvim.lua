@@ -1,4 +1,3 @@
-lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "/nacro90/numb.nvim",
   event = "CmdlineEnter",

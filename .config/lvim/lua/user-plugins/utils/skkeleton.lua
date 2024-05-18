@@ -1,4 +1,3 @@
-lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "vim-skk/skkeleton",
   dependencies = { "vim-denops/denops.vim" },

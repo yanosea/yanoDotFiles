@@ -1,4 +1,3 @@
-lvim.plugins = lvim.plugins or {}
 table.insert(lvim.plugins, {
   "zbirenbaum/copilot-cmp",
   dependencies = { "zbirenbaum/copilot.lua" },
