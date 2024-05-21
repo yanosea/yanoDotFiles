@@ -7,12 +7,11 @@ local buttons = {
   { "p", "  Projects ", "<CMD>Telescope projects<CR>" },
   { "r", "  Recent Files", ":Telescope oldfiles <CR>" },
   { "t", "󰊄  Find Text", "<CMD>Telescope live_grep<CR>" },
-  { "l", "󰒲  Plugins", "<CMD>Lazy<CR>" },
   { "c", "  Configuration", "<CMD>edit /home/yanosea/.config/lvim/config.lua <CR>" },
   { "U", "󰏗  Update LunarVim", "<CMD>LvimUpdate<CR>" },
-  { "S", "󰚰  Sync Core Plugins", "<CMD>LvimSyncCorePlugins<CR>" },
   { "T", "󰔱  Sync Tree-Sitter Parser", "<CMD>TSUpdateSync<CR>" },
-  { "m", "󱌣  Lsp", "<CMD>Mason<CR>" },
+  { "L", "󰒲  Plugins", "<CMD>Lazy<CR>" },
+  { "M", "󱌣  Mason Lsp", "<CMD>Mason<CR>" },
   { "q", "󰅖  Quit", "<CMD>quit<CR>" },
 }
 for i, btn in ipairs(buttons) do
