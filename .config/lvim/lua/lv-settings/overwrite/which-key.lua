@@ -29,4 +29,6 @@ lvim.builtin.which_key.mappings["o"] = { "<CMD>Outline<CR>", "Outline" }
 table.insert(lvim.builtin.which_key.mappings["l"], {
   -- todo-comments
   t = { "<CMD>TodoLocList<CR>", "TodoLocList" },
+  -- trouble
+  T = { "<CMD>TroubleToggle<CR>", "TroubleToggle" },
 })
