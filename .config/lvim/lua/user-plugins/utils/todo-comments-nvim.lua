@@ -1,3 +1,4 @@
+-- highlight and search for todo comments
 table.insert(lvim.plugins, {
   "folke/todo-comments.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },

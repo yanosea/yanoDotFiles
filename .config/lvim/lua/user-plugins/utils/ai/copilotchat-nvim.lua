@@ -1,3 +1,4 @@
+-- github copilot chat for neovim
 table.insert(lvim.plugins, {
   "CopilotC-Nvim/CopilotChat.nvim",
   dependencies = {

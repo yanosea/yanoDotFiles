@@ -1,3 +1,4 @@
+-- pretty list for showing diagnostics, references, telescope results, quickfix and location lists
 table.insert(lvim.plugins, {
   "folke/trouble.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },

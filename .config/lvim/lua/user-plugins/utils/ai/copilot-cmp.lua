@@ -1,3 +1,4 @@
+-- github copilot completion plugin for cmp
 table.insert(lvim.plugins, {
   "zbirenbaum/copilot-cmp",
   dependencies = { "zbirenbaum/copilot.lua" },

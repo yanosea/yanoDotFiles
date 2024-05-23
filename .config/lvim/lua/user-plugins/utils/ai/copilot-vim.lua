@@ -1,3 +1,4 @@
+-- github copilot for vim
 table.insert(lvim.plugins, {
   "github/copilot.vim",
   event = "InsertEnter",

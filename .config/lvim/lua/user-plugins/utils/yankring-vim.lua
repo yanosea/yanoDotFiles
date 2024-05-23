@@ -1,3 +1,4 @@
+-- show history of yanks and deletions
 table.insert(lvim.plugins, {
   "vim-scripts/YankRing.vim",
   cmd = "YRShow",

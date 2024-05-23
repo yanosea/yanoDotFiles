@@ -1,9 +1,11 @@
+-- lsp config
 table.insert(lvim.plugins, {
   "williamboman/mason-lspconfig.nvim",
   dependencies = { "williamboman/mason.nvim" },
   event = { "BufRead", "BufEnter" },
   init = function()
     require("mason-lspconfig").setup({
+      -- install lsp servers
       ensure_installed = {
         "angularls",
         "arduino_language_server",
@@ -51,10 +53,12 @@ table.insert(lvim.plugins, {
 })
 -- formatters
 require("lvim.lsp.null-ls.formatters").setup({
+  -- lua
   {
     name = "stylua",
     filetypes = { "lua" },
   },
+  -- typescript
   {
     name = "prettier",
     args = { "--print-width", "100" },
@@ -63,6 +67,7 @@ require("lvim.lsp.null-ls.formatters").setup({
 })
 -- linters
 require("lvim.lsp.null-ls.linters").setup({
+  -- shell
   {
     name = "shellcheck",
     args = { "--severity", "warning" },
@@ -70,6 +75,7 @@ require("lvim.lsp.null-ls.linters").setup({
 })
 -- code actions
 require("lvim.lsp.null-ls.code_actions").setup({
+  -- proselint
   {
     name = "proselint",
   },

@@ -1,3 +1,4 @@
+-- jump to fuzzy match word
 table.insert(lvim.plugins, {
   "yuki-yano/fuzzy-motion.vim",
   dependencies = {

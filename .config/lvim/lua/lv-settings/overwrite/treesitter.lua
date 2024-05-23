@@ -1,5 +1,7 @@
 -- treesitter
+-- enable treesitter
 lvim.builtin.treesitter.matchup.enable = true
+-- install treesitter parsers
 lvim.builtin.treesitter.ensure_installed = {
   "astro",
   "bash",

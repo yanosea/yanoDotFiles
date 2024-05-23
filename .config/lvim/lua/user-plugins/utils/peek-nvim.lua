@@ -1,3 +1,4 @@
+-- markdown preview
 table.insert(lvim.plugins, {
   "toppair/peek.nvim",
   event = { "VeryLazy" },

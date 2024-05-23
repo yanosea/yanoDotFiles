@@ -1,3 +1,4 @@
+-- translate text
 table.insert(lvim.plugins, {
   "skanehira/denops-translate.vim",
   dependencies = { "vim-denops/denops.vim" },

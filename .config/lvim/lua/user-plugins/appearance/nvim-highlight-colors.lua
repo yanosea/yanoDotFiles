@@ -1,3 +1,4 @@
+-- show colors by name and tailwindcss colors and hex values
 table.insert(lvim.plugins, {
   "brenoprata10/nvim-highlight-colors",
   event = { "BufRead", "BufEnter" },

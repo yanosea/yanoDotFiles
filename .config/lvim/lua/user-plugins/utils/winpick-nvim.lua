@@ -1,3 +1,4 @@
+-- window selection
 table.insert(lvim.plugins, {
   "gbrlsnchs/winpick.nvim",
   keys = { "<C-w><C-w>" },

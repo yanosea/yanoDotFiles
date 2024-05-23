@@ -1,3 +1,4 @@
+-- hightlight pairs and extend % key to jump between matching pairs
 table.insert(lvim.plugins, {
   "andymass/vim-matchup",
   event = { "BufRead", "BufEnter" },

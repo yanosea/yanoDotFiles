@@ -1,3 +1,4 @@
+-- extend increment and decrement
 table.insert(lvim.plugins, {
   "monaqa/dial.nvim",
   event = { "BufRead", "BufEnter" },

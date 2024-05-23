@@ -1,3 +1,4 @@
+-- chatgpt for neovim
 table.insert(lvim.plugins, {
   "robitx/gp.nvim",
   cmd = {

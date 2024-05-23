@@ -1,3 +1,4 @@
+-- peeks lines of the buffer in non-obtrusive way
 table.insert(lvim.plugins, {
   "/nacro90/numb.nvim",
   event = "CmdlineEnter",

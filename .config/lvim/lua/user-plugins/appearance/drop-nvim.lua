@@ -1,3 +1,4 @@
+-- screensaver
 table.insert(lvim.plugins, {
   "folke/drop.nvim",
   event = "VimEnter",

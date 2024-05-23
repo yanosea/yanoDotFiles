@@ -1,3 +1,4 @@
+-- displaying reference and definition info upon functions
 table.insert(lvim.plugins, {
   "VidocqH/lsp-lens.nvim",
   event = { "BufRead", "BufEnter" },

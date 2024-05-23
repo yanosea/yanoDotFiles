@@ -1,3 +1,4 @@
+-- show indent lines instead of lunarvim builtin indentblankline.nvim
 table.insert(lvim.plugins, {
   "shellRaining/hlchunk.nvim",
   -- TODO: watch the repo for updates

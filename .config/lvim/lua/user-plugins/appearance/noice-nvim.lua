@@ -1,3 +1,4 @@
+-- enhance the look of the editor
 table.insert(lvim.plugins, {
   "folke/noice.nvim",
   dependencies = {
