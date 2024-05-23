@@ -1,5 +1,7 @@
 table.insert(lvim.plugins, {
   "shellRaining/hlchunk.nvim",
+  -- TODO: watch the repo for updates
+  commit = "882d1bc86d459fa8884398223c841fd09ea61b6b",
   event = { "BufRead", "BufEnter" },
   init = function()
     require("hlchunk").setup({
