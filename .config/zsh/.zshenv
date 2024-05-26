@@ -112,18 +112,15 @@ if [[ -n "$WSL_DISTRO_NAME" && "$WSL_DISTRO_NAME" = "Arch" ]]; then
 fi
 # credentials
 ## openai
-export OPENAI_API_KEY=`rbw get openai --field OPENAI_API_KEY`
+export OPENAI_API_KEY=`cat $XDG_DATA_HOME/credentials/OPENAI_API_KEY`
 ## gemini
-export GEMINI_API_KEY=`rbw get google --folder main --field GEMINI_API_KEY`
+export GEMINI_API_KEY=`cat $XDG_DATA_HOME/credentials/GEMINI_API_KEY`
 ## spotify
-export SPOTIFY_ID=`rbw get spotify --field SPOTIFY_ID`
-export SPOTIFY_SECRET=`rbw get spotify --field SPOTIFY_SECRET`
-export SPOTIFY_REDIRECT_URI=`rbw get spotify --field SPOTIFY_REDIRECT_URI`
-export SPOTIFY_REFRESH_TOKEN=`rbw get spotify --field SPOTIFY_REFRESH_TOKEN`
+export SPOTIFY_ID=`cat $XDG_DATA_HOME/credentials/SPOTIFY_ID`
+export SPOTIFY_SECRET=`cat $XDG_DATA_HOME/credentials/SPOTIFY_SECRET`
+export SPOTIFY_REDIRECT_URI=`cat $XDG_DATA_HOME/credentials/SPOTIFY_REDIRECT_URI`
+export SPOTIFY_REFRESH_TOKEN=`cat $XDG_DATA_HOME/credentials/SPOTIFY_REFRESH_TOKEN`
 ## trello
-export TRELLO_USER=`rbw get trello --field user`
-export TRELLO_KEY=`rbw get trello --field TRELLO_KEY`
-export TRELLO_TOKEN=`rbw get trello --field TRELLO_TOKEN`
-# oatmeal
-export OATMEAL_OPENAI_TOKEN=$OPENAI_API_KEY
-export OATMEAL_GEMINI_TOKEN=$GEMINI_API_KEY
+export TRELLO_USER=`cat $XDG_DATA_HOME/credentials/TRELLO_USER`
+export TRELLO_KEY=`cat $XDG_DATA_HOME/credentials/TRELLO_KEY`
+export TRELLO_TOKEN=`cat $XDG_DATA_HOME/credentials/TRELLO_TOKEN`
