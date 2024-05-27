@@ -10,7 +10,7 @@ local buttons = {
   { "c", "  Configuration", "<CMD>edit /home/yanosea/.config/lvim/config.lua <CR>" },
   { "U", "󰏗  Update LunarVim", "<CMD>LvimUpdate<CR>" },
   { "T", "󰔱  Sync Tree-Sitter Parser", "<CMD>TSUpdateSync<CR>" },
-  { "L", "󰒲  Plugins", "<CMD>Lazy<CR>" },
+  { "L", "󰒲  Update Plugins", "<CMD>Lazy update<CR>" },
   { "M", "󱌣  Mason Lsp", "<CMD>Mason<CR>" },
   { "q", "󰅖  Quit", "<CMD>quit<CR>" },
 }
