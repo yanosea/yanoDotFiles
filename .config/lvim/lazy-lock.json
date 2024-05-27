@@ -23,7 +23,7 @@
   "fuzzy-motion.vim": { "branch": "main", "commit": "f926a6080489d03b08af66cdd1e89b8c2f5c4f39" },
   "gitsigns.nvim": { "branch": "main", "commit": "805610a9393fa231f2c2b49cb521bfa413fadb3d" },
   "gp.nvim": { "branch": "main", "commit": "52938ffbd47b5e06d0f9b7c8b146f26d6021fbac" },
-  "hlchunk.nvim": { "branch": "main", "commit": "9322a67215119ca32518f3befbeef548d98c4b43" },
+  "hlchunk.nvim": { "branch": "main", "commit": "350e4e8f1b6f4c6dbd9a98946547ed557bab5335" },
   "kensaku.vim": { "branch": "main", "commit": "7ddad2f355a3678597ebbac666e2ee6dda6b9cf3" },
   "lazy.nvim": { "branch": "main", "commit": "bef521ac89c8d423f9d092e37b58e8af0c099309" },
   "lir.nvim": { "branch": "master", "commit": "7a9d45de08fecd23a04aca1f96688d744830029e" },
