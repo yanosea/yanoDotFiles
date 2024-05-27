@@ -72,10 +72,3 @@ zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}"
 autoload -Uz zmv
 # starship
 export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
-# zellij
-if command -v zellij &> /dev/null; then
-    if [ -z "$INSIDE_ZELLIJ" ]; then
-        export INSIDE_ZELLIJ=1
-        exec zellij
-    fi
-fi

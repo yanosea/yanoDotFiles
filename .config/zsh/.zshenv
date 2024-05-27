@@ -124,3 +124,10 @@ export SPOTIFY_REFRESH_TOKEN=`cat $XDG_DATA_HOME/credentials/SPOTIFY_REFRESH_TOK
 export TRELLO_USER=`cat $XDG_DATA_HOME/credentials/TRELLO_USER`
 export TRELLO_KEY=`cat $XDG_DATA_HOME/credentials/TRELLO_KEY`
 export TRELLO_TOKEN=`cat $XDG_DATA_HOME/credentials/TRELLO_TOKEN`
+# zellij
+if command -v zellij &> /dev/null; then
+    if [ -z "$INSIDE_ZELLIJ" ]; then
+        export INSIDE_ZELLIJ=1
+        exec zellij
+    fi
+fi
