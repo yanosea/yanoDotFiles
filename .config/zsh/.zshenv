@@ -79,19 +79,7 @@ export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PATH:$PYENV_ROOT/bin
 eval "$($USBINPATH/pyenv init -)"
 ## fzf
-if [[ -n "${WSL_DISTRO_NAME:-}" ]]; then
-    if [[ "$WSL_DISTRO_NAME" = "Arch" ]]; then
-        source /usr/share/fzf/key-bindings.zsh
-        source /usr/share/fzf/completion.zsh
-    elif [[ "$WSL_DISTRO_NAME" = "NixOS" ]]; then
-        TARGET_PATH=$(readlink -f $(which fzf))
-        ORIGINAL="/bin/fzf"
-        REPLACEMENT="/share/fzf"
-        FZF_PATH=${TARGET_PATH//$ORIGINAL/$REPLACEMENT}
-        source $FZF_PATH/key-bindings.zsh
-        source $FZF_PATH/completion.zsh
-    fi
-fi
+source <(fzf --zsh)
 # cabal
 export CABAL_CONFIG="$XDG_CONFIG_HOME"/cabal/config
 export CABAL_DIR="$XDG_CACHE_HOME"/cabal
@@ -124,6 +112,8 @@ export SPOTIFY_REFRESH_TOKEN=`cat $XDG_DATA_HOME/credentials/SPOTIFY_REFRESH_TOK
 export TRELLO_USER=`cat $XDG_DATA_HOME/credentials/TRELLO_USER`
 export TRELLO_KEY=`cat $XDG_DATA_HOME/credentials/TRELLO_KEY`
 export TRELLO_TOKEN=`cat $XDG_DATA_HOME/credentials/TRELLO_TOKEN`
+# starship
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
 # zellij
 if command -v zellij &> /dev/null; then
     if [ -z "$INSIDE_ZELLIJ" ]; then

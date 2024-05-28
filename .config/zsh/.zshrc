@@ -70,5 +70,3 @@ zstyle ":completion:*:default" menu select=2
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}"
 ## zmv
 autoload -Uz zmv
-# starship
-export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
