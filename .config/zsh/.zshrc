@@ -33,18 +33,19 @@ eval "$(zoxide init zsh)"
 eval "$($USBINPATH/pyenv init -)"
 # alias
 alias cat="$USBINPATH"/bat
+alias gbp='git branch --merged | grep -E -v "(^\*|main)" | xargs git branch -d'
 alias ls="$USBINPATH"/lsd
 alias nvimdiff="$USBINPATH/nvim -d"
 alias reboot="sudo systemctl reboot"
 alias rm="$USBINPATH"/trash
 alias rrm="/bin/rm"
 alias shutdown="sudo systemctl poweroff"
-alias zmv="noglob zmv -W"
 alias st="systemctl-tui"
 alias trl="trello-tui -board yanoBoard"
+alias zmv="noglob zmv -W"
 ## directories
-alias repos="cd $HOME/ghq/github.com/yanosea"
 alias dot="cd $HOME/ghq/github.com/yanosea/yanoDotFiles"
+alias repos="cd $HOME/ghq/github.com/yanosea"
 alias work="cd $WORKSPACE"
 # history
 HISTFILE=$XDG_STATE_HOME/zsh/.zhistory
