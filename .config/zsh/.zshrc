@@ -33,7 +33,8 @@ eval "$(zoxide init zsh)"
 eval "$($USBINPATH/pyenv init -)"
 # alias
 alias cat="$USBINPATH"/bat
-alias gbp='git branch --merged | grep -E -v "(^\*|main)" | xargs git branch -d'
+alias gbp='git branch --merged | grep -v "*)" | xargs git branch -d'
+alias gsf='git switch $(git branch -l | fzf | tr -d "* ")'
 alias ls="$USBINPATH"/lsd
 alias nvimdiff="$USBINPATH/nvim -d"
 alias reboot="sudo systemctl reboot"
