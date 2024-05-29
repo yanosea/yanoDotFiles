@@ -10,10 +10,27 @@ PROMPT='[%n@%m %~]$ '
 
 # edited by yanosea
 
+# zellij
+if command -v zellij &>/dev/null; then
+	if [ -z "$INSIDE_ZELLIJ" ]; then
+		export INSIDE_ZELLIJ=1
+		exec zellij
+	fi
+fi
+# homebrew
+if [[ "$OS" = "Darwin" ]]; then
+	eval $(/opt/homebrew/bin/brew shellenv)
+elif [[ "$OS" = "Linux" ]]; then
+	if [[ "$ID" = "arch" ]]; then
+		eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+	fi
+fi
 # sheldon
 eval "$(sheldon source)"
 # zoxide
 eval "$(zoxide init zsh)"
+# python
+eval "$($USBINPATH/pyenv init -)"
 # alias
 alias cat="$USBINPATH"/bat
 alias ls="$USBINPATH"/lsd
