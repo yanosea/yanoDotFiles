@@ -64,6 +64,11 @@ require("lvim.lsp.null-ls.formatters").setup({
     args = { "--print-width", "100" },
     filetypes = { "typescript", "typescriptreact" },
   },
+  -- shell
+  {
+    name = "shfmt",
+    filetypes = { "sh", "zsh" },
+  },
 })
 -- linters
 require("lvim.lsp.null-ls.linters").setup({
@@ -71,6 +76,7 @@ require("lvim.lsp.null-ls.linters").setup({
   {
     name = "shellcheck",
     args = { "--severity", "warning" },
+    filetypes = { "sh" },
   },
 })
 -- code actions
