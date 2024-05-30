@@ -31,6 +31,8 @@ eval "$(sheldon source)"
 eval "$(zoxide init zsh)"
 # python
 eval "$($USBINPATH/pyenv init -)"
+# fzf
+source <(fzf --zsh)
 # alias
 alias cat="$USBINPATH"/bat
 alias gbp='git branch --merged | grep -v "*)" | xargs git branch -d'

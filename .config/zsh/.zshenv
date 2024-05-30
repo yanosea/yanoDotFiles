@@ -69,8 +69,6 @@ if [[ -n "${WSL_DISTRO_NAME:-}" ]]; then
 		source "$file"
 	done
 fi
-## fzf
-source <(fzf --zsh)
 ## go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
