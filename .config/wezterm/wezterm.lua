@@ -4,14 +4,14 @@ local act = wezterm.action
 function Basename(s)
 	return string.gsub(s, "(.*[/\\])(.*)", "%2")
 end
-
 -- os, font
 local default_domain
 local wsl_domains = wezterm.default_wsl_domains()
 local default_prog
 local font_size
 local ctrl_key
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+local os_name = os.getenv("OS")
+if os_name and string.find(os_name, "Windows") then
 	-- default_domain = "WSL:Arch"
 	-- for _, domain in ipairs(wsl_domains) do
 	--   domain.default_cwd = "~"
@@ -20,10 +20,14 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	default_domain = "local"
 	font_size = 10.5
 	ctrl_key = "CTRL"
-elseif wezterm.target_triple == "aarch64-apple-darwin" then
+elseif os_name and string.find(os_name, "Darwin") then
 	default_domain = "local"
 	font_size = 14
-	ctrl_key = "CMD"
+	ctrl_key = "SUPER"
+elseif os_name and string.find(os_name, "Linux") then
+	default_domain = "local"
+	font_size = 14
+	ctrl_key = "CTRL"
 end
 -- style
 local background_opacity = 0.8
