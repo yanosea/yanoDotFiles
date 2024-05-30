@@ -8,5 +8,5 @@ local finderBinding = {
     hs.hotkey.bind({ "option" }, "up", nil, function() hs.eventtap.keyStroke({ "cmd" }, "up") end)
 }
 hs.window.filter.new('Finder')
-    :subscribe(hs.window.filter.windowFocused, function() EnableAll(finderBinding) end)
-    :subscribe(hs.window.filter.windowUnfocused, function() DisableAll(finderBinding) end)
+    :subscribe(hs.window.filter.windowFocused, function() require("helper.util").EnableAll(finderBinding) end)
+    :subscribe(hs.window.filter.windowUnfocused, function() require("helper.util").DisableAll(finderBinding) end)
