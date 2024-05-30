@@ -10,8 +10,8 @@ local wsl_domains = wezterm.default_wsl_domains()
 local default_prog
 local font_size
 local ctrl_key
-local os_name = os.getenv("OS")
-if os_name and string.find(os_name, "Windows") then
+local target = wezterm.target_triple:lower()
+if string.find(target, "windows") then
 	-- default_domain = "WSL:Arch"
 	-- for _, domain in ipairs(wsl_domains) do
 	--   domain.default_cwd = "~"
@@ -20,11 +20,11 @@ if os_name and string.find(os_name, "Windows") then
 	default_domain = "local"
 	font_size = 10.5
 	ctrl_key = "CTRL"
-elseif os_name and string.find(os_name, "Darwin") then
+elseif string.find(target, "darwin") then
 	default_domain = "local"
 	font_size = 14
 	ctrl_key = "SUPER"
-elseif os_name and string.find(os_name, "Linux") then
+elseif string.find(target, "linux") then
 	default_domain = "local"
 	font_size = 14
 	ctrl_key = "CTRL"
