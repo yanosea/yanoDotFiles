@@ -1,4 +1,4 @@
-﻿-- activity monitor
+-- activity monitor
 hs.hotkey.bind({ "cmd", "shift" }, "escape", require("helper.util").OpenApp("Activity Monitor"))
 -- lanuchpad
 hs.hotkey.bind({}, "ctrl", require("helper.util").OpenApp("Launchpad"))
