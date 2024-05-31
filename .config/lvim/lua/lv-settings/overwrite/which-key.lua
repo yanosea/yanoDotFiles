@@ -39,6 +39,6 @@ table.insert(lvim.builtin.which_key.mappings["l"], {
   -- TodoLocList
   t = { "<CMD>TodoLocList<CR>", "TodoLocList" },
   -- trouble
-  -- TroubleToggle
-  T = { "<CMD>TroubleToggle<CR>", "TroubleToggle" },
+  -- Trouble diagnostics toggle
+  T = { "<CMD>Trouble diagnostics toggle<CR>", "TroubleDiagnostics" },
 })
