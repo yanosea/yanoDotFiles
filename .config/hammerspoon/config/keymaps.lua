@@ -66,9 +66,9 @@ end)
 --   hs.eventtap.keyStroke({}, "right")
 -- end)
 ---- redo
-hs.hotkey.bind({ "cmd" }, "y", nil, function()
-  hs.eventtap.keyStroke({ "cmd", "shift" }, "z")
-end)
+-- hs.hotkey.bind({ "cmd" }, "y", nil, function()
+--   hs.eventtap.keyStroke({ "cmd", "shift" }, "z")
+-- end)
 ---- quit
 hs.hotkey.bind({ "option" }, "f4", nil, function()
   hs.eventtap.keyStroke({ "cmd" }, "q")

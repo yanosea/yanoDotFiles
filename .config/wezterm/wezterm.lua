@@ -23,7 +23,7 @@ if string.find(target, "windows") then
 elseif string.find(target, "darwin") then
   default_domain = "local"
   font_size = 14
-  ctrl_key = "SUPER"
+  ctrl_key = "CTRL"
 elseif string.find(target, "linux") then
   default_domain = "local"
   font_size = 14
