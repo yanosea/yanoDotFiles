@@ -4,9 +4,11 @@ return {
     "cshuaimin/ssr.nvim",
     lazy = false,
     module = "ssr",
-    vim.keymap.set({ 'n', 'x' }, "<leader>sr", function() require("ssr").open() end),
+    vim.keymap.set({ "n", "x" }, "<leader>sr", function()
+      require("ssr").open()
+    end),
     config = function()
-      require("ssr").setup {
+      require("ssr").setup({
         border = "rounded",
         min_width = 50,
         min_height = 5,
@@ -14,12 +16,12 @@ return {
         max_height = 25,
         keymaps = {
           close = "<ESC>",
-          next_match = 'n',
-          prev_match = 'N',
+          next_match = "n",
+          prev_match = "N",
           replace_confirm = "<CR>",
           replace_all = "<LEADER><CR>",
         },
-      }
+      })
     end,
   },
 }

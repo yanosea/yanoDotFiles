@@ -6,8 +6,8 @@ return {
     -- https://github.com/vim-denops/denops.vim
     dependencies = { "vim-denops/denops.vim" },
     init = function()
-      vim.keymap.set('i',"<C-Space>", "<Plug>(skkeleton-toggle)")
-      vim.keymap.set('c',"<C-Space>", "<Plug>(skkeleton-toggle)")
+      vim.keymap.set("i", "<C-Space>", "<Plug>(skkeleton-toggle)")
+      vim.keymap.set("c", "<C-Space>", "<Plug>(skkeleton-toggle)")
       local dictionaries = {}
       local handle = io.popen("ls $XDG_DATA_HOME/skk/*")
       if handle then
@@ -16,7 +16,7 @@ return {
         end
         handle:close()
       end
-      local src = {"skk_dictionary", "google_japanese_input"}
+      local src = { "skk_dictionary", "google_japanese_input" }
       vim.api.nvim_create_autocmd("User", {
         pattern = "skkeleton-initialize-pre",
         callback = function()

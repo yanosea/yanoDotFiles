@@ -5,7 +5,7 @@ return {
     lazy = false,
     dependencies = {
       -- https://github.com/vim-denops/denops.vim
-      "vim-denops/denops.vim"
+      "vim-denops/denops.vim",
     },
-  }
+  },
 }

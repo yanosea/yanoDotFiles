@@ -39,7 +39,7 @@ return {
       patch_global("ui", "pum")
 
       patch_global("sources", {
-        'skkeleton',
+        "skkeleton",
         "lsp",
         "file",
         "around",
@@ -68,8 +68,8 @@ return {
           forceCompletionPattern = [[\S/\S*]],
         },
         skkeleton = {
-          mark = '[SKK]',
-          matchers = { 'skkeleton' },
+          mark = "[SKK]",
+          matchers = { "skkeleton" },
           sorters = {},
           isVolatile = true,
           minAutoCompleteLength = 2,

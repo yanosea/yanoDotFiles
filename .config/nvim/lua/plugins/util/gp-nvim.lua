@@ -5,13 +5,13 @@ return {
     lazy = true,
     cmd = { "GpChatNew", "GpChatPaste", "GpChatToggle", "GpChatFinder" },
     init = function()
-      vim.keymap.set('n', "<LEADER>at", "<CMD>GpChatNew tabnew<CR>")
-      vim.keymap.set('n', "<LEADER>as", "<CMD>GpChatNew split<CR>")
-      vim.keymap.set('n', "<LEADER>av", "<CMD>GpChatNew vsplit<CR>")
-      vim.keymap.set('n', "<LEADER>af", "<CMD>GpChatFinder<CR>")
-      vim.keymap.set('n', "<LEADER>aa", "<CMD>GpChatRespond<CR>")
-      vim.keymap.set('n', "<LEADER>ad", "<CMD>GpChatDelete<CR>")
-      vim.keymap.set('n', "<LEADER>ac", "<CMD>GpChatStop<CR>")
+      vim.keymap.set("n", "<LEADER>at", "<CMD>GpChatNew tabnew<CR>")
+      vim.keymap.set("n", "<LEADER>as", "<CMD>GpChatNew split<CR>")
+      vim.keymap.set("n", "<LEADER>av", "<CMD>GpChatNew vsplit<CR>")
+      vim.keymap.set("n", "<LEADER>af", "<CMD>GpChatFinder<CR>")
+      vim.keymap.set("n", "<LEADER>aa", "<CMD>GpChatRespond<CR>")
+      vim.keymap.set("n", "<LEADER>ad", "<CMD>GpChatDelete<CR>")
+      vim.keymap.set("n", "<LEADER>ac", "<CMD>GpChatStop<CR>")
     end,
     config = function()
       require("gp").setup({
@@ -43,8 +43,8 @@ return {
               .. "START AND END YOUR ANSWER WITH:\n\n```",
           },
           {
-            name = "ChatGPT3-5"
-          }
+            name = "ChatGPT3-5",
+          },
         },
         state_dir = os.getenv("GOOGLE_DRIVE") .. "/gp-nvim/persisted",
         chat_dir = os.getenv("GOOGLE_DRIVE") .. "/gp-nvim/chats",

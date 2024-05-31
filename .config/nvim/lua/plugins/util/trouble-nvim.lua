@@ -8,7 +8,7 @@ return {
     opts = { use_diagnostic_signs = true },
     config = function()
       require("trouble").setup({})
-      vim.keymap.set('n', "<LEADER>T", "<CMD>TroubleToggle<CR>")
-    end
+      vim.keymap.set("n", "<LEADER>T", "<CMD>TroubleToggle<CR>")
+    end,
   },
 }

@@ -16,10 +16,10 @@ return {
           augend.date.alias["%Y-%m-%d"],
           augend.date.alias["%Y年%m月%d日"],
           augend.date.alias["%m月%d日"],
-        }
+        },
       })
-      vim.keymap.set('n', "<C-a>", require("dial.map").inc_normal(), { noremap = true })
-      vim.keymap.set('n', "<C-x>", require("dial.map").dec_normal(), { noremap = true })
+      vim.keymap.set("n", "<C-a>", require("dial.map").inc_normal(), { noremap = true })
+      vim.keymap.set("n", "<C-x>", require("dial.map").dec_normal(), { noremap = true })
     end,
   },
 }

@@ -2,7 +2,7 @@ local signs = {
   Error = " ",
   Warn = " ",
   Hint = " ",
-  Info = " "
+  Info = " ",
 }
 
 for type, icon in pairs(signs) do
@@ -143,14 +143,14 @@ return {
     lazy = true,
     event = "BufReadPre",
     dependencies = {
-    -- https://github.com/williamboman/mason.nvim
+      -- https://github.com/williamboman/mason.nvim
       "williamboman/mason.nvim",
-    -- https://github.com/williamboman/mason-lspconfig.nvim
+      -- https://github.com/williamboman/mason-lspconfig.nvim
       "williamboman/mason-lspconfig.nvim",
-    -- https://github.com/Shougo/ddc-source-lsp
+      -- https://github.com/Shougo/ddc-source-lsp
       "Shougo/ddc-source-lsp",
     },
-     config = function()
+    config = function()
       require("lspconfig.ui.windows").default_options.border = "single"
       vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
       vim.diagnostic.config({ float = { border = "single" } })
@@ -179,7 +179,6 @@ return {
             opts.cmd = { "deno", "lsp", "--unstable" }
             opts.init_options = { lint = true, unstable = true }
             opts.on_attach = lsp.disable_fmt_on_attach
-
           elseif server == "tsserver" then
             local node_root_dir = lspconfig.util.root_pattern("package.json")
             if node_root_dir(buf_full_filename) == nil then
@@ -187,27 +186,22 @@ return {
             end
             opts.root_dir = node_root_dir
             opts.on_attach = lsp.disable_fmt_on_attach
-
           elseif server == "tailwindcss" then
             local tailwind_root_dir = lspconfig.util.root_pattern("tailwind.config.{js,cjs,ts}", "twind.config.{js,ts}")
             if tailwind_root_dir(buf_full_filename) == nil then
               return
             end
             opts.root_dir = tailwind_root_dir
-
           elseif server == "cssls" then
             opts.filetypes = { "css", "scss", "sass", "less" }
-
           elseif server == "yamlls" then
             opts.settings = {
               yaml = {
                 keyOrdering = false,
               },
             }
-
           elseif server == "efm" then
             opts = vim.tbl_deep_extend("force", opts, efm_opts())
-
           elseif server == "html" or server == "jsonls" or server == "lua_ls" then
             opts.on_attach = lsp.disable_fmt_on_attach
           end
@@ -216,20 +210,20 @@ return {
         end,
       })
 
-      vim.keymap.set('n', "gE", "<CMD>Ddu lsp_diagnostic -unique<CR>", { desc = "Lists all the diagnostics" })
-      vim.keymap.set('n', "ge", "<CMD>lua vim.diagnostic.open_float()<CR>", { desc = "Show diagnostic" })
-      vim.keymap.set('n', "]g", "<CMD>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to next diagnostic" })
-      vim.keymap.set('n', "[g", "<CMD>lua vim.diagnostic.goto_prev()<CR>", { desc = "Go to previous diagnostic" })
+      vim.keymap.set("n", "gE", "<CMD>Ddu lsp_diagnostic -unique<CR>", { desc = "Lists all the diagnostics" })
+      vim.keymap.set("n", "ge", "<CMD>lua vim.diagnostic.open_float()<CR>", { desc = "Show diagnostic" })
+      vim.keymap.set("n", "]g", "<CMD>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to next diagnostic" })
+      vim.keymap.set("n", "[g", "<CMD>lua vim.diagnostic.goto_prev()<CR>", { desc = "Go to previous diagnostic" })
 
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function()
-          vim.keymap.set('n', "K", "<CMD>lua vim.lsp.buf.hover()<CR>", { desc = "Show hover" })
-          vim.keymap.set('n', "gf", "<CMD>lua vim.lsp.buf.format({ async = true })<CR>", { desc = "Formatting" })
-          vim.keymap.set('n', "gn", "<CMD>lua vim.lsp.buf.rename()<CR>", { desc = "Rename definition" })
-          vim.keymap.set('n', "ga", "<CMD>Ddu lsp_codeAction -unique<CR>", { desc = "Show available code actions" })
-          vim.keymap.set('n', "gd", "<CMD>Ddu lsp_definition<CR>", { desc = "Lists all the definition" })
-          vim.keymap.set('n', "gr", "<CMD>Ddu lsp_references -unique<CR>", { desc = "Lists all the references" })
+          vim.keymap.set("n", "K", "<CMD>lua vim.lsp.buf.hover()<CR>", { desc = "Show hover" })
+          vim.keymap.set("n", "gf", "<CMD>lua vim.lsp.buf.format({ async = true })<CR>", { desc = "Formatting" })
+          vim.keymap.set("n", "gn", "<CMD>lua vim.lsp.buf.rename()<CR>", { desc = "Rename definition" })
+          vim.keymap.set("n", "ga", "<CMD>Ddu lsp_codeAction -unique<CR>", { desc = "Show available code actions" })
+          vim.keymap.set("n", "gd", "<CMD>Ddu lsp_definition<CR>", { desc = "Lists all the definition" })
+          vim.keymap.set("n", "gr", "<CMD>Ddu lsp_references -unique<CR>", { desc = "Lists all the references" })
         end,
       })
     end,

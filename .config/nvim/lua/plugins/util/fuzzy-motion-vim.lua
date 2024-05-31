@@ -10,7 +10,7 @@ return {
       "lambdalisue/kensaku.vim",
     },
     init = function()
-      vim.keymap.set('n', "<LEADER><SPACE>", "<CMD>FuzzyMotion<CR>", { silent = true })
+      vim.keymap.set("n", "<LEADER><SPACE>", "<CMD>FuzzyMotion<CR>", { silent = true })
       vim.g.fuzzy_motion_matchers = { "fzf", "kensaku" }
     end,
   },

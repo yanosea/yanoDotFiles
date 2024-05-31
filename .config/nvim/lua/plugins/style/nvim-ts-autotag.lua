@@ -6,7 +6,7 @@ return {
     event = "InsertEnter",
     config = true,
     init = function()
-        require("nvim-ts-autotag").setup({})
-    end
+      require("nvim-ts-autotag").setup({})
+    end,
   },
 }

@@ -11,9 +11,9 @@ return {
         exclude_dirs = {},
         show_hidden = true,
         silent_chdir = true,
-        scope_chdir = 'global',
+        scope_chdir = "global",
         datapath = vim.fn.stdpath("data"),
       })
-    end
-  }
+    end,
+  },
 }

@@ -24,19 +24,21 @@ return {
     },
     cmd = "Telescope",
     init = function()
-      vim.keymap.set('n', "<LEADER>B", "<CMD>Telescope buffers<CR>")
-      vim.keymap.set('n', "<LEADER>E", function() return "<CMD>Telescope file_browser cwd=" .. vim.fn.expand("%:p:h") .. "<CR>" end, { silent = true, expr = true })
-      vim.keymap.set('n', "<LEADER>F", "<CMD>Telescope find_files<CR>")
-      vim.keymap.set('n', "<LEADER>G", "<CMD>Telescope egrepify<CR>")
-      vim.keymap.set('n', "<LEADER>H", "<CMD>Telescope help_tags<CR>")
-      vim.keymap.set('n', "<LEADER>K", "<CMD>Telescope kensaku<CR>")
-      vim.keymap.set('n', "<LEADER>L", "<CMD>Telescope lazy<CR>")
-      vim.keymap.set('n', "<LEADER>O", "<CMD>Telescope oldfiles<CR>")
+      vim.keymap.set("n", "<LEADER>B", "<CMD>Telescope buffers<CR>")
+      vim.keymap.set("n", "<LEADER>E", function()
+        return "<CMD>Telescope file_browser cwd=" .. vim.fn.expand("%:p:h") .. "<CR>"
+      end, { silent = true, expr = true })
+      vim.keymap.set("n", "<LEADER>F", "<CMD>Telescope find_files<CR>")
+      vim.keymap.set("n", "<LEADER>G", "<CMD>Telescope egrepify<CR>")
+      vim.keymap.set("n", "<LEADER>H", "<CMD>Telescope help_tags<CR>")
+      vim.keymap.set("n", "<LEADER>K", "<CMD>Telescope kensaku<CR>")
+      vim.keymap.set("n", "<LEADER>L", "<CMD>Telescope lazy<CR>")
+      vim.keymap.set("n", "<LEADER>O", "<CMD>Telescope oldfiles<CR>")
     end,
     config = function()
       require("telescope").setup({
         defaults = {
-          prompt_prefix = ' ',
+          prompt_prefix = " ",
           layout_strategy = "vertical",
           layout_config = {
             vertical = {
@@ -75,16 +77,16 @@ return {
             hidden = true,
             respect_gitignore = false,
             mappings = {
-              ['n'] = {
-                ['c'] = require("telescope._extensions.file_browser.actions").create,
-                ['r'] = require("telescope._extensions.file_browser.actions").rename,
-                ['m'] = require("telescope._extensions.file_browser.actions").move,
-                ['y'] = require("telescope._extensions.file_browser.actions").copy,
-                ['d'] = require("telescope._extensions.file_browser.actions").remove,
-                ['o'] = require("telescope._extensions.file_browser.actions").open,
-                ['g'] = require("telescope._extensions.file_browser.actions").goto_parent_dir,
-                ['h'] = require("telescope._extensions.file_browser.actions").goto_home_dir,
-                ['w'] = require("telescope._extensions.file_browser.actions").goto_cwd,
+              ["n"] = {
+                ["c"] = require("telescope._extensions.file_browser.actions").create,
+                ["r"] = require("telescope._extensions.file_browser.actions").rename,
+                ["m"] = require("telescope._extensions.file_browser.actions").move,
+                ["y"] = require("telescope._extensions.file_browser.actions").copy,
+                ["d"] = require("telescope._extensions.file_browser.actions").remove,
+                ["o"] = require("telescope._extensions.file_browser.actions").open,
+                ["g"] = require("telescope._extensions.file_browser.actions").goto_parent_dir,
+                ["h"] = require("telescope._extensions.file_browser.actions").goto_home_dir,
+                ["w"] = require("telescope._extensions.file_browser.actions").goto_cwd,
               },
             },
           },

@@ -3,7 +3,7 @@ return {
     -- https://github.com/nvim-tree/nvim-tree.lua
     "nvim-tree/nvim-tree.lua",
     lazy = false,
-    vim.keymap.set({ 'n', }, "<leader>f", "<CMD>NvimTreeToggle<CR>"),
+    vim.keymap.set({ "n" }, "<leader>f", "<CMD>NvimTreeToggle<CR>"),
     init = function()
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1

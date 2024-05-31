@@ -4,12 +4,12 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 -- remove whitespace on save
 autocmd("BufWritePre", {
-  pattern = '*',
+  pattern = "*",
   command = "if expand('%:e') != 'mdx' | %s/\\s\\+$//e | endif",
 })
 -- open terminal with insert mode
 autocmd("TermOpen", {
-  pattern = '*',
+  pattern = "*",
   command = "startinsert",
 })
 -- highlight on yank
@@ -17,7 +17,7 @@ autocmd("TextYankPost", {
   group = augroup("highlight_yank", {}),
   pattern = "*",
   callback = function()
-    vim.highlight.on_yank { higroup = "IncSearch", timeout = 200 }
+    vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
   end,
 })
 -- prevent neovim from exiting with status code 134

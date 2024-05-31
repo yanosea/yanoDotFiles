@@ -17,7 +17,7 @@ return {
             if context.buffer:current() then
               return ""
             end
-            return ''
+            return ""
           end,
           offsets = {
             {
@@ -25,12 +25,11 @@ return {
               text = "File Explorer",
               text_align = "left",
               separator = true,
-            }
+            },
           },
           color_icon = true,
           get_element_icon = function(element)
-            local icon, hl = require("nvim-web-devicons").get_icon_by_filetype(element.filetype,
-              { default = false })
+            local icon, hl = require("nvim-web-devicons").get_icon_by_filetype(element.filetype, { default = false })
             return icon, hl
           end,
           show_buffer_close_icons = false,
@@ -44,8 +43,8 @@ return {
           always_show_bufferline = true,
         },
       })
-      vim.keymap.set('n', "<C-UP>", "<CMD>BufferLineMovePrev<CR>")
-      vim.keymap.set('n', "<C-DOWN>", "<CMD>BufferLineMoveNext<CR>")
+      vim.keymap.set("n", "<C-UP>", "<CMD>BufferLineMovePrev<CR>")
+      vim.keymap.set("n", "<C-DOWN>", "<CMD>BufferLineMoveNext<CR>")
     end,
   },
 }

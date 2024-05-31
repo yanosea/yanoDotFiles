@@ -7,7 +7,7 @@ return {
     cmd = { "Outline" },
     init = function()
       require("outline").setup({})
-      vim.keymap.set('n', "<LEADER>o", "<CMD>Outline<CR>")
+      vim.keymap.set("n", "<LEADER>o", "<CMD>Outline<CR>")
     end,
   },
 }

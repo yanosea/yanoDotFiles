@@ -10,6 +10,6 @@ return {
       vim.keymap.set("i", "<C-a><C-k>", "<Plug>(copilot-previous)")
       vim.keymap.set("i", "<C-a><C-d>", "<Plug>(copilot-dismiss)")
       vim.keymap.set("i", "<C-a><C-s>", "<Plug>(copilot-suggest)")
-   end,
+    end,
   },
 }

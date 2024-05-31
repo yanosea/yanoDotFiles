@@ -1,6 +1,8 @@
 -- yanosea nvim initialize
 -- fast loader
-if vim.loader then vim.loader.enable() end
+if vim.loader then
+  vim.loader.enable()
+end
 -- preferences
 require("config.options")
 -- keymaps

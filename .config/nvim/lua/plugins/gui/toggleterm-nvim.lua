@@ -3,7 +3,7 @@ return {
     -- https://github.com/akinsho/toggleterm.nvim
     "akinsho/toggleterm.nvim",
     lazy = true,
-    keys = { "<LEADER>t"},
+    keys = { "<LEADER>t" },
     opts = function()
       require("toggleterm").setup({
         hide_numbers = true,
@@ -19,7 +19,7 @@ return {
         shell = vim.o.shell,
         auto_scroll = true,
       })
-      vim.keymap.set("n", "<LEADER>t", "<CMD>ToggleTerm<CR>", {noremap = true})
+      vim.keymap.set("n", "<LEADER>t", "<CMD>ToggleTerm<CR>", { noremap = true })
       vim.api.nvim_create_autocmd({ "TermEnter" }, {
         callback = function()
           for _, buffers in ipairs(vim.fn.getbufinfo()) do

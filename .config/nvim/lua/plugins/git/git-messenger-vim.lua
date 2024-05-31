@@ -4,7 +4,7 @@ return {
     "rhysd/git-messenger.vim",
     cmd = "GitMessenger",
     init = function()
-      vim.keymap.set('n', "<LEADER>gm", "<CMD>GitMessenger<CR>", { desc = "Show git blame on the current line" })
+      vim.keymap.set("n", "<LEADER>gm", "<CMD>GitMessenger<CR>", { desc = "Show git blame on the current line" })
     end,
   },
 }

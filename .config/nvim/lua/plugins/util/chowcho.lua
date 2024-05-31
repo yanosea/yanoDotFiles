@@ -6,9 +6,9 @@ return {
     -- https://zenn.dev/kawarimidoll/articles/daa39da5838567
     init = function()
       local select_window = function()
-        local focusable_windows = 0;
+        local focusable_windows = 0
 
-        for i = 1, vim.fn.winnr('$') do
+        for i = 1, vim.fn.winnr("$") do
           local id = vim.fn.win_getid(i)
           local conf = vim.api.nvim_win_get_config(id)
 
@@ -25,7 +25,7 @@ return {
         vim.api.nvim_command("wincmd w")
       end
 
-      for _, mode in pairs({ 'n', 'x' }) do
+      for _, mode in pairs({ "n", "x" }) do
         vim.keymap.set(mode, "<C-w><C-w>", select_window, { desc = "Select window" })
       end
     end,
@@ -33,7 +33,7 @@ return {
       require("chowcho").setup({
         icon_enabled = true,
         active_border_color = "#d162cb",
-        border_style = "rounded"
+        border_style = "rounded",
       })
     end,
   },

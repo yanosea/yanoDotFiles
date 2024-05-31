@@ -4,14 +4,14 @@ return {
     "NeogitOrg/neogit",
     cmd = { "Neogit" },
     dependencies = {
-    -- https://github.com/nvim-lua/plenary.nvim
+      -- https://github.com/nvim-lua/plenary.nvim
       "nvim-lua/plenary.nvim",
-    -- https://github.com/sindrets/diffview.nvim
+      -- https://github.com/sindrets/diffview.nvim
       "sindrets/diffview.nvim",
     },
     init = function()
-      vim.keymap.set('n', "<LEADER>gg", "<CMD>Neogit<CR>", { desc = "Open Neogit" })
-      vim.keymap.set('n', "<LEADER>gc", "<CMD>Neogit commit<CR>", { desc = "git commit" })
+      vim.keymap.set("n", "<LEADER>gg", "<CMD>Neogit<CR>", { desc = "Open Neogit" })
+      vim.keymap.set("n", "<LEADER>gc", "<CMD>Neogit commit<CR>", { desc = "git commit" })
     end,
     config = function()
       require("neogit").setup({
@@ -34,8 +34,8 @@ return {
         preview_buffer = { kind = "split" },
         popup = { kind = "split" },
         signs = {
-          section = { '', '' },
-          item = { '', '' },
+          section = { "", "" },
+          item = { "", "" },
           hunk = { "", "" },
         },
         integrations = { diffview = true },

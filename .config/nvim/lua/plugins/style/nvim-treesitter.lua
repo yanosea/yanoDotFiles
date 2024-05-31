@@ -7,7 +7,7 @@ return {
     config = function()
       require("nvim-treesitter.configs").setup({
         autotag = {
-          enable = true
+          enable = true,
         },
         highlight = {
           enable = true,
@@ -74,6 +74,6 @@ return {
           "yaml",
         },
       })
-    end
+    end,
   },
 }
