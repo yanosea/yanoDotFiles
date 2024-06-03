@@ -3,3 +3,4 @@
 # ignore files
 .DS_Store
 *.log
+desktop.ini

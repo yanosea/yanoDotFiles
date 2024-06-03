@@ -1,10 +1,5 @@
 # ignore folders
-.config/astro
 .config/browsh/firefox_profile
-.config/configstore
-.config/gh
-.config/gh-copilot
-.config/github-copilot
 .config/go
 .config/gup
 .config/menus
@@ -21,6 +16,8 @@
 .config/vim/plugged
 .config/vim/viminfo
 # ignore files
+.config/gh/hosts.yml
+.config/github-copilot/hosts.json
 .config/dlv/.dbg_history
 .config/lazygit/state.yml
 .config/nekome/.cred.toml
