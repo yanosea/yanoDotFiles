@@ -21,7 +21,6 @@
 .config/dlv/.dbg_history
 .config/lazygit/state.yml
 .config/nekome/.cred.toml
-.config/nvim/lazy-lock.json
 .config/spotify-tui/.spotify_token_cache.json
 .config/spotify-tui/client.yml
 .DS_Store
