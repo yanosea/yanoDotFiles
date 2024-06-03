@@ -1,13 +1,39 @@
-theme = "onedark"
+theme = "tokyonight_storm"
 
 [editor]
-line-number = "relative"
+bufferline = "multiple"
+color-modes = true
+cursorline = true
+cursorcolumn = true
+gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+line-number = "absolute"
 mouse = false
+popup-border = "all"
+true-color = true
+undercurl = true
 
 [editor.cursor-shape]
-insert = "bar"
+insert = "block"
 normal = "block"
-select = "underline"
+select = "block"
 
 [editor.file-picker]
 hidden = false
+
+[editor.indent-guides]
+render = true
+
+[editor.search]
+wrap-around = false
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type", "file-name"]
+separator = "│"
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
+
+[editor.whitespace]
+render = "all"
