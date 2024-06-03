@@ -2,6 +2,7 @@
 .config/browsh/firefox_profile
 .config/go
 .config/gup
+.config/karabiner/automatic_backups
 .config/menus
 .config/PowerShell/Modules
 .config/PowerShell/Scripts
