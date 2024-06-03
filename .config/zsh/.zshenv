@@ -107,3 +107,7 @@ export TRELLO_KEY=$(cat $XDG_DATA_HOME/credentials/TRELLO_KEY)
 export TRELLO_TOKEN=$(cat $XDG_DATA_HOME/credentials/TRELLO_TOKEN)
 # starship
 export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
+# karabiner and goku
+if [[ "$OS" = "Darwin" ]]; then
+	export GOKU_EDN_CONFIG_FILE=$XDG_CONFIG_HOME/karabiner/karabiner.edn
+fi

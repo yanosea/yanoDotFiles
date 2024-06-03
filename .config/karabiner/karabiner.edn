@@ -1,0 +1,8 @@
+{
+ ::main [{
+    :des "左Option(空打ち) -> Ctrl+F2"
+    :rules [[
+      :left_option :left_option nil {:alone :!Tf2}
+    ]]
+  }]
+}
