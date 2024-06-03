@@ -25,6 +25,6 @@ Set-PSReadLineKeyHandler -Key "Ctrl+n" -Function NextHistory
 # alias
 Set-Alias ls lsd
 Set-Alias cat bat
-# oh my posh init
+# starship
 $ENV:STARSHIP_CONFIG = "$HOME\.config\starship\starship.toml"
 Invoke-Expression (&starship init powershell)
