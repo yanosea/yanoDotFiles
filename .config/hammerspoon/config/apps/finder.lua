@@ -1,7 +1,7 @@
 -- FInder
 local finderBinding = {
-  -- open file (cmd + return)
-  hs.hotkey.bind({ "cmd" }, "return", nil, function()
+  -- open file (ctrl + return)
+  hs.hotkey.bind({ "ctrl" }, "return", nil, function()
     hs.eventtap.keyStroke({ "cmd" }, "o")
   end),
   -- rename (f2)
