@@ -84,7 +84,6 @@
   "treesj": { "branch": "main", "commit": "f98deb33805485b56a8d44d1a27d16874af00d7f" },
   "trouble.nvim": { "branch": "main", "commit": "c11dc2777d52da2c8da25836817e43608ec951a5" },
   "vim-delve": { "branch": "master", "commit": "41d6ad294fb6dd5090f5f938318fc4ed73b6e1ea" },
-  "vim-im-select": { "branch": "master", "commit": "0f0ae3bb38b516fbce815b708fd420027a20e429" },
   "vim-matchup": { "branch": "master", "commit": "1535a769d5dca851fe7d41b0be95f7c7203a4bef" },
   "vim-qfreplace": { "branch": "master", "commit": "e3c417691399e758c7ef40ee6952d0496abc2735" },
   "vim-quickrun": { "branch": "master", "commit": "c6c50a9926ca18605ae2472a343b8212f3a2af29" },
