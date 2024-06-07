@@ -6,7 +6,7 @@
 .config/menus
 .config/PowerShell/Modules
 .config/PowerShell/Scripts
-.config/raycast
+.config/raycast/extensions
 .config/rbw
 .config/scoop
 .config/skk
