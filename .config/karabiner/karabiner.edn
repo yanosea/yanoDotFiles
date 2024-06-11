@@ -58,6 +58,12 @@
       [:!Tr :!Tend]
       [:!Sr :!Send]
       [:!Or :!Oend]
+      ;; delete
+      [:delete_or_backspace :delete_forward]
+      [:!Cdelete_or_backspace :!Cdelete_forward]
+      [:!Tdelete_or_backspace :!Tdelete_forward]
+      [:!Sdelete_or_backspace :!Sdelete_forward]
+      [:!Odelete_or_backspace :!Odelete_forward]
     ]},
     {
     :des "built-in keyboard change"
