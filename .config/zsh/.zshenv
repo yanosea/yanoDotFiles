@@ -82,18 +82,16 @@ if [[ "$OS" = "Linux" && "$ID" = "arch" ]]; then
 fi
 # credentials
 ## openai
-export OPENAI_API_KEY=$(cat $XDG_DATA_HOME/credentials/OPENAI_API_KEY)
-## gemini
-export GEMINI_API_KEY=$(cat $XDG_DATA_HOME/credentials/GEMINI_API_KEY)
+export OPENAI_API_KEY=$(cat $XDG_DATA_HOME/credentials/openapi/OPENAI_API_KEY)
 ## spotify
-export SPOTIFY_ID=$(cat $XDG_DATA_HOME/credentials/SPOTIFY_ID)
-export SPOTIFY_SECRET=$(cat $XDG_DATA_HOME/credentials/SPOTIFY_SECRET)
-export SPOTIFY_REDIRECT_URI=$(cat $XDG_DATA_HOME/credentials/SPOTIFY_REDIRECT_URI)
-export SPOTIFY_REFRESH_TOKEN=$(cat $XDG_DATA_HOME/credentials/SPOTIFY_REFRESH_TOKEN)
+export SPOTIFY_ID=$(cat $XDG_DATA_HOME/credentials/spotify/SPOTIFY_ID)
+export SPOTIFY_SECRET=$(cat $XDG_DATA_HOME/credentials/spotify/SPOTIFY_SECRET)
+export SPOTIFY_REDIRECT_URI=$(cat $XDG_DATA_HOME/credentials/spotify/SPOTIFY_REDIRECT_URI)
+export SPOTIFY_REFRESH_TOKEN=$(cat $XDG_DATA_HOME/credentials/spotify/SPOTIFY_REFRESH_TOKEN)
 ## trello
-export TRELLO_USER=$(cat $XDG_DATA_HOME/credentials/TRELLO_USER)
-export TRELLO_KEY=$(cat $XDG_DATA_HOME/credentials/TRELLO_KEY)
-export TRELLO_TOKEN=$(cat $XDG_DATA_HOME/credentials/TRELLO_TOKEN)
+export TRELLO_USER=$(cat $XDG_DATA_HOME/credentials/trello/TRELLO_USER)
+export TRELLO_KEY=$(cat $XDG_DATA_HOME/credentials/trello/TRELLO_KEY)
+export TRELLO_TOKEN=$(cat $XDG_DATA_HOME/credentials/trello/TRELLO_TOKEN)
 # starship
 export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
 # karabiner and goku
