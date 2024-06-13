@@ -4,8 +4,6 @@
 .config/gup
 .config/karabiner/automatic_backups
 .config/menus
-.config/PowerShell/Modules
-.config/PowerShell/Scripts
 .config/raycast/extensions
 .config/rbw
 .config/scoop
