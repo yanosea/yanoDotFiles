@@ -39,17 +39,6 @@ export HOMEBREW_NO_INSTALL_FROM_API=1
 # google drive
 export GOOGLE_DRIVE=$HOME/GoogleDrive
 # path
-## usbinpath
-if [[ "$OS" = "Darwin" ]]; then
-	export USBINPATH=/opt/homebrew/bin
-elif [[ "$OS" = "Linux" ]]; then
-	source /etc/os-release
-	if [[ "$ID" = "arch" ]]; then
-		export USBINPATH=/usr/bin
-	elif [[ "$ID" = "nixos" ]]; then
-		export USBINPATH=/run/current-system/sw/bin
-	fi
-fi
 ## local
 export PATH=$PATH:$HOME/.local/bin
 export WORKSPACE=$HOME/ghq/github.com/yanosea/yanoLocalEnv

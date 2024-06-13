@@ -30,17 +30,18 @@ eval "$(sheldon source)"
 # zoxide
 eval "$(zoxide init zsh)"
 # python
-eval "$($USBINPATH/pyenv init -)"
+eval "$(pyenv init -)"
 # fzf
 source <(fzf --zsh)
 # alias
-alias cat="$USBINPATH"/bat
+alias cat="$(which bat)"
 alias gbp='git branch --merged | grep -v "*)" | xargs git branch -d'
 alias gsf='git switch $(git branch -l | fzf | tr -d "* ")'
-alias ls="$USBINPATH"/lsd
-alias nvimdiff="$USBINPATH/nvim -d"
+alias ls="$(which lsd)"
+alias nvimdiff="$(which nvim) -d"
+alias lvimdiff="$(which lvim) -d"
 alias reboot="sudo systemctl reboot"
-alias rm="$USBINPATH"/trash
+alias rm="$(which trash)"
 alias rrm="/bin/rm"
 alias shutdown="sudo systemctl poweroff"
 alias st="systemctl-tui"
@@ -50,6 +51,10 @@ alias zmv="noglob zmv -W"
 alias dot="cd $HOME/ghq/github.com/yanosea/yanoDotFiles"
 alias repos="cd $HOME/ghq/github.com/yanosea"
 alias work="cd $WORKSPACE"
+if [[ ! -d "$XDG_STATE_HOME/zsh" ]]; then
+	mkdir -p "$XDG_STATE_HOME/zsh"
+fi
+
 # history
 HISTFILE=$XDG_STATE_HOME/zsh/.zhistory
 HISTSIZE=1000
