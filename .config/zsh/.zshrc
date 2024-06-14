@@ -17,13 +17,9 @@ if command -v zellij &>/dev/null; then
 		exec zellij
 	fi
 fi
-# homebrew
+# homebrew # TODO : delete after moving to nix from brew in darwin
 if [[ "$OS" = "Darwin" ]]; then
 	eval $(/opt/homebrew/bin/brew shellenv)
-elif [[ "$OS" = "Linux" ]]; then
-	if [[ "$ID" = "arch" ]]; then
-		eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-	fi
 fi
 # sheldon
 eval "$(sheldon source)"
@@ -42,19 +38,19 @@ alias nvimdiff="$(which nvim) -d"
 alias lvimdiff="$(which lvim) -d"
 alias reboot="sudo systemctl reboot"
 alias rm="$(which trash)"
-alias rrm="/bin/rm"
+if [[ "$OS" = "Darwin" ]]; then
+	alias rrm="/bin/rm"
+elif [[ "$OS" = "Linux" ]]; then
+	alias rrm="/run/current-system/sw/bin/rm"
+fi
 alias shutdown="sudo systemctl poweroff"
 alias st="systemctl-tui"
 alias trl="trello-tui -board yanoBoard"
 alias zmv="noglob zmv -W"
-## directories
-alias dot="cd $HOME/ghq/github.com/yanosea/yanoDotFiles"
-alias repos="cd $HOME/ghq/github.com/yanosea"
-alias work="cd $WORKSPACE"
+# make state directory
 if [[ ! -d "$XDG_STATE_HOME/zsh" ]]; then
 	mkdir -p "$XDG_STATE_HOME/zsh"
 fi
-
 # history
 HISTFILE=$XDG_STATE_HOME/zsh/.zhistory
 HISTSIZE=1000

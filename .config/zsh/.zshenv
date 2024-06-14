@@ -39,15 +39,13 @@ export TERM=xterm-256color
 export LESSHISTFILE=$XDG_STATE_HOME/less/.lesshst
 ## node
 export NODE_REPL_HISTORY=$XDG_STATE_HOME/node/.node_repl_history
-# homebrew
+# homebrew # TODO : delete after moving to nix from brew in darwin
 export HOMEBREW_NO_INSTALL_FROM_API=1
 # google drive
 export GOOGLE_DRIVE=$HOME/google_drive
 # path
 ## local
 export PATH=$PATH:$HOME/.local/bin
-export WORKSPACE=$HOME/ghq/github.com/yanosea/yanoLocalEnv
-export PATH=$PATH:$WORKSPACE/bin
 ## zsh functions
 ### common
 for file in $XDG_CONFIG_HOME/zsh/functions/*; do
@@ -68,23 +66,13 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 ## cargo
 export PATH=$PATH:$HOME/.cargo/bin
-## volta
-export VOLTA_HOME=$HOME/.volta
-export PATH=$PATH:$VOLTA_HOME/bin
 ## pnpm
 export PNPM_HOME=$XDG_DATA_HOME/pnpm
 ## python
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PATH:$PYENV_ROOT/bin
-# cabal
-export CABAL_CONFIG="$XDG_CONFIG_HOME"/cabal/config
-export CABAL_DIR="$XDG_CACHE_HOME"/cabal
 ## ghq
 export GHQ_ROOT="$HOME"/ghq
-## pkg config path
-if [[ "$OS" = "Linux" && "$ID" = "arch" ]]; then
-	export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/share/pkgconfig
-fi
 # credentials
 ## openai
 export OPENAI_API_KEY=$(cat $XDG_DATA_HOME/credentials/openapi/OPENAI_API_KEY)
