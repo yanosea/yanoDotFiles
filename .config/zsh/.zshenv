@@ -37,7 +37,7 @@ export NODE_REPL_HISTORY=$XDG_STATE_HOME/node/.node_repl_history
 # homebrew
 export HOMEBREW_NO_INSTALL_FROM_API=1
 # google drive
-export GOOGLE_DRIVE=$HOME/GoogleDrive
+export GOOGLE_DRIVE=$HOME/google_drive
 # path
 ## local
 export PATH=$PATH:$HOME/.local/bin
