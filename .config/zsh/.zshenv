@@ -8,6 +8,11 @@
 
 # os
 export OS=$(uname)
+if [[ "$OS" = "Linux" ]]; then
+	if [[ -f /etc/os-release ]]; then
+		source /usr/lib/os-release
+	fi
+fi
 # xdg config
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
