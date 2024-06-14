@@ -10,7 +10,7 @@
 export OS=$(uname)
 if [[ "$OS" = "Linux" ]]; then
 	if [[ -f /etc/os-release ]]; then
-		source /usr/lib/os-release
+		source /etc/os-release
 	fi
 fi
 # xdg config
